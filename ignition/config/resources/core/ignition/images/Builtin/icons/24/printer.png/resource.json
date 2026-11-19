@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "printer.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2026-04-08T22:35:22Z"
+    },
+    "size": 389,
+    "lastModificationSignature": "2c92636d5f570fec5983f63300e861cb9c2e812163ddaee8617af6b12a82b979",
+    "height": 24
+  }
+}

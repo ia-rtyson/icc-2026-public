@@ -1,0 +1,5 @@
+# Shell scripts run inside Linux containers (services/youtrack/restore.sh is
+# the youtrack-init entrypoint). Git for Windows defaults to core.autocrlf=true,
+# which would check them out CRLF and make alpine sh exit 2 on `set -eu` --
+# youtrack-init fails and YouTrack never starts. Pin them to LF.
+*.sh text eol=lf

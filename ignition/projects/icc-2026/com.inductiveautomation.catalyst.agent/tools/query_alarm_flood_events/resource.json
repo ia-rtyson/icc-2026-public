@@ -1,0 +1,35 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-24T00:00:00Z"
+    },
+    "title": "query_alarm_flood_events",
+    "description": "Queries collected alarm-flood events from the database. Call with no event_id to list all detected floods (event_id, detected time, alarm count, distinct source count, status, whether a dashboard exists), most recent first. Call with an event_id to get that event's full record: the summary (window start/end, duration, peak rate, breakdowns by priority/area/tag), the sequence-of-events alarm list (every alarm with tag path, alarm name, priority, triggering value, and millisecond timestamp), and the tag inventory (each distinct source tag with its configuration, engineering units, and whether tag history is enabled). This is the agent's primary evidence source for root-cause analysis.",
+    "parameters": [
+      {
+        "name": "event_id",
+        "description": "The flood event's event_id, as returned by the list mode of this tool. To list all events instead of fetching one, OMIT this parameter or pass null. Do not pass 0 as a placeholder (0 and negatives are also treated as list-mode, never as a real id).",
+        "type": "INTEGER",
+        "required": false
+      },
+      {
+        "name": "include_alarms",
+        "description": "When fetching a single event, whether to include the full sequence-of-events alarm list. Defaults to true. Set false for a lighter payload (summary + tag inventory only) when the flood has many alarms.",
+        "type": "BOOLEAN",
+        "required": false
+      }
+    ]
+  }
+}

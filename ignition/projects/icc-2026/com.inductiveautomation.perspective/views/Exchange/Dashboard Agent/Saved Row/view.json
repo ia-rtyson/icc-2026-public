@@ -1,0 +1,217 @@
+{
+  "custom": {
+    "confirming": false
+  },
+  "params": {
+    "id": 0,
+    "isDemo": false,
+    "name": "",
+    "updated": "",
+    "widgetCount": 0
+  },
+  "propConfig": {
+    "params.id": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.isDemo": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.updated": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.widgetCount": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 46,
+      "width": 600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Name"
+        },
+        "position": {
+          "basis": "0px",
+          "grow": 1,
+          "shrink": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.name"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-90)",
+            "fontSize": "14px",
+            "fontWeight": 500,
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap"
+          },
+          "text": ""
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Meta"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "toStr({view.params.widgetCount}) + \" widgets  ·  \" + {view.params.updated} + if({view.params.isDemo}, \"  ·  demo\", \"\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "12px",
+            "whiteSpace": "nowrap"
+          },
+          "text": ""
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\texchange.dashboard.ui.toggleDemo(self.view.params.id, self.view.params.name, self.view.params.isDemo)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Demo"
+        },
+        "position": {
+          "basis": "94px",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "primary": false,
+          "style": {
+            "fontSize": "12px",
+            "height": "28px",
+            "minHeight": "0px"
+          },
+          "text": "Demo flag"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.custom.confirming \u003d exchange.dashboard.ui.deleteSaved(self.view.params.id, self.view.params.name, self.view.custom.confirming)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Delete"
+        },
+        "position": {
+          "basis": "72px",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "primary": false,
+          "style": {
+            "color": "var(--error)",
+            "fontSize": "12px",
+            "height": "28px",
+            "minHeight": "0px"
+          },
+          "text": "Delete"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\texchange.dashboard.ui.openSaved(self.view.params.id)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Open"
+        },
+        "position": {
+          "basis": "72px",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "primary": true,
+          "style": {
+            "fontSize": "12px",
+            "height": "28px",
+            "minHeight": "0px"
+          },
+          "text": "Open"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "shrink": 0
+    },
+    "props": {
+      "alignItems": "center",
+      "direction": "row",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "border": "1px solid var(--neutral-40)",
+        "borderRadius": "6px",
+        "gap": "10px",
+        "padding": "0px 10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

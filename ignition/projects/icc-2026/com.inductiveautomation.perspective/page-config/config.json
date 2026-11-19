@@ -1,0 +1,185 @@
+{
+  "pages": {
+    "/": {
+      "title": "Home",
+      "viewPath": "Exchange/Demo/Home"
+    },
+    "/alarm-flood-event": {
+      "title": "Alarm Flood Event",
+      "viewPath": "Exchange/Alarm Flood Agent/Alarm Flood Event"
+    },
+    "/dashboard-agent": {
+      "title": "Dashboard Agent",
+      "viewPath": "Exchange/Dashboard Agent/Dashboard"
+    },
+    "/db-wrecker": {
+      "title": "DB Wrecker",
+      "viewPath": "Exchange/DB Wrecker/Query Load"
+    },
+    "/designer-assist-demo": {
+      "title": "Line Status Board",
+      "viewPath": "Exchange/Designer Assist/Formatting Demo"
+    },
+    "/designer-assist-demo-fixed": {
+      "title": "Line Status Board (fixed)",
+      "viewPath": "Exchange/Designer Assist/Formatting Demo Fixed"
+    },
+    "/designer-embeds-example": {
+      "title": "Designer Embeds Example",
+      "viewPath": "Exchange/Designer Embeds/Example"
+    },
+    "/drawing": {
+      "title": "Drawing Tool with Agent",
+      "viewPath": "Exchange/Drawing Agent/Drawing AI Chat"
+    },
+    "/report-issue": {
+      "title": "Report Issue Agent",
+      "viewPath": "Exchange/Report Issue Agent/Line Overview"
+    },
+    "/security-audit": {
+      "title": "Security Audit",
+      "viewPath": "Exchange/Security Agent/Security Audit"
+    },
+    "/tag-import": {
+      "title": "Tag Import Agent",
+      "viewPath": "Exchange/Tag Import Agent/Tag Import"
+    },
+    "/translation-manager": {
+      "title": "Translation Manager",
+      "viewPath": "Exchange/Translation Agent/Translation Manager"
+    },
+    "/what-is-an-agent": {
+      "title": "What is an Agent?",
+      "viewPath": "Exchange/Agent Anatomy/Walkthrough"
+    }
+  },
+  "sharedDocks": {
+    "cornerPriority": "top-bottom",
+    "left": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 0,
+        "content": "cover",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "leftNavigation",
+        "modal": false,
+        "resizable": false,
+        "runWhileHidden": true,
+        "show": "onDemand",
+        "size": 200,
+        "viewParams": {},
+        "viewPath": "Exchange/perspective-custom-navigation-menu/Navigation/LeftNavigation"
+      }
+    ],
+    "right": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 0,
+        "content": "cover",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "page-info",
+        "modal": false,
+        "resizable": true,
+        "runWhileHidden": false,
+        "show": "onDemand",
+        "size": 600,
+        "viewParams": {},
+        "viewPath": "Exchange/Demo/Page Info"
+      },
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 0,
+        "content": "cover",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "alarm-flood-agent",
+        "modal": false,
+        "resizable": true,
+        "runWhileHidden": true,
+        "show": "onDemand",
+        "size": 800,
+        "viewParams": {},
+        "viewPath": "Exchange/Alarm Flood Agent/Agent Dock"
+      },
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 0,
+        "content": "cover",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "issue-pipeline",
+        "modal": true,
+        "resizable": true,
+        "runWhileHidden": true,
+        "show": "onDemand",
+        "size": 1240,
+        "viewParams": {},
+        "viewPath": "Exchange/Report Issue Agent/Pipeline Status"
+      },
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 0,
+        "content": "cover",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "issue-report",
+        "modal": false,
+        "resizable": true,
+        "runWhileHidden": false,
+        "show": "onDemand",
+        "size": 660,
+        "viewParams": {},
+        "viewPath": "Exchange/Report Issue Agent/Report Chat"
+      },
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 0,
+        "content": "cover",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "dashboard-save",
+        "modal": true,
+        "resizable": false,
+        "runWhileHidden": true,
+        "show": "onDemand",
+        "size": 420,
+        "viewParams": {},
+        "viewPath": "Exchange/Dashboard Agent/Save Dashboard"
+      },
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 0,
+        "content": "cover",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "dashboard-agent",
+        "modal": false,
+        "resizable": true,
+        "runWhileHidden": true,
+        "show": "onDemand",
+        "size": 560,
+        "viewParams": {},
+        "viewPath": "Exchange/Dashboard Agent/Agent Dock"
+      }
+    ],
+    "top": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "",
+        "modal": false,
+        "resizable": false,
+        "runWhileHidden": true,
+        "show": "visible",
+        "size": 50,
+        "viewParams": {},
+        "viewPath": "Exchange/perspective-custom-navigation-menu/Navigation/TopNavigation"
+      }
+    ]
+  }
+}

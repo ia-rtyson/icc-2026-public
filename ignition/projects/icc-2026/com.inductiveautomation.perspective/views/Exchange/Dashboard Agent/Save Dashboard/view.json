@@ -1,0 +1,336 @@
+{
+  "custom": {
+    "isDemo": false,
+    "name": "",
+    "status": ""
+  },
+  "params": {
+    "isDemo": false,
+    "name": "",
+    "widgets": []
+  },
+  "propConfig": {
+    "custom.isDemo": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "path": "view.params.isDemo"
+        },
+        "type": "property"
+      }
+    },
+    "custom.name": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "path": "view.params.name"
+        },
+        "type": "property"
+      }
+    },
+    "custom.status": {
+      "access": "PRIVATE"
+    },
+    "params.isDemo": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.widgets": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 460
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 1
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-90)",
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "text": "Save dashboard"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Hint"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 1
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-70)",
+            "fontSize": "12px"
+          },
+          "text": "Stores the widget layout only. Save under a new name to keep the original as well."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "NameField"
+        },
+        "position": {
+          "basis": "36px",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.name"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "deferUpdates": false,
+          "placeholder": "Dashboard name",
+          "style": {
+            "fontSize": "14px"
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "ExistsHint"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "runScript(\"exchange.dashboard.ui.nameHint\", 0, {view.custom.name})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "12px",
+            "minHeight": "16px"
+          },
+          "text": ""
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "DemoCheck"
+        },
+        "position": {
+          "basis": "28px",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.isDemo"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "13px"
+          },
+          "text": "Demo dashboard -- keep past midnight"
+        },
+        "type": "ia.input.checkbox"
+      },
+      {
+        "meta": {
+          "name": "DemoHint"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 1
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "11px"
+          },
+          "text": "Anything not flagged is deleted automatically at the end of the day, so this environment stays clean."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Status"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.status"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--error)",
+            "fontSize": "12px",
+            "minHeight": "16px"
+          },
+          "text": ""
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Spacer"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 1,
+              "shrink": 1
+            },
+            "props": {
+              "style": {},
+              "text": ""
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closeDock(\u0027dashboard-save\u0027)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Cancel"
+            },
+            "position": {
+              "basis": "90px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "fontSize": "13px",
+                "height": "32px",
+                "minHeight": "0px"
+              },
+              "text": "Cancel"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.status \u003d exchange.dashboard.ui.saveFromDock(self.view.custom.name, self.view.params.widgets, self.view.custom.isDemo)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Save"
+            },
+            "position": {
+              "basis": "90px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": true,
+              "style": {
+                "fontSize": "13px",
+                "height": "32px",
+                "minHeight": "0px"
+              },
+              "text": "Save"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Actions"
+        },
+        "position": {
+          "basis": "40px",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": "8px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "gap": "10px",
+        "padding": "18px 20px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

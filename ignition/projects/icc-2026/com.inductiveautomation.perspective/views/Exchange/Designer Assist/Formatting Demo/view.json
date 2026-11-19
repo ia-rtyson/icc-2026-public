@@ -1,0 +1,532 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "28px",
+                "fontWeight": "600"
+              },
+              "text": "Line Status Board"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Subtitle"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-70)",
+                "fontSize": "13px"
+              },
+              "text": "Every station on the five Alarm Flood lines -- live status and key readings from the process simulator."
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "30px",
+          "grow": 0,
+          "shrink": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "hidden",
+            "padding": "2px 0px 0px 40px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "SectionLabel"
+                },
+                "position": {
+                  "basis": "14px",
+                  "grow": 0,
+                  "shrink": 1
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-70)",
+                    "fontSize": "12px",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "All stations - 5 lines, 5 stations each"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "StationRepeater"
+                },
+                "position": {
+                  "basis": "104px",
+                  "grow": 0,
+                  "shrink": 0
+                },
+                "props": {
+                  "alignContent": "stretch",
+                  "alignItems": "stretch",
+                  "direction": "row",
+                  "elementPosition": {
+                    "basis": "150px",
+                    "grow": 0,
+                    "shrink": 0
+                  },
+                  "elementStyle": {},
+                  "instances": [
+                    {
+                      "lineName": "Line 1",
+                      "metric1Label": "Bin",
+                      "metric1Tag": "BinLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Conveyor",
+                      "metric2Tag": "ConveyorSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Picks",
+                      "metric3Tag": "PickRate",
+                      "metric3Unit": "picks/min",
+                      "stationName": "Kitting",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Kitting"
+                    },
+                    {
+                      "lineName": "Line 1",
+                      "metric1Label": "Tank",
+                      "metric1Tag": "TankLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Motor",
+                      "metric2Tag": "MixerMotorCurrent",
+                      "metric2Unit": "A",
+                      "metric3Label": "Slurry",
+                      "metric3Tag": "SlurryTemp",
+                      "metric3Unit": "°F",
+                      "stationName": "Mixing",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Mixing"
+                    },
+                    {
+                      "lineName": "Line 1",
+                      "metric1Label": "Buffer",
+                      "metric1Tag": "BufferLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Pressure",
+                      "metric2Tag": "FormerPressure",
+                      "metric2Unit": "psi",
+                      "metric3Label": "Cycles",
+                      "metric3Tag": "FormerCycleRate",
+                      "metric3Unit": "cyc/min",
+                      "stationName": "Forming",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Forming"
+                    },
+                    {
+                      "lineName": "Line 1",
+                      "metric1Label": "Oven",
+                      "metric1Tag": "OvenTemperature",
+                      "metric1Unit": "°F",
+                      "metric2Label": "Belt",
+                      "metric2Tag": "OvenBeltSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Exit buffer",
+                      "metric3Tag": "ExitBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Cooking",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Cooking"
+                    },
+                    {
+                      "lineName": "Line 1",
+                      "metric1Label": "Torque",
+                      "metric1Tag": "MotorTorque",
+                      "metric1Unit": "%",
+                      "metric2Label": "Output",
+                      "metric2Tag": "PackagesPerMinute",
+                      "metric2Unit": "pkg/min",
+                      "metric3Label": "Infeed",
+                      "metric3Tag": "InfeedBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Packaging",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging"
+                    },
+                    {
+                      "lineName": "Line 2",
+                      "metric1Label": "Bin",
+                      "metric1Tag": "BinLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Conveyor",
+                      "metric2Tag": "ConveyorSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Picks",
+                      "metric3Tag": "PickRate",
+                      "metric3Unit": "picks/min",
+                      "stationName": "Kitting",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line2/Kitting"
+                    },
+                    {
+                      "lineName": "Line 2",
+                      "metric1Label": "Tank",
+                      "metric1Tag": "TankLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Motor",
+                      "metric2Tag": "MixerMotorCurrent",
+                      "metric2Unit": "A",
+                      "metric3Label": "Slurry",
+                      "metric3Tag": "SlurryTemp",
+                      "metric3Unit": "°F",
+                      "stationName": "Mixing",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line2/Mixing"
+                    },
+                    {
+                      "lineName": "Line 2",
+                      "metric1Label": "Buffer",
+                      "metric1Tag": "BufferLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Pressure",
+                      "metric2Tag": "FormerPressure",
+                      "metric2Unit": "psi",
+                      "metric3Label": "Cycles",
+                      "metric3Tag": "FormerCycleRate",
+                      "metric3Unit": "cyc/min",
+                      "stationName": "Forming",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line2/Forming"
+                    },
+                    {
+                      "lineName": "Line 2",
+                      "metric1Label": "Oven",
+                      "metric1Tag": "OvenTemperature",
+                      "metric1Unit": "°F",
+                      "metric2Label": "Belt",
+                      "metric2Tag": "OvenBeltSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Exit buffer",
+                      "metric3Tag": "ExitBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Cooking",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line2/Cooking"
+                    },
+                    {
+                      "lineName": "Line 2",
+                      "metric1Label": "Torque",
+                      "metric1Tag": "MotorTorque",
+                      "metric1Unit": "%",
+                      "metric2Label": "Output",
+                      "metric2Tag": "PackagesPerMinute",
+                      "metric2Unit": "pkg/min",
+                      "metric3Label": "Infeed",
+                      "metric3Tag": "InfeedBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Packaging",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line2/Packaging"
+                    },
+                    {
+                      "lineName": "Line 3",
+                      "metric1Label": "Bin",
+                      "metric1Tag": "BinLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Conveyor",
+                      "metric2Tag": "ConveyorSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Picks",
+                      "metric3Tag": "PickRate",
+                      "metric3Unit": "picks/min",
+                      "stationName": "Kitting",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line3/Kitting"
+                    },
+                    {
+                      "lineName": "Line 3",
+                      "metric1Label": "Tank",
+                      "metric1Tag": "TankLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Motor",
+                      "metric2Tag": "MixerMotorCurrent",
+                      "metric2Unit": "A",
+                      "metric3Label": "Slurry",
+                      "metric3Tag": "SlurryTemp",
+                      "metric3Unit": "°F",
+                      "stationName": "Mixing",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line3/Mixing"
+                    },
+                    {
+                      "lineName": "Line 3",
+                      "metric1Label": "Buffer",
+                      "metric1Tag": "BufferLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Pressure",
+                      "metric2Tag": "FormerPressure",
+                      "metric2Unit": "psi",
+                      "metric3Label": "Cycles",
+                      "metric3Tag": "FormerCycleRate",
+                      "metric3Unit": "cyc/min",
+                      "stationName": "Forming",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line3/Forming"
+                    },
+                    {
+                      "lineName": "Line 3",
+                      "metric1Label": "Oven",
+                      "metric1Tag": "OvenTemperature",
+                      "metric1Unit": "°F",
+                      "metric2Label": "Belt",
+                      "metric2Tag": "OvenBeltSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Exit buffer",
+                      "metric3Tag": "ExitBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Cooking",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line3/Cooking"
+                    },
+                    {
+                      "lineName": "Line 3",
+                      "metric1Label": "Torque",
+                      "metric1Tag": "MotorTorque",
+                      "metric1Unit": "%",
+                      "metric2Label": "Output",
+                      "metric2Tag": "PackagesPerMinute",
+                      "metric2Unit": "pkg/min",
+                      "metric3Label": "Infeed",
+                      "metric3Tag": "InfeedBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Packaging",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line3/Packaging"
+                    },
+                    {
+                      "lineName": "Line 4",
+                      "metric1Label": "Bin",
+                      "metric1Tag": "BinLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Conveyor",
+                      "metric2Tag": "ConveyorSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Picks",
+                      "metric3Tag": "PickRate",
+                      "metric3Unit": "picks/min",
+                      "stationName": "Kitting",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line4/Kitting"
+                    },
+                    {
+                      "lineName": "Line 4",
+                      "metric1Label": "Tank",
+                      "metric1Tag": "TankLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Motor",
+                      "metric2Tag": "MixerMotorCurrent",
+                      "metric2Unit": "A",
+                      "metric3Label": "Slurry",
+                      "metric3Tag": "SlurryTemp",
+                      "metric3Unit": "°F",
+                      "stationName": "Mixing",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line4/Mixing"
+                    },
+                    {
+                      "lineName": "Line 4",
+                      "metric1Label": "Buffer",
+                      "metric1Tag": "BufferLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Pressure",
+                      "metric2Tag": "FormerPressure",
+                      "metric2Unit": "psi",
+                      "metric3Label": "Cycles",
+                      "metric3Tag": "FormerCycleRate",
+                      "metric3Unit": "cyc/min",
+                      "stationName": "Forming",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line4/Forming"
+                    },
+                    {
+                      "lineName": "Line 4",
+                      "metric1Label": "Oven",
+                      "metric1Tag": "OvenTemperature",
+                      "metric1Unit": "°F",
+                      "metric2Label": "Belt",
+                      "metric2Tag": "OvenBeltSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Exit buffer",
+                      "metric3Tag": "ExitBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Cooking",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line4/Cooking"
+                    },
+                    {
+                      "lineName": "Line 4",
+                      "metric1Label": "Torque",
+                      "metric1Tag": "MotorTorque",
+                      "metric1Unit": "%",
+                      "metric2Label": "Output",
+                      "metric2Tag": "PackagesPerMinute",
+                      "metric2Unit": "pkg/min",
+                      "metric3Label": "Infeed",
+                      "metric3Tag": "InfeedBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Packaging",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line4/Packaging"
+                    },
+                    {
+                      "lineName": "Line 5",
+                      "metric1Label": "Bin",
+                      "metric1Tag": "BinLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Conveyor",
+                      "metric2Tag": "ConveyorSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Picks",
+                      "metric3Tag": "PickRate",
+                      "metric3Unit": "picks/min",
+                      "stationName": "Kitting",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line5/Kitting"
+                    },
+                    {
+                      "lineName": "Line 5",
+                      "metric1Label": "Tank",
+                      "metric1Tag": "TankLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Motor",
+                      "metric2Tag": "MixerMotorCurrent",
+                      "metric2Unit": "A",
+                      "metric3Label": "Slurry",
+                      "metric3Tag": "SlurryTemp",
+                      "metric3Unit": "°F",
+                      "stationName": "Mixing",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line5/Mixing"
+                    },
+                    {
+                      "lineName": "Line 5",
+                      "metric1Label": "Buffer",
+                      "metric1Tag": "BufferLevel",
+                      "metric1Unit": "%",
+                      "metric2Label": "Pressure",
+                      "metric2Tag": "FormerPressure",
+                      "metric2Unit": "psi",
+                      "metric3Label": "Cycles",
+                      "metric3Tag": "FormerCycleRate",
+                      "metric3Unit": "cyc/min",
+                      "stationName": "Forming",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line5/Forming"
+                    },
+                    {
+                      "lineName": "Line 5",
+                      "metric1Label": "Oven",
+                      "metric1Tag": "OvenTemperature",
+                      "metric1Unit": "°F",
+                      "metric2Label": "Belt",
+                      "metric2Tag": "OvenBeltSpeed",
+                      "metric2Unit": "ft/min",
+                      "metric3Label": "Exit buffer",
+                      "metric3Tag": "ExitBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Cooking",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line5/Cooking"
+                    },
+                    {
+                      "lineName": "Line 5",
+                      "metric1Label": "Torque",
+                      "metric1Tag": "MotorTorque",
+                      "metric1Unit": "%",
+                      "metric2Label": "Output",
+                      "metric2Tag": "PackagesPerMinute",
+                      "metric2Unit": "pkg/min",
+                      "metric3Label": "Infeed",
+                      "metric3Tag": "InfeedBufferLevel",
+                      "metric3Unit": "%",
+                      "stationName": "Packaging",
+                      "stationPath": "[default]Exchange/Alarm Flood/Site1/Area2/Line5/Packaging"
+                    }
+                  ],
+                  "justify": "flex-start",
+                  "path": "Exchange/Designer Assist/Station Card",
+                  "style": {
+                    "overflow": "auto"
+                  },
+                  "useDefaultViewHeight": false,
+                  "useDefaultViewWidth": false,
+                  "wrap": "nowrap"
+                },
+                "type": "ia.display.flex-repeater"
+              }
+            ],
+            "meta": {
+              "name": "BoardWrapper"
+            },
+            "position": {
+              "basis": "600px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "overflow": "auto",
+                "padding": "0px 40px 0px 0px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "520px",
+          "grow": 0,
+          "shrink": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-20)",
+            "overflow": "auto",
+            "padding": "40px 0px 4px 12px",
+            "width": "900px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "basis": "100%",
+      "grow": 1,
+      "shrink": 1
+    },
+    "props": {
+      "alignItems": "flex-start",
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "overflow": "scroll",
+        "padding": "0px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

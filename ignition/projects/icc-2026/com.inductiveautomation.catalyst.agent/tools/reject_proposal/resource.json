@@ -1,0 +1,35 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-11T00:00:00Z"
+    },
+    "title": "reject_proposal",
+    "description": "Marks the saved proposal as rejected and clears it from the review panel, when the user says it is wrong or asks to start over. Nothing is deleted -- already-created tags are untouched (use reset_demo_folder for those) and the proposal stays in the history. Revise and call save_proposal again to show a new one.",
+    "parameters": [
+      {
+        "name": "reason",
+        "description": "Short note on what the user objected to, for the record.",
+        "type": "STRING",
+        "required": false
+      },
+      {
+        "name": "proposal_id",
+        "description": "Id returned by save_proposal. Omit to reject the most recent proposal.",
+        "type": "INTEGER",
+        "required": false
+      }
+    ]
+  }
+}

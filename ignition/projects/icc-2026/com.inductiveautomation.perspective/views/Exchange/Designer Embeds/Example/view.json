@@ -1,0 +1,755 @@
+{
+  "custom": {
+    "filters": {
+      "acknowledged": false,
+      "area": "",
+      "lastHours": 24,
+      "minSeverity": 0,
+      "rowLimit": 50
+    },
+    "result": {
+      "data": [],
+      "status": "Press Run Query to load events"
+    }
+  },
+  "params": {},
+  "propConfig": {
+    "custom.filters": {
+      "access": "PRIVATE"
+    },
+    "custom.result": {
+      "access": "PRIVATE",
+      "persistent": false
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 700,
+      "width": 1200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "42px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-100)",
+                "fontSize": "32px",
+                "fontWeight": "800"
+              },
+              "text": "Equipment Events"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Subtitle"
+            },
+            "position": {
+              "basis": "26px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "14px"
+              },
+              "text": "Named Query: Exchange/DesignerEmbeds/SelectEquipmentEvents  |  Source table: ex_icc_demo_equipment_events"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "90px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+            "border": "1px solid color-mix(in srgb, var(--neutral-60) 22%, transparent)",
+            "borderRadius": "20px",
+            "boxShadow": "0 18px 40px rgba(0,0,0,0.35)",
+            "overflow": "visible",
+            "padding": "18px 24px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "AreaLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "fontWeight": "700",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Area"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Area"
+                },
+                "position": {
+                  "basis": "38px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.filters.area"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "placeholder": "Blank \u003d all areas",
+                  "style": {
+                    "backgroundColor": "var(--neutral-10)",
+                    "border": "1px solid color-mix(in srgb, var(--neutral-60) 28%, transparent)",
+                    "borderRadius": "10px",
+                    "color": "var(--neutral-90)"
+                  }
+                },
+                "type": "ia.input.text-field"
+              }
+            ],
+            "meta": {
+              "name": "AreaGroup"
+            },
+            "position": {
+              "basis": "190px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "6px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "LastHoursLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "fontWeight": "700",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Last Hours"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "LastHours"
+                },
+                "position": {
+                  "basis": "38px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.filters.lastHours"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "0",
+                  "style": {
+                    "backgroundColor": "var(--neutral-10)",
+                    "border": "1px solid color-mix(in srgb, var(--neutral-60) 28%, transparent)",
+                    "borderRadius": "10px",
+                    "color": "var(--neutral-90)"
+                  },
+                  "value": 24
+                },
+                "type": "ia.input.numeric-entry-field"
+              }
+            ],
+            "meta": {
+              "name": "LastHoursGroup"
+            },
+            "position": {
+              "basis": "150px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "6px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "SeverityLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "fontWeight": "700",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Min Severity"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "MinSeverity"
+                },
+                "position": {
+                  "basis": "38px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.filters.minSeverity"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "0",
+                  "style": {
+                    "backgroundColor": "var(--neutral-10)",
+                    "border": "1px solid color-mix(in srgb, var(--neutral-60) 28%, transparent)",
+                    "borderRadius": "10px",
+                    "color": "var(--neutral-90)"
+                  },
+                  "value": 0
+                },
+                "type": "ia.input.numeric-entry-field"
+              }
+            ],
+            "meta": {
+              "name": "SeverityGroup"
+            },
+            "position": {
+              "basis": "150px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "6px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "AckLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "fontWeight": "700",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Acknowledged"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Acknowledged"
+                },
+                "position": {
+                  "basis": "38px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.selected": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.filters.acknowledged"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)"
+                  },
+                  "text": "Show acknowledged"
+                },
+                "type": "ia.input.checkbox"
+              }
+            ],
+            "meta": {
+              "name": "AckGroup"
+            },
+            "position": {
+              "basis": "170px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "6px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "LimitLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "fontWeight": "700",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Row Limit"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "RowLimit"
+                },
+                "position": {
+                  "basis": "38px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.filters.rowLimit"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "0",
+                  "style": {
+                    "backgroundColor": "var(--neutral-10)",
+                    "border": "1px solid color-mix(in srgb, var(--neutral-60) 28%, transparent)",
+                    "borderRadius": "10px",
+                    "color": "var(--neutral-90)"
+                  },
+                  "value": 50
+                },
+                "type": "ia.input.numeric-entry-field"
+              }
+            ],
+            "meta": {
+              "name": "LimitGroup"
+            },
+            "position": {
+              "basis": "140px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "6px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.result \u003d exchange.designerEmbeds.query.queryEquipmentEvents(self.view.custom.filters)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "RunQuery"
+            },
+            "position": {
+              "basis": "160px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "alignSelf": "center",
+                "background": "linear-gradient(135deg, var(--qual-2), var(--qual-1))",
+                "border": "none",
+                "borderRadius": "999px",
+                "boxShadow": "0 0 24px color-mix(in srgb, var(--qual-2) 35%, transparent)",
+                "color": "var(--white)",
+                "fontWeight": "800",
+                "height": "40px"
+              },
+              "text": "Run Query"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Filters"
+        },
+        "position": {
+          "basis": "135px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+            "border": "1px solid color-mix(in srgb, var(--neutral-60) 22%, transparent)",
+            "borderRadius": "20px",
+            "boxShadow": "0 18px 40px rgba(0,0,0,0.30)",
+            "gap": "14px",
+            "padding": "18px"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "TableTitle"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-100)",
+                    "fontSize": "18px",
+                    "fontWeight": "800"
+                  },
+                  "text": "Query Results"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "StatusLabel"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.result.status"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "13px"
+                  },
+                  "text": "Press Run Query to load events"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "TableHeader"
+            },
+            "position": {
+              "basis": "52px",
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-between",
+              "style": {
+                "borderBottom": "1px solid color-mix(in srgb, var(--neutral-60) 18%, transparent)",
+                "padding": "0 18px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "domId": "equipment-events-table",
+              "name": "EventTable"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.result.data"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "bodyStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 50%, transparent)",
+                "color": "var(--neutral-90)"
+              },
+              "cells": {
+                "style": {
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "columns": [
+                {
+                  "field": "id",
+                  "header": {
+                    "title": "ID"
+                  },
+                  "render": "number",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": true,
+                  "visible": true,
+                  "width": 70
+                },
+                {
+                  "field": "equipment_name",
+                  "header": {
+                    "title": "Equipment"
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 160
+                },
+                {
+                  "field": "area",
+                  "header": {
+                    "title": "Area"
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 120
+                },
+                {
+                  "field": "event_type",
+                  "header": {
+                    "title": "Event Type"
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 140
+                },
+                {
+                  "field": "event_time",
+                  "header": {
+                    "title": "Event Time"
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 180
+                },
+                {
+                  "field": "severity",
+                  "header": {
+                    "title": "Severity"
+                  },
+                  "render": "number",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": true,
+                  "visible": true,
+                  "width": 100
+                },
+                {
+                  "field": "acknowledged",
+                  "header": {
+                    "title": "Ack"
+                  },
+                  "render": "boolean",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": true,
+                  "visible": true,
+                  "width": 80
+                },
+                {
+                  "field": "notes",
+                  "header": {
+                    "title": "Notes"
+                  },
+                  "render": "auto",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 260
+                }
+              ],
+              "data": [],
+              "emptyMessage": {
+                "noData": {
+                  "textStyle": {
+                    "color": "var(--neutral-80)"
+                  }
+                },
+                "noFilterResults": {
+                  "textStyle": {
+                    "color": "var(--neutral-80)"
+                  }
+                },
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 50%, transparent)",
+                  "color": "var(--neutral-80)"
+                }
+              },
+              "filter": {
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "footerGroupStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-90)"
+              },
+              "footerStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-90)"
+              },
+              "headerGroupStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-100)"
+              },
+              "headerStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-100)"
+              },
+              "pager": {
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "rows": {
+                "highlight": {
+                  "color": "color-mix(in srgb, var(--callToAction) 22%, transparent)"
+                },
+                "striped": {
+                  "color": {
+                    "even": "color-mix(in srgb, var(--neutral-10) 34%, transparent)",
+                    "odd": "color-mix(in srgb, var(--neutral-20) 34%, transparent)"
+                  }
+                },
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 36%, transparent)",
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "selection": {
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--callToAction) 24%, transparent)",
+                  "color": "var(--neutral-100)"
+                }
+              },
+              "style": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                "border": "1px solid color-mix(in srgb, var(--neutral-60) 22%, transparent)",
+                "borderRadius": "20px",
+                "boxShadow": "0 18px 40px rgba(0,0,0,0.30)",
+                "color": "var(--neutral-90)",
+                "overflow": "auto"
+              }
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "TablePanel"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "backgroundImage": "radial-gradient(circle at top left, color-mix(in srgb, var(--callToAction) 22%, transparent), transparent 35%), radial-gradient(circle at bottom right, color-mix(in srgb, var(--qual-1) 20%, transparent), transparent 35%), linear-gradient(135deg, var(--neutral-10) 0%, var(--neutral-20) 100%)",
+        "color": "var(--neutral-90)",
+        "fontFamily": "Inter, Segoe UI, Roboto, Arial, sans-serif",
+        "gap": "18px",
+        "padding": "28px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-10T00:00:00Z"
+    },
+    "title": "describe_production_line",
+    "description": "Returns a structured snapshot of the Alarm Flood production line: the five stations in process order (Kitting -> Mixing -> Forming -> Cooking -> Packaging), every tag on each with its units, engineering range, full tag path and configured alarms, plus how each station is running right now (throughput as % of nominal, buffer level, status, active alarm count) and the simulator's current phase. Call this FIRST when asked to build or extend a dashboard about the line: it gives you real tag paths so you never have to guess one, and the live state tells you which widgets are worth placing -- a line in a fault wants the cascade widgets (Sankey, Heatmap, Funnel), a healthy line wants the steady-state ones (Ring, Sparkline, Bar). This is a read-only operation.",
+    "parameters": [
+      {
+        "name": "line_path",
+        "description": "Which line to describe, e.g. 'Site1/Area1/Line1'. Omit to use the simulator's default line, which is the one the Alarm Flood Event page drives and almost always the one you want.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

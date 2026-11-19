@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-11T00:00:00Z"
+    },
+    "title": "accept_proposal",
+    "description": "Records that the user has approved the saved proposal, which unlocks the create_ tools. Call it ONLY when the user has clearly told you in the chat to go ahead and create the structure -- never on your own initiative, and never to get past a 'not_accepted' refusal. Creates nothing itself; follow it with the create_ calls.",
+    "parameters": [
+      {
+        "name": "proposal_id",
+        "description": "Id returned by save_proposal. Omit to accept the most recent proposal.",
+        "type": "INTEGER",
+        "required": false
+      }
+    ]
+  }
+}

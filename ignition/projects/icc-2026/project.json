@@ -1,0 +1,7 @@
+{
+  "title": "ICC 2026 AI Demos",
+  "description": "Ignition Community Conference 2026 demo stack for the AI and MCP modules: AI agents, tool bundles and the Perspective pages that drive them.",
+  "enabled": true,
+  "inheritable": false,
+  "parent": ""
+}

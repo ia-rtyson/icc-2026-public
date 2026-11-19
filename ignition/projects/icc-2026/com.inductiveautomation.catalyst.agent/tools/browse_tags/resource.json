@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "browse_tags",
+    "description": "Browses one folder level of the tag tree under a given path and lists its immediate children (name, full path, whether it has children, tag/data type). Use this to discover what tags exist before reading or charting them. If you do not know which provider to use, ask -- providers are wrapped in []. Defaults to the [default] provider root if no path is given.",
+    "parameters": [
+      {
+        "name": "path",
+        "description": "The folder path to browse, e.g. '[default]Exchange/Alarm Flood/Site1'. Paths without a [provider] prefix are assumed to be in [default]. Omit to browse the [default] provider root.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

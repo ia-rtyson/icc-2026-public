@@ -1,0 +1,62 @@
+# Database files
+**/db/
+**/metricsdb/
+**/autobackup/
+**/db_backup_sqlite.idb
+**/valueStore.idb
+# SQLite write-ahead sidecars -- created and removed while the gateway runs,
+# so a `git add -A` during a restart can fail on a file that just vanished
+**/*.idb-shm
+**/*.idb-wal
+
+# Cache and temporary files
+**/jar-cache/
+**/request
+**/response
+*.tmp
+*.bak
+**/var
+
+# Log files
+*.log
+**/logs
+
+# Certificates and security
+**/certificates/
+**/keystore/
+
+# Runtime configuration (environment-specific)
+**/config/local
+**/config/resources/local
+
+# Gateway-specific runtime files
+**/.container-init.conf
+
+# Backup and converted files
+**/conversion-report.txt
+**.digest.json
+
+# System tag definitions
+**/tag-definition/System/
+
+# Project conversion artifacts
+**/projects/conversion-report.txt
+**/migration-log-*.md
+**/.resources/
+
+# Alarm history files
+**/.alarms_*
+
+# Local secrets
+.gateway-token
+**/api-token/
+
+# Local environment overrides (machine-specific, never promoted)
+.env
+
+# Python bytecode from scripts/
+__pycache__/
+
+
+# 2027.2 historian replication identity -- a per-gateway node id, never shared
+**/config/com.inductiveautomation.historian/replication/

@@ -1,0 +1,177 @@
+{
+  "custom": {
+    "value": 0
+  },
+  "params": {
+    "footer": "",
+    "header": "",
+    "tagPath": "",
+    "valueName": ""
+  },
+  "propConfig": {
+    "custom.value": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{view.params.tagPath}"
+        },
+        "type": "tag"
+      }
+    },
+    "params.footer": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.header": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.valueName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 390,
+      "width": 320
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.header"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "13px",
+            "fontWeight": 600
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Bar"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.dataSources.values[0].label": {
+            "binding": {
+              "config": {
+                "expression": "if(len({view.params.valueName}) \u003e 0, {view.params.valueName}, \u0027Value\u0027)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.dataSources.values[0].value": {
+            "binding": {
+              "config": {
+                "path": "view.custom.value"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "dataSources": {
+            "values": [
+              {
+                "label": "Value",
+                "value": 0
+              }
+            ]
+          },
+          "series": [
+            {
+              "data": {
+                "source": "values",
+                "x": "label",
+                "y": "value"
+              },
+              "name": "Value",
+              "render": "column",
+              "xAxis": "categoryAxis",
+              "yAxis": "valueAxis"
+            }
+          ],
+          "xAxes": [
+            {
+              "name": "categoryAxis",
+              "render": "category"
+            }
+          ],
+          "yAxes": [
+            {
+              "name": "valueAxis",
+              "render": "value"
+            }
+          ]
+        },
+        "type": "ia.chart.xy"
+      },
+      {
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.footer"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-50)",
+            "fontSize": "11px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "4px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

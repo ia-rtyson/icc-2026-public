@@ -1,0 +1,42 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 1,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "postgres",
+    "fallbackEnabled": false,
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-30T00:00:00Z"
+    },
+    "parameters": [
+      {"type": "Parameter", "identifier": "agent", "sqlType": 7},
+      {"type": "Parameter", "identifier": "stage", "sqlType": 7},
+      {"type": "Parameter", "identifier": "issue", "sqlType": 7},
+      {"type": "Parameter", "identifier": "event", "sqlType": 7},
+      {"type": "Parameter", "identifier": "status", "sqlType": 7},
+      {"type": "Parameter", "identifier": "summary", "sqlType": 7},
+      {"type": "Parameter", "identifier": "detail", "sqlType": 7},
+      {"type": "Parameter", "identifier": "prompt", "sqlType": 7}
+    ]
+  }
+}

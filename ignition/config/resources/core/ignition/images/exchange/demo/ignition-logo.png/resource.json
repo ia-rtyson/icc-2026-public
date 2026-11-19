@@ -1,0 +1,16 @@
+{
+  "scope": "A",
+  "description": "",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ignition-logo.png"
+  ],
+  "attributes": {
+    "width": 300,
+    "format": "PNG",
+    "size": 3024,
+    "height": 300
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "custom": {},
+  "params": {
+    "agent": "",
+    "automated": false,
+    "registered": null,
+    "stage": ""
+  },
+  "propConfig": {
+    "params.agent": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.automated": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.registered": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.stage": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 110,
+      "width": 210
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Dot"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.params.automated},\n   if({view.params.registered}, '#24a148', '#da1e28'),\n   'var(--neutral-50)')"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderRadius": "50%",
+                "height": "8px",
+                "width": "8px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "StageName"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.stage"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "14px",
+                "fontWeight": 600
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "TitleRow"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": "7px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "AgentName"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.automated}, {view.params.agent}, 'manual — a human moves the card')"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-90)",
+            "fontSize": "12px"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "AgentState"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.automated},\n   if({view.params.registered}, 'agent registered', 'AGENT NOT FOUND'),\n   'no agent runs here')"
+              },
+              "type": "expr"
+            }
+          },
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.automated} && !{view.params.registered}, '#da1e28', 'var(--neutral-60)')"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "11px",
+            "letterSpacing": "0.04em",
+            "textTransform": "uppercase"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "border": "1px solid var(--neutral-30)",
+        "borderRadius": "6px",
+        "gap": "5px",
+        "padding": "12px 14px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

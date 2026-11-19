@@ -1,0 +1,23 @@
+{
+  "profile": {
+    "retentionDays": 7,
+    "type": "database"
+  },
+  "settings": {
+    "actionColumn": "action",
+    "actionTargetColumn": "action_target",
+    "actionValueColumn": "action_value",
+    "actorColumn": "actor",
+    "actorHostColumn": "actor_host",
+    "autoCreate": true,
+    "databaseName": "postgres",
+    "keyColumn": "audit_events_id",
+    "originatingContextColumn": "originating_context",
+    "originatingSystemColumn": "originating_system",
+    "previousValueColumn": "previous_value",
+    "pruneEnabled": true,
+    "statusCodeColumn": "status_code",
+    "tableName": "audit_events",
+    "timestampColumn": "event_timestamp"
+  }
+}

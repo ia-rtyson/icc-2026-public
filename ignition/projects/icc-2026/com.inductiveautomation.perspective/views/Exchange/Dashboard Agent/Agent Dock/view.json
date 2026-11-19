@@ -1,0 +1,153 @@
+{
+  "custom": {},
+  "params": {},
+  "propConfig": {},
+  "props": {
+    "defaultSize": {
+      "height": 900,
+      "width": 560
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 1
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "15px",
+                "fontWeight": 600
+              },
+              "text": "Dashboard Agent"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closeDock(\u0027dashboard-agent\u0027)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "fontSize": "13px",
+                "height": "28px",
+                "minHeight": "0px"
+              },
+              "text": "Close"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "borderBottom": "1px solid var(--neutral-40)",
+            "gap": "8px",
+            "padding": "10px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "AiChat"
+        },
+        "position": {
+          "basis": "0px",
+          "grow": 1,
+          "shrink": 1
+        },
+        "props": {
+          "agentIcon": "material/dashboard",
+          "agentName": "Dashboard Agent",
+          "suggestedPrompts": [
+            "Build me a full operations dashboard for the line: how it\u0027s running, where product is piling up, and what alarms fired recently.",
+            "Build a shift-handover screen: alarm density over the last 12 hours, current buffer levels, and a station health comparison so the next crew knows what they\u0027re walking into.",
+            "Build a bottleneck dashboard: which station is actually setting the line\u0027s throughput right now, a material flow view, and a bar chart comparing every station\u0027s rate."
+          ]
+        },
+        "scripts": {
+          "componentScriptExtensions": {
+            "ai.tools": [
+              {
+                "code": "\timport exchange.dashboard.configs\n\t\n\t# Read from view.json rather than off the component: this chat lives in a dock\n\t# now, so there is no sibling Dashboard to read props from.\n\treturn system.util.jsonEncode(exchange.dashboard.configs.catalog())\n",
+                "description": "Use this tool to get a list of available widgets",
+                "parameters": [],
+                "permissions": {
+                  "securityLevels": [],
+                  "type": "AllOf"
+                },
+                "title": "getAvailableWidgets"
+              },
+              {
+                "code": "\t# The dashboard component is on the page and this chat is in a dock, so the\n\t# layout is handed over as a Perspective message rather than a property write.\n\t#\n\t# It has to be session scope with an explicit sessionId. An ai.tools script\n\t# runs on a gateway thread with no session attached to it, so a bare\n\t# page-scoped send fails with \"No perspective session attached to this\n\t# thread\" -- which surfaces as the tool returning Failed and the agent\n\t# apologising, not as anything in the gateway log.\n\tsystem.perspective.sendMessage(\n\t\tmessageType\u003d\u0027exchange.dashboard.setWidgets\u0027,\n\t\tpayload\u003d{\u0027widgets\u0027: config},\n\t\tscope\u003d\u0027session\u0027,\n\t\tsessionId\u003dself.session.props.id)\n\treturn \u0027Wrote %d widget(s) to the dashboard.\u0027 % len(config)\n",
+                "description": "Use this tool to write the dashboard\u0027s widget layout once you have decided what to display. Never modify availableWidgets -- only write the widgets list itself.",
+                "parameters": [
+                  {
+                    "description": "The full list of widgets to display on the dashboard. Each entry must follow the shape of an availableWidgets entry, plus a position object.",
+                    "name": "config",
+                    "required": true,
+                    "type": "ARRAY"
+                  }
+                ],
+                "permissions": {
+                  "securityLevels": [],
+                  "type": "AllOf"
+                },
+                "title": "writeDashboardConfiguration"
+              }
+            ]
+          },
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": []
+        },
+        "type": "ia.ai.chat"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

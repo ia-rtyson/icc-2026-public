@@ -1,0 +1,161 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "FlexRepeater"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "elementPosition": {
+                "basis": "auto",
+                "grow": 0,
+                "shrink": 0
+              },
+              "instances": [
+                {
+                  "icon": "person",
+                  "instances": [
+                    {
+                      "label": "Walkthrough",
+                      "navTo": "/what-is-an-agent"
+                    }
+                  ],
+                  "label": "What is an Agent?"
+                },
+                {
+                  "icon": "alarm",
+                  "instances": [
+                    {
+                      "label": "Event",
+                      "navTo": "/alarm-flood-event"
+                    }
+                  ],
+                  "label": "Alarm Flood Agent"
+                },
+                {
+                  "icon": "account_tree",
+                  "instances": [
+                    {
+                      "label": "Import",
+                      "navTo": "/tag-import"
+                    }
+                  ],
+                  "label": "Tag Import Agent"
+                },
+                {
+                  "icon": "dashboard",
+                  "instances": [
+                    {
+                      "label": "Chat",
+                      "navTo": "/dashboard-agent"
+                    }
+                  ],
+                  "label": "Dashboard Agent"
+                },
+                {
+                  "icon": "edit",
+                  "instances": [
+                    {
+                      "label": "Agent",
+                      "navTo": "/drawing"
+                    }
+                  ],
+                  "label": "Drawing Agent"
+                },
+                {
+                  "icon": "bug_report",
+                  "instances": [
+                    {
+                      "label": "Line Overview",
+                      "navTo": "/report-issue"
+                    }
+                  ],
+                  "label": "Report Issue Agent"
+                },
+                {
+                  "icon": "lock",
+                  "instances": [
+                    {
+                      "label": "Audit",
+                      "navTo": "/security-audit"
+                    }
+                  ],
+                  "label": "Security Agent"
+                },
+                {
+                  "icon": "translate",
+                  "instances": [
+                    {
+                      "label": "Manager",
+                      "navTo": "/translation-manager"
+                    }
+                  ],
+                  "label": "Translation Agent"
+                },
+                {
+                  "icon": "table_chart",
+                  "instances": [
+                    {
+                      "label": "Example",
+                      "navTo": "/designer-embeds-example"
+                    }
+                  ],
+                  "label": "Designer Embeds"
+                }
+              ],
+              "path": "Exchange/perspective-custom-navigation-menu/Templates/Navigation/NavGroup",
+              "style": {
+                "overflow": "hidden"
+              },
+              "useDefaultViewHeight": false
+            },
+            "type": "ia.display.flex-repeater"
+          }
+        ],
+        "meta": {
+          "name": "FlexBody"
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginBottom": 10,
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "classes": "left-nav-open",
+        "overflow": "hidden",
+        "paddingTop": 10
+      }
+    },
+    "scripts": {
+      "componentScriptExtensions": null,
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.flex"
+  }
+}

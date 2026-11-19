@@ -1,0 +1,320 @@
+{
+ "custom": {},
+ "params": {
+  "icon": "menu",
+  "instances": [
+   {
+    "label": "value",
+    "navTo": "ApexCharts"
+   }
+  ],
+  "label": "Sample"
+ },
+ "propConfig": {
+  "params.icon": {
+   "paramDirection": "input",
+   "persistent": true
+  },
+  "params.instances": {
+   "paramDirection": "input",
+   "persistent": true
+  },
+  "params.label": {
+   "paramDirection": "input",
+   "persistent": true
+  }
+ },
+ "props": {
+  "defaultSize": {
+   "height": 250,
+   "width": 200
+  }
+ },
+ "root": {
+  "children": [
+   {
+    "children": [
+     {
+      "children": [
+       {
+        "meta": {
+         "name": "Icon"
+        },
+        "position": {
+         "basis": "64%",
+         "shrink": 0
+        },
+        "propConfig": {
+         "props.path": {
+          "binding": {
+           "config": {
+            "expression": "'material/'+{view.params.icon}"
+           },
+           "type": "expr"
+          }
+         }
+        },
+        "props": {
+         "style": {
+          "classes": "clickable",
+          "marginLeft": 5,
+          "marginRight": 5
+         }
+        },
+        "type": "ia.display.icon"
+       }
+      ],
+      "events": {
+       "dom": {
+        "onClick": {
+         "config": {
+          "script": "\tif getattr(event, \"pointerType\", None) not in (\"touch\", \"pen\"):\n\t\treturn\n\tif self.view.getChild(\"root\").props.style.classes == 'nav-group':\n\t\tself.view.getChild(\"root\").props.style.classes = 'nav-group-small'\n\telse:\n\t\tself.view.getChild(\"root\").props.style.classes = 'nav-group'"
+         },
+         "scope": "G",
+         "type": "script"
+        }
+       }
+      },
+      "meta": {
+       "name": "FlexIcon"
+      },
+      "position": {
+       "basis": "50px"
+      },
+      "props": {
+       "direction": "column",
+       "justify": "center",
+       "style": {
+        "classes": "zoom",
+        "overflow": "hidden"
+       }
+      },
+      "type": "ia.container.flex"
+     },
+     {
+      "children": [
+       {
+        "meta": {
+         "name": "Label"
+        },
+        "position": {
+         "shrink": 0
+        },
+        "propConfig": {
+         "props.text": {
+          "binding": {
+           "config": {
+            "path": "view.params.label"
+           },
+           "type": "property"
+          }
+         }
+        },
+        "props": {
+         "style": {
+          "paddingLeft": 0
+         }
+        },
+        "type": "ia.display.label"
+       },
+       {
+        "children": [
+         {
+          "meta": {
+           "name": "ArrowIcon"
+          },
+          "position": {
+           "basis": "15px",
+           "grow": 1
+          },
+          "props": {
+           "path": "material/arrow_forward_ios"
+          },
+          "type": "ia.display.icon"
+         }
+        ],
+        "meta": {
+         "name": "FlexArrow"
+        },
+        "position": {
+         "basis": "16px",
+         "shrink": 0
+        },
+        "propConfig": {
+         "props.style.classes": {
+          "binding": {
+           "config": {
+            "expression": "if({/root.props.style.classes}='nav-group-small','nav-group-icon-normal','nav-group-icon-turned')"
+           },
+           "type": "expr"
+          }
+         },
+         "position.display": {
+          "binding": {
+           "config": {
+            "expression": "if(isNull({view.params.instances}), false, len({view.params.instances}) > 1)"
+           },
+           "type": "expr"
+          }
+         }
+        },
+        "props": {
+         "alignItems": "center",
+         "justify": "center",
+         "style": {
+          "marginRight": "10px",
+          "overflow": "hidden"
+         }
+        },
+        "type": "ia.container.flex"
+       }
+      ],
+      "events": {
+       "dom": {
+        "onClick": {
+         "config": {
+          "script": "\tif getattr(event, \"pointerType\", None) not in (\"touch\", \"pen\"):\n\t\treturn\n\tif self.view.getChild(\"root\").props.style.classes == 'nav-group':\n\t\tself.view.getChild(\"root\").props.style.classes = 'nav-group-small'\n\telse:\n\t\tself.view.getChild(\"root\").props.style.classes = 'nav-group'"
+         },
+         "scope": "G",
+         "type": "script"
+        }
+       }
+      },
+      "meta": {
+       "name": "FlexName"
+      },
+      "position": {
+       "basis": "150px"
+      },
+      "props": {
+       "alignItems": "center",
+       "justify": "space-between",
+       "style": {
+        "fontFamily": "Verdana",
+        "fontSize": 12,
+        "overflow": "hidden"
+       }
+      },
+      "type": "ia.container.flex"
+     }
+    ],
+    "events": {
+     "dom": {
+      "onClick": {
+       "config": {
+        "script": "\tinstances = self.view.params.instances\n\tif instances is not None and len(instances) == 1:\n\t\ttarget = instances[0].get('navTo')\n\t\tif target:\n\t\t\tsystem.perspective.navigate(target)\n\t\t\tsystem.perspective.closeDock('leftNavigation')\n\t\t\tsystem.perspective.sendMessage('navGroupExit', scope='session')\n\t\t\tsystem.perspective.sendMessage('dockInteraction', {'interaction':'close'}, 'session')\n\t\t\treturn"
+       },
+       "scope": "G",
+       "type": "script"
+      },
+      "onPointerEnter": {
+       "config": {
+        "script": "\tif getattr(event, \"pointerType\", None) in (\"touch\", \"pen\"):\n\t\tpass\n\telse:\n\t\tself.props.style.classes = 'nav-text-hover'\n\t\tself.view.getChild(\"root\").props.style.classes = 'nav-group'"
+       },
+       "scope": "G",
+       "type": "script"
+      },
+      "onPointerLeave": {
+       "config": {
+        "script": "\tif getattr(event, \"pointerType\", None) in (\"touch\", \"pen\"):\n\t\tpass\n\telse:\n\t\tself.props.style.classes = 'nav-text'"
+       },
+       "scope": "G",
+       "type": "script"
+      }
+     }
+    },
+    "meta": {
+     "name": "FlexContainer"
+    },
+    "position": {
+     "basis": "50px",
+     "shrink": 0
+    },
+    "props": {
+     "style": {
+      "classes": "nav-text",
+      "overflow": "hidden"
+     }
+    },
+    "type": "ia.container.flex"
+   },
+   {
+    "meta": {
+     "name": "FlexRepeater"
+    },
+    "position": {
+     "shrink": 0
+    },
+    "propConfig": {
+     "props.instances": {
+      "binding": {
+       "config": {
+        "path": "view.params.instances"
+       },
+       "type": "property"
+      }
+     },
+     "position.display": {
+      "binding": {
+       "config": {
+        "expression": "if(isNull({view.params.instances}), false, len({view.params.instances}) > 1)"
+       },
+       "type": "expr"
+      }
+     }
+    },
+    "props": {
+     "direction": "column",
+     "elementPosition": {
+      "basis": "auto",
+      "grow": 0,
+      "shrink": 0
+     },
+     "path": "Exchange/perspective-custom-navigation-menu/Templates/Navigation/NavTo",
+     "style": {
+      "overflow": "hidden"
+     },
+     "useDefaultViewWidth": false
+    },
+    "type": "ia.display.flex-repeater"
+   }
+  ],
+  "events": {
+   "dom": {
+    "onPointerLeave": {
+     "config": {
+      "script": "\tif getattr(event, \"pointerType\", None) in (\"touch\", \"pen\"):\n\t\tpass\n\telse:\n\t\tself.props.style.classes = 'nav-group-small'"
+     },
+     "scope": "G",
+     "type": "script"
+    }
+   }
+  },
+  "meta": {
+   "name": "root"
+  },
+  "props": {
+   "direction": "column",
+   "style": {
+    "classes": "nav-group-small",
+    "cursor": "pointer",
+    "overflow": "hidden"
+   }
+  },
+  "scripts": {
+   "componentScriptExtensions": null,
+   "customMethods": [],
+   "extensionFunctions": null,
+   "messageHandlers": [
+    {
+     "messageType": "navGroupExit",
+     "pageScope": true,
+     "script": "\t# implement your handler here\n\tself.props.style.classes = 'nav-group-small'",
+     "sessionScope": true,
+     "viewScope": true
+    }
+   ]
+  },
+  "type": "ia.container.flex"
+ }
+}

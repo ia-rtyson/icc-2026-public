@@ -1,0 +1,320 @@
+{
+  "custom": {},
+  "params": {
+    "bufferLabel": "Buffer",
+    "bufferTag": "",
+    "linePath": "Exchange/Alarm Flood/Site1/Area1/Line1",
+    "rateLabel": "Rate",
+    "rateTag": "",
+    "rateUnits": "",
+    "station": ""
+  },
+  "propConfig": {
+    "params.bufferLabel": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.bufferTag": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.linePath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rateLabel": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rateTag": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.rateUnits": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.station": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 132,
+      "width": 190
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "StatusDot"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.status": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "indirect",
+                    "references": {
+                      "line": "{view.params.linePath}",
+                      "station": "{view.params.station}"
+                    },
+                    "tagPath": "[default]{line}/{station}/Status"
+                  },
+                  "type": "tag"
+                }
+              },
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.status"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": "var(--neutral-50)",
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Running",
+                          "output": "#24a148"
+                        },
+                        {
+                          "input": "Degraded",
+                          "output": "#f1c21b"
+                        },
+                        {
+                          "input": "Faulted",
+                          "output": "#da1e28"
+                        },
+                        {
+                          "input": "Stopped",
+                          "output": "var(--neutral-50)"
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "borderRadius": "50%",
+                "height": "8px",
+                "width": "8px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "StationName"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.station"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "13px",
+                "fontWeight": 600
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "TitleRow"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": "7px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "RateValue"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.rate": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "indirect",
+                "references": {
+                  "line": "{view.params.linePath}",
+                  "metric": "{view.params.rateTag}",
+                  "station": "{view.params.station}"
+                },
+                "tagPath": "[default]{line}/{station}/{metric}"
+              },
+              "type": "tag"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "concat(numberFormat({this.custom.rate}, '#0.0'), ' ', {view.params.rateUnits})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-90)",
+            "fontSize": "22px",
+            "fontWeight": 600
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "RateLabel"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.rateLabel"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "11px",
+            "letterSpacing": "0.05em",
+            "textTransform": "uppercase"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "BufferCaption"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.bufferLabel"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "10px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "BufferBar"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "indirect",
+                    "references": {
+                      "line": "{view.params.linePath}",
+                      "metric": "{view.params.bufferTag}",
+                      "station": "{view.params.station}"
+                    },
+                    "tagPath": "[default]{line}/{station}/{metric}"
+                  },
+                  "type": "tag"
+                }
+              }
+            },
+            "props": {
+              "max": 100,
+              "min": 0,
+              "style": {
+                "height": "6px"
+              },
+              "value": 0
+            },
+            "type": "ia.display.progress"
+          }
+        ],
+        "meta": {
+          "name": "BufferRow"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": "7px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "borderRadius": "6px",
+        "gap": "3px",
+        "padding": "12px 14px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

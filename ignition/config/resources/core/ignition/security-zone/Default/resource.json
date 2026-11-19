@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "This zone cannot be edited, and will be used for zone-based settings when no other zone is matched.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2026-04-08T22:35:18Z"
+    },
+    "uuid": "2efe9d12-9da3-498f-8da4-a84d45f2c934",
+    "lastModificationSignature": "9c0c167e8f498288fb4b87f9f1190fd9318eb79fb737a48d48c5274d550c89cb",
+    "enabled": true
+  }
+}

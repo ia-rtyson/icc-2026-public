@@ -1,0 +1,631 @@
+{
+  "custom": {
+    "concurrentCount": 5,
+    "result": {
+      "data": [],
+      "status": "Ready. Choose a workload above."
+    }
+  },
+  "params": {},
+  "propConfig": {
+    "custom.concurrentCount": {
+      "access": "PRIVATE"
+    },
+    "custom.result": {
+      "access": "PRIVATE",
+      "persistent": false
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 760,
+      "width": 1200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "44px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-100)",
+                "fontSize": "34px",
+                "fontWeight": "900",
+                "letterSpacing": "-0.8px"
+              },
+              "text": "Database Diagnostics Demo"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Subtitle"
+            },
+            "position": {
+              "basis": "44px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "15px"
+              },
+              "text": "Uses the slow named query dbwrecker to create visible database activity in the Gateway web UI diagnostics."
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "115px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "backgroundColor": "color-mix(in srgb, var(--neutral-10) 76%, transparent)",
+            "border": "1px solid color-mix(in srgb, var(--error) 28%, transparent)",
+            "borderRadius": "20px",
+            "boxShadow": "0 18px 40px rgba(0,0,0,0.36)",
+            "overflow": "visible",
+            "padding": "20px 24px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "InfoTitle"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-100)",
+                    "fontSize": "18px",
+                    "fontWeight": "800"
+                  },
+                  "text": "What this demonstrates"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "InfoText"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "14px",
+                    "lineHeight": "1.45"
+                  },
+                  "text": "Run one or more slow PostgreSQL queries, then inspect the Gateway web UI diagnostics for active DB work, long-running queries, and connection behavior."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "InfoCard"
+            },
+            "position": {
+              "basis": "310px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                "border": "1px solid color-mix(in srgb, var(--neutral-60) 20%, transparent)",
+                "borderRadius": "16px",
+                "gap": "8px",
+                "padding": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "BurstLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "fontWeight": "800",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Concurrent Calls"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "ConcurrentCount"
+                },
+                "position": {
+                  "basis": "38px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.value": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.concurrentCount"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "format": "0",
+                  "style": {
+                    "backgroundColor": "var(--neutral-10)",
+                    "border": "1px solid color-mix(in srgb, var(--neutral-60) 35%, transparent)",
+                    "borderRadius": "10px",
+                    "color": "var(--neutral-90)"
+                  },
+                  "value": 5
+                },
+                "type": "ia.input.numeric-entry-field"
+              },
+              {
+                "meta": {
+                  "name": "BurstHint"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-50)",
+                    "fontSize": "12px"
+                  },
+                  "text": "Capped at 20 concurrent calls."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "BurstCard"
+            },
+            "position": {
+              "basis": "250px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                "border": "1px solid color-mix(in srgb, var(--neutral-60) 20%, transparent)",
+                "borderRadius": "16px",
+                "gap": "8px",
+                "padding": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tself.view.custom.result \u003d exchange.dbWrecker.load.runHeavyQuery(1)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "RunOne"
+                },
+                "position": {
+                  "basis": "170px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "background": "linear-gradient(135deg, var(--warning), var(--error))",
+                    "border": "none",
+                    "borderRadius": "999px",
+                    "boxShadow": "0 0 24px color-mix(in srgb, var(--error) 32%, transparent)",
+                    "color": "var(--white)",
+                    "fontWeight": "800",
+                    "height": "42px"
+                  },
+                  "text": "Run One Slow Query"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tself.view.custom.result \u003d exchange.dbWrecker.load.runHeavyQuery(3)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "RunThree"
+                },
+                "position": {
+                  "basis": "160px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "background": "linear-gradient(135deg, var(--warning), var(--warning))",
+                    "border": "none",
+                    "borderRadius": "999px",
+                    "boxShadow": "0 0 24px color-mix(in srgb, var(--warning) 30%, transparent)",
+                    "color": "var(--white)",
+                    "fontWeight": "800",
+                    "height": "42px"
+                  },
+                  "text": "Run 3 Sequential"
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tself.view.custom.result.status \u003d exchange.dbWrecker.load.launchConcurrent(self.view.custom.concurrentCount)"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "LaunchConcurrent"
+                },
+                "position": {
+                  "basis": "230px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "background": "linear-gradient(135deg, var(--qual-1), var(--error))",
+                    "border": "none",
+                    "borderRadius": "999px",
+                    "boxShadow": "0 0 24px color-mix(in srgb, var(--qual-1) 35%, transparent)",
+                    "color": "var(--white)",
+                    "fontWeight": "800",
+                    "height": "42px"
+                  },
+                  "text": "Launch Concurrent Slow Calls"
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "Buttons"
+            },
+            "position": {
+              "basis": "470px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                "border": "1px solid color-mix(in srgb, var(--neutral-60) 20%, transparent)",
+                "borderRadius": "16px",
+                "gap": "12px",
+                "padding": "16px"
+              },
+              "wrap": "wrap"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Controls"
+        },
+        "position": {
+          "basis": "175px",
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "color-mix(in srgb, var(--neutral-10) 76%, transparent)",
+            "border": "1px solid color-mix(in srgb, var(--neutral-60) 22%, transparent)",
+            "borderRadius": "20px",
+            "boxShadow": "0 18px 40px rgba(0,0,0,0.30)",
+            "gap": "14px",
+            "padding": "18px"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "ResultsTitle"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-100)",
+                    "fontSize": "18px",
+                    "fontWeight": "800"
+                  },
+                  "text": "dbwrecker Results"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Status"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.result.status"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--warning)",
+                    "fontSize": "13px",
+                    "fontWeight": "700"
+                  },
+                  "text": "Ready. Choose a workload above."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "ResultsHeader"
+            },
+            "position": {
+              "basis": "56px",
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-between",
+              "style": {
+                "borderBottom": "1px solid color-mix(in srgb, var(--neutral-60) 18%, transparent)",
+                "padding": "0 18px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "domId": "dbwrecker-result-table",
+              "name": "ResultTable"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.result.data"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "bodyStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 50%, transparent)",
+                "color": "var(--neutral-90)"
+              },
+              "cells": {
+                "style": {
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "columns": [
+                {
+                  "field": "tagid",
+                  "header": {
+                    "title": "Tag ID"
+                  },
+                  "render": "number",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": true,
+                  "visible": true,
+                  "width": 110
+                },
+                {
+                  "field": "comparisons",
+                  "header": {
+                    "title": "Comparisons"
+                  },
+                  "numberFormat": "0,0",
+                  "render": "number",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 160
+                },
+                {
+                  "field": "total_delta",
+                  "header": {
+                    "title": "Total Delta"
+                  },
+                  "numberFormat": "0,0.###",
+                  "render": "number",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 170
+                },
+                {
+                  "field": "checksum",
+                  "header": {
+                    "title": "Checksum"
+                  },
+                  "numberFormat": "0,0",
+                  "render": "number",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 170
+                },
+                {
+                  "field": "hash_work",
+                  "header": {
+                    "title": "Hash Work"
+                  },
+                  "numberFormat": "0,0",
+                  "render": "number",
+                  "resizable": true,
+                  "sortable": true,
+                  "strictWidth": false,
+                  "visible": true,
+                  "width": 170
+                }
+              ],
+              "emptyMessage": {
+                "noData": {
+                  "textStyle": {
+                    "color": "var(--neutral-80)"
+                  }
+                },
+                "noFilterResults": {
+                  "textStyle": {
+                    "color": "var(--neutral-80)"
+                  }
+                },
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 50%, transparent)",
+                  "color": "var(--neutral-80)"
+                }
+              },
+              "filter": {
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "footerGroupStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-90)"
+              },
+              "footerStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-90)"
+              },
+              "headerGroupStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-100)"
+              },
+              "headerStyle": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 92%, transparent)",
+                "color": "var(--neutral-100)"
+              },
+              "pager": {
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "rows": {
+                "highlight": {
+                  "color": "color-mix(in srgb, var(--error) 20%, transparent)"
+                },
+                "striped": {
+                  "color": {
+                    "even": "color-mix(in srgb, var(--neutral-10) 34%, transparent)",
+                    "odd": "color-mix(in srgb, var(--neutral-20) 34%, transparent)"
+                  }
+                },
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--neutral-10) 36%, transparent)",
+                  "color": "var(--neutral-90)"
+                }
+              },
+              "selection": {
+                "style": {
+                  "backgroundColor": "color-mix(in srgb, var(--error) 22%, transparent)",
+                  "color": "var(--neutral-100)"
+                }
+              },
+              "style": {
+                "backgroundColor": "color-mix(in srgb, var(--neutral-10) 72%, transparent)",
+                "border": "1px solid color-mix(in srgb, var(--neutral-60) 22%, transparent)",
+                "borderRadius": "20px",
+                "boxShadow": "0 18px 40px rgba(0,0,0,0.30)",
+                "color": "var(--neutral-90)",
+                "overflow": "auto"
+              }
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "Results"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "color-mix(in srgb, var(--neutral-10) 76%, transparent)",
+            "border": "1px solid color-mix(in srgb, var(--neutral-60) 22%, transparent)",
+            "borderRadius": "20px",
+            "boxShadow": "0 18px 40px rgba(0,0,0,0.35)",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "backgroundImage": "radial-gradient(circle at top left, color-mix(in srgb, var(--error) 20%, transparent), transparent 34%), radial-gradient(circle at bottom right, color-mix(in srgb, var(--warning) 18%, transparent), transparent 34%), linear-gradient(135deg, var(--neutral-10) 0%, var(--neutral-20) 100%)",
+        "color": "var(--neutral-90)",
+        "fontFamily": "Inter, Segoe UI, Roboto, Arial, sans-serif",
+        "gap": "18px",
+        "padding": "28px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

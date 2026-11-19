@@ -1,0 +1,17 @@
+{
+  "attributes": {
+    "enabled": true,
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "uuid": "df14876f-5a2b-4e92-91ae-9a59ffd2403d"
+  },
+  "files": [
+    "config.json"
+  ],
+  "overridable": true,
+  "restricted": false,
+  "scope": "A",
+  "version": 1
+}

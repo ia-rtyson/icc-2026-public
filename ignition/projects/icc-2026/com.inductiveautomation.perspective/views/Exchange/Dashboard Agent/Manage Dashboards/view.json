@@ -1,0 +1,204 @@
+{
+  "custom": {
+    "status": ""
+  },
+  "params": {},
+  "propConfig": {},
+  "props": {
+    "defaultSize": {
+      "height": 430,
+      "width": 700
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Title"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-90)",
+            "fontSize": "16px",
+            "fontWeight": 600
+          },
+          "text": "Saved dashboards"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Hint"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "12px"
+          },
+          "text": "Anything without a demo flag is deleted automatically at the end of the day."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Rows"
+        },
+        "position": {
+          "basis": "0px",
+          "grow": 1,
+          "shrink": 1
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "expression": "runScript(\"exchange.dashboard.configs.listConfigs\", 3000)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "path": "Exchange/Dashboard Agent/Saved Row",
+          "style": {
+            "gap": "6px",
+            "overflow": "auto"
+          },
+          "useDefaultViewHeight": true,
+          "useDefaultViewWidth": false
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "meta": {
+          "name": "Status"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.status"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-70)",
+            "fontSize": "12px",
+            "minHeight": "16px"
+          },
+          "text": ""
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Spacer"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 1,
+              "shrink": 1
+            },
+            "props": {
+              "text": ""
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\u0027dashboard-manage\u0027)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "90px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "fontSize": "13px",
+                "height": "32px",
+                "minHeight": "0px"
+              },
+              "text": "Close"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Actions"
+        },
+        "position": {
+          "basis": "40px",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": "8px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "gap": "10px",
+        "padding": "18px 20px"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "exchange.dashboard.manageStatus",
+          "pageScope": true,
+          "script": "\t# Every row lives in its own view, so a row reports back the same way it talks\n\t# to the page: by message.\n\tself.view.custom.status \u003d payload[\u0027text\u0027]\n",
+          "sessionScope": false,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,875 @@
+{
+  "custom": {
+    "lastUploadId": 0,
+    "proposal": {}
+  },
+  "params": {},
+  "propConfig": {
+    "custom.proposal": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "expression": "runScript(\u0027exchange.tagImport.core.latestProposalSummary\u0027, 3000)"
+        },
+        "type": "expr"
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 900,
+      "width": 1500
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "fontSize": "20px",
+                "fontWeight": 600
+              },
+              "text": "Tag Import Agent"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Subtitle"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "12px",
+                "whiteSpace": "normal"
+              },
+              "text": "The Studio 5000 controller export and its ladder logic are hosted on this gateway. Ask the agent to read them; it proposes a UDT / tag structure here for you to review, and creates it when you tell it to in the chat -- entirely inside the \u0027Exchange/Tag Import Agent\u0027 tag folder."
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "gap": "2px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Heading"
+                    },
+                    "position": {
+                      "basis": "auto",
+                      "grow": 0,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "fontSize": "11px",
+                        "fontWeight": 600,
+                        "letterSpacing": "0.08em"
+                      },
+                      "text": "1 - SOURCE FILES ON THIS GATEWAY"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Files"
+                    },
+                    "position": {
+                      "basis": "auto",
+                      "grow": 0,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.source": {
+                        "binding": {
+                          "config": {
+                            "expression": "runScript(\u0027exchange.tagImport.core.referenceMarkdown\u0027, 0)"
+                          },
+                          "type": "expr"
+                        }
+                      }
+                    },
+                    "props": {
+                      "markdown": {
+                        "escapeHtml": false
+                      },
+                      "source": "",
+                      "style": {
+                        "classes": "exchange/tag-import/reference-links",
+                        "fontSize": "12px"
+                      }
+                    },
+                    "type": "ia.display.markdown"
+                  }
+                ],
+                "meta": {
+                  "name": "ReferenceCard"
+                },
+                "position": {
+                  "basis": "auto",
+                  "grow": 0,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "6px",
+                    "gap": "8px",
+                    "padding": "12px 14px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "AiChat"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1,
+                  "shrink": 1
+                },
+                "propConfig": {
+                  "props.context.tagImport": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.proposal"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "agentIcon": "material/account_tree",
+                  "agentName": "Tag Import Agent",
+                  "suggestedPrompts": [
+                    "Read the Studio 5000 controller export on this gateway and show me the structure you propose, before you create anything.",
+                    "Looks good, go ahead and create it and report the tag paths.",
+                    "Delete the old demo tags and clear out the Tag Import Agent folder so we can start fresh."
+                  ]
+                },
+                "type": "ia.ai.chat"
+              }
+            ],
+            "meta": {
+              "name": "LeftColumn"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "10px",
+                "minHeight": "0px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Heading"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 0,
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-60)",
+                            "fontSize": "11px",
+                            "fontWeight": 600,
+                            "letterSpacing": "0.08em"
+                          },
+                          "text": "2 - REVIEW PROPOSED STRUCTURE"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Spacer"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 1,
+                          "shrink": 1
+                        },
+                        "props": {
+                          "text": ""
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Status"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 0,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "expression": "{view.custom.proposal.statusLabel}"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "12px",
+                            "fontWeight": 600
+                          },
+                          "text": ""
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "ProposalHeader"
+                    },
+                    "position": {
+                      "basis": "auto",
+                      "grow": 0,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "direction": "row",
+                      "style": {
+                        "gap": "10px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.proposal.counts.udt_definitions}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-90)",
+                                "fontSize": "20px",
+                                "fontWeight": 600,
+                                "lineHeight": "1.1"
+                              },
+                              "text": "0"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "10px",
+                                "fontWeight": 600,
+                                "letterSpacing": "0.06em",
+                                "whiteSpace": "nowrap"
+                              },
+                              "text": "UDT TYPES"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Types"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 1,
+                          "shrink": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "var(--neutral-10)",
+                            "border": "1px solid var(--neutral-30)",
+                            "borderRadius": "6px",
+                            "gap": "2px",
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.proposal.counts.udt_instances}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-90)",
+                                "fontSize": "20px",
+                                "fontWeight": 600,
+                                "lineHeight": "1.1"
+                              },
+                              "text": "0"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "10px",
+                                "fontWeight": 600,
+                                "letterSpacing": "0.06em",
+                                "whiteSpace": "nowrap"
+                              },
+                              "text": "INSTANCES"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Instances"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 1,
+                          "shrink": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "var(--neutral-10)",
+                            "border": "1px solid var(--neutral-30)",
+                            "borderRadius": "6px",
+                            "gap": "2px",
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.proposal.counts.standalone_tags}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-90)",
+                                "fontSize": "20px",
+                                "fontWeight": 600,
+                                "lineHeight": "1.1"
+                              },
+                              "text": "0"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "10px",
+                                "fontWeight": 600,
+                                "letterSpacing": "0.06em",
+                                "whiteSpace": "nowrap"
+                              },
+                              "text": "STANDALONE"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Standalone"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 1,
+                          "shrink": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "var(--neutral-10)",
+                            "border": "1px solid var(--neutral-30)",
+                            "borderRadius": "6px",
+                            "gap": "2px",
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.style.color": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "if({view.custom.proposal.counts.unresolved} \u003e 0, \u0027var(--warning)\u0027, \u0027var(--neutral-50)\u0027)"
+                                  },
+                                  "type": "expr"
+                                }
+                              },
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.proposal.counts.unresolved}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-50)",
+                                "fontSize": "20px",
+                                "fontWeight": 600,
+                                "lineHeight": "1.1"
+                              },
+                              "text": "0"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "10px",
+                                "fontWeight": 600,
+                                "letterSpacing": "0.06em",
+                                "whiteSpace": "nowrap"
+                              },
+                              "text": "UNRESOLVED"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Unresolved"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 1,
+                          "shrink": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "var(--neutral-10)",
+                            "border": "1px solid var(--neutral-30)",
+                            "borderRadius": "6px",
+                            "gap": "2px",
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "{view.custom.proposal.totalTags}"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-90)",
+                                "fontSize": "20px",
+                                "fontWeight": 600,
+                                "lineHeight": "1.1"
+                              },
+                              "text": "0"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "position": {
+                              "basis": "auto",
+                              "grow": 0,
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "10px",
+                                "fontWeight": 600,
+                                "letterSpacing": "0.06em",
+                                "whiteSpace": "nowrap"
+                              },
+                              "text": "TAGS TOTAL"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Total"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 1,
+                          "shrink": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "var(--neutral-10)",
+                            "border": "1px solid var(--neutral-30)",
+                            "borderRadius": "6px",
+                            "gap": "2px",
+                            "padding": "8px 10px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "StatStrip"
+                    },
+                    "position": {
+                      "basis": "auto",
+                      "grow": 0,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.style": {
+                        "binding": {
+                          "config": {
+                            "struct": {
+                              "display": "if({view.custom.proposal.hasProposal}, \u0027flex\u0027, \u0027none\u0027)",
+                              "gap": "\u00278px\u0027"
+                            },
+                            "waitOnAll": true
+                          },
+                          "type": "expr-struct"
+                        }
+                      }
+                    },
+                    "props": {
+                      "alignItems": "stretch",
+                      "direction": "row"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "EmptyHint"
+                        },
+                        "position": {
+                          "basis": "auto",
+                          "grow": 0,
+                          "shrink": 0
+                        },
+                        "propConfig": {},
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-60)",
+                            "fontSize": "12.5px",
+                            "fontStyle": "italic",
+                            "whiteSpace": "normal"
+                          },
+                          "text": "Ask the agent in the chat to read the hosted tag export and propose a structure. Whatever it proposes lands here for you to review, and nothing is created until you tell the agent to go ahead."
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "EmptyHintWrap"
+                    },
+                    "position": {
+                      "basis": "auto",
+                      "grow": 0,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.style": {
+                        "binding": {
+                          "config": {
+                            "struct": {
+                              "display": "if({view.custom.proposal.hasProposal}, \u0027none\u0027, \u0027flex\u0027)"
+                            },
+                            "waitOnAll": true
+                          },
+                          "type": "expr-struct"
+                        }
+                      }
+                    },
+                    "props": {
+                      "direction": "column"
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "ProposalTree"
+                    },
+                    "position": {
+                      "basis": "120px",
+                      "grow": 1,
+                      "shrink": 1
+                    },
+                    "propConfig": {
+                      "props.items": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.proposal.treeItems"
+                          },
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "appearance": {
+                        "rowHeight": 22,
+                        "textOverflow": "truncate"
+                      },
+                      "branchNodeSelectable": true,
+                      "items": [],
+                      "style": {
+                        "backgroundColor": "var(--neutral-10)",
+                        "border": "1px solid var(--neutral-30)",
+                        "borderRadius": "6px",
+                        "padding": "8px"
+                      }
+                    },
+                    "type": "ia.display.tree"
+                  }
+                ],
+                "meta": {
+                  "name": "ProposalCard"
+                },
+                "position": {
+                  "basis": "200px",
+                  "grow": 1,
+                  "shrink": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "6px",
+                    "gap": "10px",
+                    "minHeight": "0px",
+                    "padding": "12px 14px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "RightColumn"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "10px",
+                "minHeight": "0px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Body"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1,
+          "shrink": 1
+        },
+        "props": {
+          "alignItems": "stretch",
+          "direction": "row",
+          "style": {
+            "gap": "10px",
+            "minHeight": "0px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\t# Always open on a blank review panel. Anything on file belongs to an\n\t# earlier run, so it is archived rather than shown -- nothing is deleted,\n\t# and a proposal the agent saves from here on appears normally.\n\ttry:\n\t\texchange.tagImport.core.archiveLatestProposal()\n\texcept Exception, e:\n\t\t# Never block the page on this. Worst case it opens showing the last\n\t\t# proposal, which is what it did before.\n\t\tsystem.util.getLogger(\u0027exchange.tagImport.Page\u0027).warn(\n\t\t\t\u0027Could not clear the previous proposal: %s\u0027 % str(e))\n"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "basis": "100%",
+      "grow": 1
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "gap": "10px",
+        "padding": "12px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

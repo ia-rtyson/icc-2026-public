@@ -1,0 +1,129 @@
+{
+  "custom": {},
+  "params": {
+    "label": "Wells Map",
+    "navTo": "WellMap"
+  },
+  "propConfig": {
+    "params.label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.navTo": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 30,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon",
+              "visible": false
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "props": {
+              "path": "material/brightness_1",
+              "style": {
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.label"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontFamily": "Verdana",
+                "paddingLeft": 0
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\n\tviewNavTo \u003d self.view.params.navTo\n\tsystem.perspective.navigate(viewNavTo)\n\tsystem.perspective.sendMessage(messageType\u003d\u0027navGroupExit\u0027, scope\u003d\u0027session\u0027)\n\tsystem.perspective.closeDock(\u0027leftNavigation\u0027)\n\tsystem.perspective.sendMessage(messageType \u003d \u0027dockInteraction\u0027, payload\u003d{\u0027interaction\u0027:\u0027close\u0027}, scope\u003d\u0027session\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onPointerLeave": {
+              "config": {
+                "script": "#\n#\tif getattr(event, \"pointerType\", None) in (\"touch\", \"pen\"):\n#\t\tpass\n#\telse:\n#\t\tself.props.style.classes \u003d \u0027nav-text zoom\u0027\n\tpass"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onPointerOver": {
+              "config": {
+                "script": "#\n#\tif getattr(event, \"pointerType\", None) in (\"touch\", \"pen\"):\n#\t\tpass\n#\telse:\n#\t\tself.props.style.classes \u003d \u0027nav-text-hover zoom\u0027\n\tpass"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "FlexBody"
+        },
+        "position": {
+          "basis": "100%",
+          "shrink": 0
+        },
+        "props": {
+          "alignContent": "flex-start",
+          "style": {
+            "classes": "zoom nav-text",
+            "fontFamily": "Verdana",
+            "fontSize": 12,
+            "overflow": "hidden",
+            "paddingLeft": 35
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "cursor": "pointer",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

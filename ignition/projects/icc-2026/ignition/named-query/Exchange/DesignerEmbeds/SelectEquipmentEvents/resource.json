@@ -1,0 +1,30 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": ["query.sql"],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 1000,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "postgres",
+    "fallbackEnabled": false,
+    "permissions": [{"zone": "", "role": ""}],
+    "lastModification": {"actor": "external", "timestamp": "2026-09-09T00:00:00Z"},
+    "parameters": [
+      {"type": "Parameter", "identifier": "area", "sqlType": 7},
+      {"type": "Parameter", "identifier": "startTime", "sqlType": 8},
+      {"type": "Parameter", "identifier": "endTime", "sqlType": 8},
+      {"type": "Parameter", "identifier": "minSeverity", "sqlType": 2},
+      {"type": "Parameter", "identifier": "acknowledged", "sqlType": 2},
+      {"type": "Parameter", "identifier": "rowLimit", "sqlType": 2}
+    ]
+  }
+}

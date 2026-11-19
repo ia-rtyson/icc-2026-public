@@ -1,0 +1,15 @@
+{
+  "attributes": {
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    }
+  },
+  "files": [
+    "view.json"
+  ],
+  "overridable": true,
+  "restricted": false,
+  "scope": "G",
+  "version": 1
+}

@@ -1,0 +1,946 @@
+[
+  {
+    "name": "CookingStation",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Oven Burner Output High",
+            "mode": "AboveValue",
+            "name": "Oven Burner Output High",
+            "priority": "Medium",
+            "setpointA": 95.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 100.0,
+        "engLow": 0.0,
+        "engUnit": "%",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "BurnerOutput",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 62.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 1.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Cook Time Exceeded - Overcook Risk",
+            "mode": "AboveValue",
+            "name": "Cook Time Exceeded - Overcook Risk",
+            "priority": "Critical",
+            "setpointA": 35.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 60.0,
+        "engLow": 0.0,
+        "engUnit": "min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "CookTimeElapsed",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 12.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Cooking Exit Buffer Level High",
+            "mode": "AboveValue",
+            "name": "Cooking Exit Buffer Level High",
+            "priority": "High",
+            "setpointA": 90.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 100.0,
+        "engLow": 0.0,
+        "engUnit": "%",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "ExitBufferLevel",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 40.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 0.5,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Oven Belt Speed Low",
+            "mode": "BelowValue",
+            "name": "Oven Belt Speed Low",
+            "priority": "High",
+            "setpointA": 5.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 25.0,
+        "engLow": 0.0,
+        "engUnit": "ft/min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "OvenBeltSpeed",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 14.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 4.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Oven Temperature High",
+            "mode": "AboveValue",
+            "name": "Oven Temperature High",
+            "priority": "Critical",
+            "setpointA": 420.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          },
+          {
+            "deadband": 4.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Oven Temperature Low",
+            "mode": "BelowValue",
+            "name": "Oven Temperature Low",
+            "priority": "Medium",
+            "setpointA": 300.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 10.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 500.0,
+        "engLow": 60.0,
+        "engUnit": "F",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "OvenTemperature",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 350.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "dataType": "String",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "Status",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": "Running",
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      }
+    ]
+  },
+  {
+    "name": "FormingStation",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Forming Buffer Level High",
+            "mode": "AboveValue",
+            "name": "Forming Buffer Level High",
+            "priority": "High",
+            "setpointA": 90.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 100.0,
+        "engLow": 0.0,
+        "engUnit": "%",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "BufferLevel",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 45.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "displayPath": "",
+            "enabled": true,
+            "label": "Forming Conveyor Jam",
+            "mode": "Equality",
+            "name": "Forming Conveyor Jam",
+            "priority": "High",
+            "setpointA": 1.0
+          }
+        ],
+        "dataType": "Boolean",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "ConveyorJam",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 3.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Former Die Temperature High",
+            "mode": "AboveValue",
+            "name": "Former Die Temperature High",
+            "priority": "Medium",
+            "setpointA": 320.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 400.0,
+        "engLow": 60.0,
+        "engUnit": "F",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "DieTemp",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 265.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Former Cycle Rate Low",
+            "mode": "BelowValue",
+            "name": "Former Cycle Rate Low",
+            "priority": "Medium",
+            "setpointA": 25.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 80.0,
+        "engLow": 0.0,
+        "engUnit": "cyc/min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "FormerCycleRate",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 58.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 5.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Former Pressure High",
+            "mode": "AboveValue",
+            "name": "Former Pressure High",
+            "priority": "Medium",
+            "setpointA": 180.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 250.0,
+        "engLow": 0.0,
+        "engUnit": "psi",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "FormerPressure",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 120.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "dataType": "String",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "Status",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": "Running",
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      }
+    ]
+  },
+  {
+    "name": "KittingStation",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Kitting Bin Level High",
+            "mode": "AboveValue",
+            "name": "Kitting Bin Level High",
+            "priority": "High",
+            "setpointA": 90.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 100.0,
+        "engLow": 0.0,
+        "engUnit": "%",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "BinLevel",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 40.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "displayPath": "",
+            "enabled": true,
+            "label": "Kitting Component Shortage",
+            "mode": "Equality",
+            "name": "Kitting Component Shortage",
+            "priority": "Low",
+            "setpointA": 1.0
+          }
+        ],
+        "dataType": "Boolean",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "ComponentShortage",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 0.5,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Kitting Conveyor Speed Low",
+            "mode": "BelowValue",
+            "name": "Kitting Conveyor Speed Low",
+            "priority": "Medium",
+            "setpointA": 4.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 30.0,
+        "engLow": 0.0,
+        "engUnit": "ft/min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "ConveyorSpeed",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 18.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Kitting Pick Rate Low",
+            "mode": "BelowValue",
+            "name": "Kitting Pick Rate Low",
+            "priority": "Medium",
+            "setpointA": 30.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 90.0,
+        "engLow": 0.0,
+        "engUnit": "picks/min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "PickRate",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 62.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "dataType": "String",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "Status",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": "Running",
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      }
+    ]
+  },
+  {
+    "name": "MixingStation",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Mixer Motor Current High",
+            "mode": "AboveValue",
+            "name": "Mixer Motor Current High",
+            "priority": "High",
+            "setpointA": 48.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 60.0,
+        "engLow": 0.0,
+        "engUnit": "A",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "MixerMotorCurrent",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 34.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 1.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Mixing Time Exceeded",
+            "mode": "AboveValue",
+            "name": "Mixing Time Exceeded",
+            "priority": "Medium",
+            "setpointA": 25.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 60.0,
+        "engLow": 0.0,
+        "engUnit": "min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "MixTimeElapsed",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 9.25,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "displayPath": "",
+            "enabled": true,
+            "label": "Mixer Motor Overload",
+            "mode": "Equality",
+            "name": "Mixer Motor Overload",
+            "priority": "Medium",
+            "setpointA": 1.0
+          }
+        ],
+        "dataType": "Boolean",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "MotorOverload",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Mixing Slurry Temperature High",
+            "mode": "AboveValue",
+            "name": "Mixing Slurry Temperature High",
+            "priority": "Medium",
+            "setpointA": 115.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          },
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Mixing Slurry Temperature Low",
+            "mode": "BelowValue",
+            "name": "Mixing Slurry Temperature Low",
+            "priority": "Low",
+            "setpointA": 80.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 140.0,
+        "engLow": 40.0,
+        "engUnit": "F",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "SlurryTemp",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 96.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "dataType": "String",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "Status",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": "Running",
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Mixing Tank Level High",
+            "mode": "AboveValue",
+            "name": "Mixing Tank Level High",
+            "priority": "High",
+            "setpointA": 92.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 2.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 100.0,
+        "engLow": 0.0,
+        "engUnit": "%",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "TankLevel",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 50.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      }
+    ]
+  },
+  {
+    "name": "PackagingStation",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "alarms": [
+          {
+            "deadband": 3.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Belt Speed Low",
+            "mode": "BelowValue",
+            "name": "Packaging Belt Speed Low",
+            "priority": "Medium",
+            "setpointA": 60.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 130.0,
+        "engLow": 0.0,
+        "engUnit": "ft/min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "BeltSpeed",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 95.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "activePipeline": "icc-2026/Notification Agent Alarm Pipeline",
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Conveyor Belt Break",
+            "mode": "Equality",
+            "name": "Packaging Conveyor Belt Break",
+            "priority": "Critical",
+            "setpointA": 1.0
+          }
+        ],
+        "dataType": "Boolean",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "ConveyorBeltStatus",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": false,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 0.7,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Drive Vibration Elevated",
+            "mode": "AboveValue",
+            "name": "Packaging Drive Vibration Elevated",
+            "priority": "Medium",
+            "setpointA": 4.5,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          },
+          {
+            "deadband": 0.7,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Drive Vibration High",
+            "mode": "AboveValue",
+            "name": "Packaging Drive Vibration High",
+            "priority": "High",
+            "setpointA": 7.1,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 20.0,
+        "engLow": 0.0,
+        "engUnit": "mm/s",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "DriveVibration",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 2.4,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 3.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Gearbox Temperature High",
+            "mode": "AboveValue",
+            "name": "Packaging Gearbox Temperature High",
+            "priority": "High",
+            "setpointA": 190.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 260.0,
+        "engLow": 60.0,
+        "engUnit": "F",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "GearboxTemp",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 142.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Infeed Buffer Level High",
+            "mode": "AboveValue",
+            "name": "Packaging Infeed Buffer Level High",
+            "priority": "High",
+            "setpointA": 90.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 100.0,
+        "engLow": 0.0,
+        "engUnit": "%",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "InfeedBufferLevel",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 35.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Drive Current High",
+            "mode": "AboveValue",
+            "name": "Packaging Drive Current High",
+            "priority": "High",
+            "setpointA": 38.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 60.0,
+        "engLow": 0.0,
+        "engUnit": "A",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "MotorCurrent",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 22.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 4.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Drive Torque Elevated",
+            "mode": "AboveValue",
+            "name": "Packaging Drive Torque Elevated",
+            "priority": "Medium",
+            "setpointA": 70.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          },
+          {
+            "deadband": 4.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Drive Torque High",
+            "mode": "AboveValue",
+            "name": "Packaging Drive Torque High",
+            "priority": "High",
+            "setpointA": 85.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 120.0,
+        "engLow": 0.0,
+        "engUnit": "%",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "MotorTorque",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 52.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "alarms": [
+          {
+            "deadband": 2.0,
+            "displayPath": "",
+            "enabled": true,
+            "label": "Packaging Throughput Low",
+            "mode": "BelowValue",
+            "name": "Packaging Throughput Low",
+            "priority": "Medium",
+            "setpointA": 5.0,
+            "timeOffDelaySeconds": 20.0,
+            "timeOnDelaySeconds": 0.0
+          }
+        ],
+        "dataType": "Float4",
+        "engHigh": 80.0,
+        "engLow": 0.0,
+        "engUnit": "pkg/min",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "historySampleRate": 1,
+        "historySampleRateUnits": "SEC",
+        "name": "PackagesPerMinute",
+        "sampleMode": "Periodic",
+        "tagType": "AtomicTag",
+        "value": 42.0,
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      },
+      {
+        "dataType": "String",
+        "historicalDeadbandMode": "Off",
+        "historyEnabled": true,
+        "historyProvider": "postgres-historian",
+        "name": "Status",
+        "sampleMode": "OnChange",
+        "tagType": "AtomicTag",
+        "value": "Running",
+        "valuePersistence": "Database",
+        "valueSource": "memory"
+      }
+    ]
+  }
+]

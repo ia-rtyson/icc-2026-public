@@ -1,0 +1,620 @@
+{
+  "custom": {
+    "metric1Value": null,
+    "metric2Value": null,
+    "metric3Value": null,
+    "status": "",
+    "statusColor": "var(--neutral-60)"
+  },
+  "params": {
+    "lineName": "",
+    "metric1Label": "",
+    "metric1Tag": "",
+    "metric1Unit": "",
+    "metric2Label": "",
+    "metric2Tag": "",
+    "metric2Unit": "",
+    "metric3Label": "",
+    "metric3Tag": "",
+    "metric3Unit": "",
+    "stationName": "",
+    "stationPath": ""
+  },
+  "propConfig": {
+    "custom.metric1Value": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "stationPath": "{view.params.stationPath}",
+            "tag": "{view.params.metric1Tag}"
+          },
+          "tagPath": "{stationPath}/{tag}"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.metric2Value": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "stationPath": "{view.params.stationPath}",
+            "tag": "{view.params.metric2Tag}"
+          },
+          "tagPath": "{stationPath}/{tag}"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.metric3Value": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "stationPath": "{view.params.stationPath}",
+            "tag": "{view.params.metric3Tag}"
+          },
+          "tagPath": "{stationPath}/{tag}"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.status": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "stationPath": "{view.params.stationPath}"
+          },
+          "tagPath": "{stationPath}/Status"
+        },
+        "type": "tag"
+      }
+    },
+    "custom.statusColor": {
+      "binding": {
+        "config": {
+          "expression": "case({view.custom.status}, \u0027Running\u0027, \u0027var(--success, #3fb950)\u0027, \u0027Recovering\u0027, \u0027var(--info, #3987e5)\u0027, \u0027Warning\u0027, \u0027var(--warning, #d29922)\u0027, \u0027Blocked\u0027, \u0027var(--warning, #d29922)\u0027, \u0027Holding\u0027, \u0027var(--warning, #d29922)\u0027, \u0027Fault\u0027, \u0027var(--error, #f85149)\u0027, \u0027Stopped\u0027, \u0027var(--error, #f85149)\u0027, \u0027var(--neutral-60)\u0027)"
+        },
+        "type": "expr"
+      }
+    },
+    "params.lineName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric1Label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric1Tag": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric1Unit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric2Label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric2Tag": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric2Unit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric3Label": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric3Tag": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.metric3Unit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.stationName": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.stationPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 118,
+      "width": 220
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "StationName"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 1,
+              "shrink": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.stationName"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "15px",
+                "fontWeight": "600",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap"
+              },
+              "text": ""
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "LineName"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.lineName"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "var(--neutral-30)",
+                "borderRadius": "10px",
+                "color": "var(--neutral-70)",
+                "fontSize": "11px",
+                "marginLeft": "8px",
+                "padding": "1px 8px",
+                "whiteSpace": "nowrap"
+              },
+              "text": ""
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "TitleRow"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "meta": {
+              "name": "StatusDot"
+            },
+            "position": {
+              "basis": "8px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.statusColor"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "borderRadius": "50%",
+                "height": "8px",
+                "overflow": "hidden",
+                "width": "8px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "StatusText"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if(isNull({view.custom.status}) || len({view.custom.status}) \u003d 0, \u0027No data\u0027, {view.custom.status})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "12px",
+                "marginLeft": "6px"
+              },
+              "text": ""
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "StatusRow"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "marginTop": "5px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "MetricLabel"
+                },
+                "position": {
+                  "basis": "auto",
+                  "grow": 1,
+                  "shrink": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.metric1Label"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "lineHeight": "16px",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap"
+                  },
+                  "text": ""
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "MetricValue"
+                },
+                "position": {
+                  "basis": "auto",
+                  "grow": 0,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(isNull({view.custom.metric1Value}), \u0027--\u0027, numberFormat({view.custom.metric1Value}, \u0027#,##0.0\u0027)) + \u0027 \u0027 + {view.params.metric1Unit}"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "13px",
+                    "fontWeight": "600",
+                    "lineHeight": "16px",
+                    "marginLeft": "8px",
+                    "textAlign": "right",
+                    "whiteSpace": "nowrap"
+                  },
+                  "text": ""
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Metric1"
+            },
+            "position": {
+              "basis": "16px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "direction": "row",
+              "style": {
+                "marginBottom": "2px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "MetricLabel"
+                },
+                "position": {
+                  "basis": "auto",
+                  "grow": 1,
+                  "shrink": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.metric2Label"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "lineHeight": "16px",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap"
+                  },
+                  "text": ""
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "MetricValue"
+                },
+                "position": {
+                  "basis": "auto",
+                  "grow": 0,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(isNull({view.custom.metric2Value}), \u0027--\u0027, numberFormat({view.custom.metric2Value}, \u0027#,##0.0\u0027)) + \u0027 \u0027 + {view.params.metric2Unit}"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "13px",
+                    "fontWeight": "600",
+                    "lineHeight": "16px",
+                    "marginLeft": "8px",
+                    "textAlign": "right",
+                    "whiteSpace": "nowrap"
+                  },
+                  "text": ""
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Metric2"
+            },
+            "position": {
+              "basis": "16px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "direction": "row",
+              "style": {
+                "marginBottom": "2px",
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "MetricLabel"
+                },
+                "position": {
+                  "basis": "auto",
+                  "grow": 1,
+                  "shrink": 1
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.metric3Label"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "lineHeight": "16px",
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap"
+                  },
+                  "text": ""
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "MetricValue"
+                },
+                "position": {
+                  "basis": "auto",
+                  "grow": 0,
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "expression": "if(isNull({view.custom.metric3Value}), \u0027--\u0027, numberFormat({view.custom.metric3Value}, \u0027#,##0.0\u0027)) + \u0027 \u0027 + {view.params.metric3Unit}"
+                      },
+                      "type": "expr"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "13px",
+                    "fontWeight": "600",
+                    "lineHeight": "16px",
+                    "marginLeft": "8px",
+                    "textAlign": "right",
+                    "whiteSpace": "nowrap"
+                  },
+                  "text": ""
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Metric3"
+            },
+            "position": {
+              "basis": "16px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "direction": "row",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "MetricsRow"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "marginTop": "6px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "basis": "100%",
+      "grow": 1,
+      "shrink": 1
+    },
+    "propConfig": {
+      "props.style.borderLeftColor": {
+        "binding": {
+          "config": {
+            "path": "view.custom.statusColor"
+          },
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "borderColor": "var(--neutral-40)",
+        "borderRadius": "8px",
+        "borderStyle": "solid",
+        "borderWidth": "1px 1px 1px 4px",
+        "overflow": "hidden",
+        "padding": "10px 12px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

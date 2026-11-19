@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inbox - Gmail</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+
+<header id="topbar">
+  <button class="iconbtn" id="btn-rail" title="Main menu" data-icon="menu"></button>
+  <a class="brand" href="#" title="Gmail">
+    <svg class="logo" viewBox="0 0 48 36" aria-hidden="true">
+      <defs>
+        <clipPath id="env"><rect x="2" y="6" width="44" height="26" rx="3"/></clipPath>
+      </defs>
+      <rect x="2" y="6" width="44" height="26" rx="3" fill="#fff"/>
+      <g clip-path="url(#env)" fill="none" stroke-width="7" stroke-linecap="butt">
+        <path d="M5.5 34V10" stroke="#34A853"/>
+        <path d="M42.5 34V10" stroke="#4285F4"/>
+        <path d="M4 8.5 24 23" stroke="#EA4335"/>
+        <path d="M24 23 44 8.5" stroke="#FBBC04"/>
+      </g>
+      <rect x="2" y="6" width="44" height="26" rx="3" fill="none" stroke="rgba(0,0,0,.06)"/>
+    </svg>
+    <span class="wordmark">Gmail</span>
+  </a>
+
+  <form id="search" autocomplete="off">
+    <button class="iconbtn" type="submit" title="Search mail" data-icon="search"></button>
+    <input id="q" type="text" placeholder="Search mail">
+    <button class="iconbtn" type="button" id="btn-clear" title="Clear search" hidden data-icon="close"></button>
+    <button class="iconbtn" type="button" title="Show search options" data-icon="tune"></button>
+  </form>
+
+  <div class="topright">
+    <button class="iconbtn" title="Support" data-icon="help"></button>
+    <button class="iconbtn" title="Settings" data-icon="settings"></button>
+    <button class="iconbtn" title="Google apps" data-icon="apps"></button>
+    <button class="avatar" id="me" title="Google Account"></button>
+  </div>
+</header>
+
+<div id="scrim" hidden></div>
+
+<div id="shell">
+  <nav id="sidebar">
+    <div class="drawer-head"></div>
+    <button id="compose" title="Compose">
+      <span class="icon" data-icon="pencil"></span><span class="label">Compose</span>
+    </button>
+    <ul id="folders">
+      <li><a data-folder="inbox" class="active"><span class="icon" data-icon="inbox"></span><span class="label">Inbox</span><span class="count" id="count-inbox"></span></a></li>
+      <li><a data-folder="starred"><span class="icon" data-icon="star"></span><span class="label">Starred</span><span class="count" id="count-starred"></span></a></li>
+      <li><a data-folder="snoozed"><span class="icon" data-icon="clock"></span><span class="label">Snoozed</span></a></li>
+      <li><a data-folder="sent"><span class="icon" data-icon="send"></span><span class="label">Sent</span></a></li>
+      <li><a data-folder="drafts"><span class="icon" data-icon="draft"></span><span class="label">Drafts</span></a></li>
+      <li id="more-row"><a id="btn-more"><span class="icon" data-icon="chevron-down"></span><span class="label">More</span></a></li>
+      <li class="extra" hidden><a data-folder="all"><span class="icon" data-icon="archive"></span><span class="label">All Mail</span></a></li>
+      <li class="extra" hidden><a data-folder="spam"><span class="icon" data-icon="spam"></span><span class="label">Spam</span></a></li>
+      <li class="extra" hidden><a data-folder="trash"><span class="icon" data-icon="trash"></span><span class="label">Trash</span><span class="count" id="count-trash"></span></a></li>
+    </ul>
+    <div class="side-head"><span>Labels</span><button class="iconbtn sm" title="Create new label" data-icon="plus"></button></div>
+    <ul id="labels"></ul>
+  </nav>
+
+  <main id="main">
+    <!-- message list -->
+    <section id="list-view">
+      <div class="toolbar">
+        <button class="chk" id="select-all" title="Select"></button>
+        <button class="iconbtn caret" id="select-caret" title="Select" data-icon="chevron-down"></button>
+        <div id="bulk" hidden>
+          <button class="iconbtn" data-bulk="archive" title="Archive" data-icon="archive"></button>
+          <button class="iconbtn" data-bulk="trash" title="Delete" data-icon="trash"></button>
+          <button class="iconbtn" data-bulk="unread" title="Mark as unread" data-icon="mail"></button>
+          <button class="iconbtn" data-bulk="read" title="Mark as read" data-icon="mail-open"></button>
+          <button class="iconbtn" data-bulk="snooze" title="Snooze" data-icon="clock"></button>
+        </div>
+        <button class="iconbtn" id="btn-refresh" title="Refresh" data-icon="refresh"></button>
+        <button class="iconbtn" title="More" data-icon="more"></button>
+        <div class="spacer"></div>
+        <span id="pager"></span>
+        <button class="iconbtn" title="Newer" disabled data-icon="chevron-left"></button>
+        <button class="iconbtn" title="Older" disabled data-icon="chevron-right"></button>
+      </div>
+
+      <div class="tabs" id="tabs">
+        <a class="tab active"><span class="icon" data-icon="inbox"></span><span>Primary</span></a>
+        <a class="tab"><span class="icon" data-icon="tag"></span><span>Promotions</span></a>
+        <a class="tab"><span class="icon" data-icon="people"></span><span>Social</span></a>
+      </div>
+
+      <div id="rows"></div>
+      <div id="empty" hidden></div>
+      <div id="trash-banner" hidden></div>
+      <div id="listfoot">
+        <span id="foot-storage"></span>
+        <span>Terms &middot; Privacy &middot; Program Policies</span>
+        <span id="foot-activity"></span>
+      </div>
+    </section>
+
+    <!-- open conversation -->
+    <section id="read-view" hidden></section>
+  </main>
+
+  <!-- Google side panel rail -->
+  <aside id="apprail">
+    <button class="iconbtn" title="Calendar" data-icon="app-calendar"></button>
+    <button class="iconbtn" title="Google Keep" data-icon="app-keep"></button>
+    <button class="iconbtn" title="Tasks" data-icon="app-tasks"></button>
+    <button class="iconbtn" title="Contacts" data-icon="app-contacts"></button>
+    <div class="rail-sep"></div>
+    <button class="iconbtn" title="Get Add-ons" data-icon="plus"></button>
+    <div class="spacer"></div>
+    <button class="iconbtn" title="Show side panel" data-icon="chevron-left"></button>
+  </aside>
+</div>
+
+<!-- mobile compose FAB (Gmail's extended FAB; the rail button is desktop-only) -->
+<button id="fab" title="Compose">
+  <span class="icon" data-icon="pencil"></span><span class="label">Compose</span>
+</button>
+
+<!-- compose window -->
+<div id="compose-win" hidden>
+  <div class="cw-head">
+    <span>New Message</span>
+    <div>
+      <button class="cw-ico" id="cw-min" title="Minimise">&#8211;</button>
+      <button class="cw-ico" id="cw-close" title="Save &amp; close">&#10005;</button>
+    </div>
+  </div>
+  <div class="cw-body">
+    <label class="cw-field"><span>To</span><input id="cw-to" type="text"></label>
+    <label class="cw-field"><span>From</span><input id="cw-from" type="text"></label>
+    <input id="cw-subject" class="cw-subject" type="text" placeholder="Subject">
+    <textarea id="cw-text" placeholder=""></textarea>
+  </div>
+  <div class="cw-foot">
+    <button id="cw-send">Send</button>
+    <button class="iconbtn" title="Formatting options" data-icon="format"></button>
+    <button class="iconbtn" title="Attach files" data-icon="paperclip"></button>
+    <div class="spacer"></div>
+    <button class="iconbtn" id="cw-trash" title="Discard draft" data-icon="trash"></button>
+  </div>
+</div>
+
+<div id="snackbar" hidden><span id="snack-text"></span><button id="snack-action">Undo</button></div>
+
+<script src="app.js"></script>
+</body>
+</html>

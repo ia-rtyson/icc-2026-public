@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "inspect_resource_permissions",
+    "description": "Inspect the permission blocks on everything that is not a page: AI agents, MCP servers, agent tool bundles, WebDev endpoints and named queries. This is the layer a manual review usually misses, because none of it appears on a security screen in the Gateway UI. Tool bundles are graded read vs. write, so an unprotected tool that changes gateway state can be distinguished from one that only reads.",
+    "parameters": [
+      {
+        "name": "kind",
+        "description": "Narrow to one kind: 'agents', 'mcp', 'tools', 'webdev' or 'queries'. Omit for all of them.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

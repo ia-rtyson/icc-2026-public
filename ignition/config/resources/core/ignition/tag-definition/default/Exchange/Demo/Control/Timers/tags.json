@@ -1,0 +1,74 @@
+[
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the AlarmFloodDetector gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "AlarmFloodDetectorEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the AlarmFloodSim gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "AlarmFloodSimEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the DashboardConfigPurge gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "DashboardConfigPurgeEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the DemoEventsFeeder gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "DemoEventsFeederEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the EquipmentDowntimeFeeder gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "EquipmentDowntimeFeederEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the IssueFaultRearm gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "IssueFaultRearmEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the IssueTicketPurge gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "IssueTicketPurgeEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "documentation": "Enable switch for the TagImportFolderPurge gateway timer. False stops the timer\u0027s library function at its first line. Created by DemoControl.ensureTimerSwitches.",
+    "name": "TagImportFolderPurgeEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  }
+]

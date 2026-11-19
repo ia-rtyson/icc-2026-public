@@ -1,0 +1,2459 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 720,
+      "width": 760
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "display": "block",
+                "fontSize": "20px",
+                "fontWeight": 600
+              },
+              "text": "Translator Demo"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "HeaderBar"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-between",
+          "style": {
+            "gap": "12px",
+            "minHeight": "64px",
+            "overflow": "visible"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "DashboardTitle"
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-100)",
+                "display": "block",
+                "fontSize": "18px",
+                "fontWeight": "700",
+                "minHeight": "28px"
+              },
+              "text": "Plant Floor Dashboard"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "DashboardSubtitle"
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "display": "block",
+                "fontSize": "12px",
+                "minHeight": "20px"
+              },
+              "text": "Live overview of Area 100 - Bottling Line 1"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "display": "block",
+                        "fontSize": "12px",
+                        "letterSpacing": "0.06em",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "Motor Speed"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-100)",
+                        "display": "block",
+                        "fontSize": "28px",
+                        "fontWeight": "700",
+                        "lineHeight": "1.2",
+                        "minHeight": "38px"
+                      },
+                      "text": "1,742"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Unit"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "display": "block",
+                        "fontSize": "13px",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px"
+                      },
+                      "text": "rpm"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--success)",
+                        "display": "block",
+                        "fontSize": "11px",
+                        "fontWeight": "600",
+                        "lineHeight": "1.2",
+                        "minHeight": "16px"
+                      },
+                      "text": "Status: Running"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "MotorRpmKpi"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "basis": "0%",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "10px",
+                    "gap": "6px",
+                    "minHeight": "130px",
+                    "minWidth": "170px",
+                    "padding": "14px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "display": "block",
+                        "fontSize": "12px",
+                        "letterSpacing": "0.06em",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "Line Pressure"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-100)",
+                        "display": "block",
+                        "fontSize": "28px",
+                        "fontWeight": "700",
+                        "lineHeight": "1.2",
+                        "minHeight": "38px"
+                      },
+                      "text": "84.6"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Unit"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "display": "block",
+                        "fontSize": "13px",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px"
+                      },
+                      "text": "psi"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--success)",
+                        "display": "block",
+                        "fontSize": "11px",
+                        "fontWeight": "600",
+                        "lineHeight": "1.2",
+                        "minHeight": "16px"
+                      },
+                      "text": "Status: Nominal"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "LinePressureKpi"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "basis": "0%",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "10px",
+                    "gap": "6px",
+                    "minHeight": "130px",
+                    "minWidth": "170px",
+                    "padding": "14px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "display": "block",
+                        "fontSize": "12px",
+                        "letterSpacing": "0.06em",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "Tank Level"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-100)",
+                        "display": "block",
+                        "fontSize": "28px",
+                        "fontWeight": "700",
+                        "lineHeight": "1.2",
+                        "minHeight": "38px"
+                      },
+                      "text": "62"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Unit"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "display": "block",
+                        "fontSize": "13px",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px"
+                      },
+                      "text": "%"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--success)",
+                        "display": "block",
+                        "fontSize": "11px",
+                        "fontWeight": "600",
+                        "lineHeight": "1.2",
+                        "minHeight": "16px"
+                      },
+                      "text": "Status: Filling"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "TankLevelKpi"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "basis": "0%",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "10px",
+                    "gap": "6px",
+                    "minHeight": "130px",
+                    "minWidth": "170px",
+                    "padding": "14px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "display": "block",
+                        "fontSize": "12px",
+                        "letterSpacing": "0.06em",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "OEE Today"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-100)",
+                        "display": "block",
+                        "fontSize": "28px",
+                        "fontWeight": "700",
+                        "lineHeight": "1.2",
+                        "minHeight": "38px"
+                      },
+                      "text": "78.4"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Unit"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "display": "block",
+                        "fontSize": "13px",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px"
+                      },
+                      "text": "%"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--success)",
+                        "display": "block",
+                        "fontSize": "11px",
+                        "fontWeight": "600",
+                        "lineHeight": "1.2",
+                        "minHeight": "16px"
+                      },
+                      "text": "Status: On Target"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "OeeKpi"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "basis": "0%",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "10px",
+                    "gap": "6px",
+                    "minHeight": "130px",
+                    "minWidth": "170px",
+                    "padding": "14px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "display": "block",
+                        "fontSize": "12px",
+                        "letterSpacing": "0.06em",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "Avg Cycle Time"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-100)",
+                        "display": "block",
+                        "fontSize": "28px",
+                        "fontWeight": "700",
+                        "lineHeight": "1.2",
+                        "minHeight": "38px"
+                      },
+                      "text": "11.3"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Unit"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "display": "block",
+                        "fontSize": "13px",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px"
+                      },
+                      "text": "sec"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--success)",
+                        "display": "block",
+                        "fontSize": "11px",
+                        "fontWeight": "600",
+                        "lineHeight": "1.2",
+                        "minHeight": "16px"
+                      },
+                      "text": "Status: Within Spec"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "CycleTimeKpi"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "basis": "0%",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "10px",
+                    "gap": "6px",
+                    "minHeight": "130px",
+                    "minWidth": "170px",
+                    "padding": "14px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Title"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "display": "block",
+                        "fontSize": "12px",
+                        "letterSpacing": "0.06em",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px",
+                        "textTransform": "uppercase"
+                      },
+                      "text": "Scrap Rate"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Value"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-100)",
+                        "display": "block",
+                        "fontSize": "28px",
+                        "fontWeight": "700",
+                        "lineHeight": "1.2",
+                        "minHeight": "38px"
+                      },
+                      "text": "1.2"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Unit"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-80)",
+                        "display": "block",
+                        "fontSize": "13px",
+                        "lineHeight": "1.2",
+                        "minHeight": "18px"
+                      },
+                      "text": "%"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "Status"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--success)",
+                        "display": "block",
+                        "fontSize": "11px",
+                        "fontWeight": "600",
+                        "lineHeight": "1.2",
+                        "minHeight": "16px"
+                      },
+                      "text": "Status: Watch"
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "ScrapRateKpi"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "basis": "0%",
+                    "border": "1px solid var(--neutral-30)",
+                    "borderRadius": "10px",
+                    "gap": "6px",
+                    "minHeight": "130px",
+                    "minWidth": "170px",
+                    "padding": "14px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "KpiRow"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "flexWrap": "nowrap",
+              "style": {
+                "alignItems": "stretch",
+                "flexWrap": "wrap",
+                "gap": "12px",
+                "minHeight": "140px",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "ProcessTrend"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "defaultStyles": {
+                    "colorScheme": "Set1",
+                    "colors": [
+                      "#2563eb",
+                      "#dc2626"
+                    ],
+                    "normal": {
+                      "fill": {
+                        "opacity": 0.15
+                      },
+                      "stroke": {
+                        "opacity": 1,
+                        "width": 2
+                      }
+                    }
+                  },
+                  "legend": {
+                    "visible": true
+                  },
+                  "series": [
+                    {
+                      "data": [
+                        {
+                          "t": 1784601300000,
+                          "v": 64.5
+                        },
+                        {
+                          "t": 1784601600000,
+                          "v": 75
+                        },
+                        {
+                          "t": 1784601900000,
+                          "v": 69
+                        },
+                        {
+                          "t": 1784602200000,
+                          "v": 79.5
+                        },
+                        {
+                          "t": 1784602500000,
+                          "v": 73.5
+                        },
+                        {
+                          "t": 1784602800000,
+                          "v": 67.5
+                        },
+                        {
+                          "t": 1784603100000,
+                          "v": 78
+                        },
+                        {
+                          "t": 1784603400000,
+                          "v": 72
+                        },
+                        {
+                          "t": 1784603700000,
+                          "v": 66
+                        },
+                        {
+                          "t": 1784604000000,
+                          "v": 76.5
+                        },
+                        {
+                          "t": 1784604300000,
+                          "v": 70.5
+                        },
+                        {
+                          "t": 1784604600000,
+                          "v": 64.5
+                        },
+                        {
+                          "t": 1784604900000,
+                          "v": 75
+                        },
+                        {
+                          "t": 1784605200000,
+                          "v": 69
+                        },
+                        {
+                          "t": 1784605500000,
+                          "v": 79.5
+                        },
+                        {
+                          "t": 1784605800000,
+                          "v": 73.5
+                        },
+                        {
+                          "t": 1784606100000,
+                          "v": 67.5
+                        },
+                        {
+                          "t": 1784606400000,
+                          "v": 78
+                        },
+                        {
+                          "t": 1784606700000,
+                          "v": 72
+                        },
+                        {
+                          "t": 1784607000000,
+                          "v": 66
+                        },
+                        {
+                          "t": 1784607300000,
+                          "v": 76.5
+                        },
+                        {
+                          "t": 1784607600000,
+                          "v": 70.5
+                        },
+                        {
+                          "t": 1784607900000,
+                          "v": 64.5
+                        },
+                        {
+                          "t": 1784608200000,
+                          "v": 75
+                        },
+                        {
+                          "t": 1784608500000,
+                          "v": 69
+                        },
+                        {
+                          "t": 1784608800000,
+                          "v": 79.5
+                        },
+                        {
+                          "t": 1784609100000,
+                          "v": 73.5
+                        },
+                        {
+                          "t": 1784609400000,
+                          "v": 67.5
+                        },
+                        {
+                          "t": 1784609700000,
+                          "v": 78
+                        },
+                        {
+                          "t": 1784610000000,
+                          "v": 72
+                        }
+                      ],
+                      "name": "Reactor A"
+                    },
+                    {
+                      "data": [
+                        {
+                          "t": 1784601300000,
+                          "v": 68.5
+                        },
+                        {
+                          "t": 1784601600000,
+                          "v": 79
+                        },
+                        {
+                          "t": 1784601900000,
+                          "v": 73
+                        },
+                        {
+                          "t": 1784602200000,
+                          "v": 83.5
+                        },
+                        {
+                          "t": 1784602500000,
+                          "v": 77.5
+                        },
+                        {
+                          "t": 1784602800000,
+                          "v": 71.5
+                        },
+                        {
+                          "t": 1784603100000,
+                          "v": 82
+                        },
+                        {
+                          "t": 1784603400000,
+                          "v": 76
+                        },
+                        {
+                          "t": 1784603700000,
+                          "v": 70
+                        },
+                        {
+                          "t": 1784604000000,
+                          "v": 80.5
+                        },
+                        {
+                          "t": 1784604300000,
+                          "v": 74.5
+                        },
+                        {
+                          "t": 1784604600000,
+                          "v": 68.5
+                        },
+                        {
+                          "t": 1784604900000,
+                          "v": 79
+                        },
+                        {
+                          "t": 1784605200000,
+                          "v": 73
+                        },
+                        {
+                          "t": 1784605500000,
+                          "v": 83.5
+                        },
+                        {
+                          "t": 1784605800000,
+                          "v": 77.5
+                        },
+                        {
+                          "t": 1784606100000,
+                          "v": 71.5
+                        },
+                        {
+                          "t": 1784606400000,
+                          "v": 82
+                        },
+                        {
+                          "t": 1784606700000,
+                          "v": 76
+                        },
+                        {
+                          "t": 1784607000000,
+                          "v": 70
+                        },
+                        {
+                          "t": 1784607300000,
+                          "v": 80.5
+                        },
+                        {
+                          "t": 1784607600000,
+                          "v": 74.5
+                        },
+                        {
+                          "t": 1784607900000,
+                          "v": 68.5
+                        },
+                        {
+                          "t": 1784608200000,
+                          "v": 79
+                        },
+                        {
+                          "t": 1784608500000,
+                          "v": 73
+                        },
+                        {
+                          "t": 1784608800000,
+                          "v": 83.5
+                        },
+                        {
+                          "t": 1784609100000,
+                          "v": 77.5
+                        },
+                        {
+                          "t": 1784609400000,
+                          "v": 71.5
+                        },
+                        {
+                          "t": 1784609700000,
+                          "v": 82
+                        },
+                        {
+                          "t": 1784610000000,
+                          "v": 76
+                        }
+                      ],
+                      "name": "Reactor B"
+                    }
+                  ],
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "overflow": "visible"
+                  },
+                  "timeAxis": {
+                    "title": {
+                      "text": "Time of Day"
+                    }
+                  },
+                  "title": {
+                    "style": {
+                      "fontSize": "14px",
+                      "fontWeight": "600"
+                    },
+                    "text": "Reactor Temperature - Last 60 Minutes"
+                  },
+                  "xTrace": {
+                    "infoBox": {
+                      "visible": false
+                    },
+                    "line": {
+                      "visible": false
+                    },
+                    "visible": false
+                  }
+                },
+                "type": "ia.chart.timeseries"
+              },
+              {
+                "meta": {
+                  "name": "HourlyOutput"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "background": {
+                    "render": "color"
+                  },
+                  "dataSources": {
+                    "Good Units": [
+                      {
+                        "x": "00:00",
+                        "y": 30
+                      },
+                      {
+                        "x": "01:00",
+                        "y": 41
+                      },
+                      {
+                        "x": "02:00",
+                        "y": 52
+                      },
+                      {
+                        "x": "03:00",
+                        "y": 63
+                      },
+                      {
+                        "x": "04:00",
+                        "y": 74
+                      },
+                      {
+                        "x": "05:00",
+                        "y": 30
+                      },
+                      {
+                        "x": "06:00",
+                        "y": 41
+                      },
+                      {
+                        "x": "07:00",
+                        "y": 52
+                      },
+                      {
+                        "x": "08:00",
+                        "y": 63
+                      },
+                      {
+                        "x": "09:00",
+                        "y": 74
+                      },
+                      {
+                        "x": "10:00",
+                        "y": 30
+                      },
+                      {
+                        "x": "11:00",
+                        "y": 41
+                      }
+                    ],
+                    "Scrap": [
+                      {
+                        "x": "00:00",
+                        "y": 30
+                      },
+                      {
+                        "x": "01:00",
+                        "y": 41
+                      },
+                      {
+                        "x": "02:00",
+                        "y": 52
+                      },
+                      {
+                        "x": "03:00",
+                        "y": 63
+                      },
+                      {
+                        "x": "04:00",
+                        "y": 74
+                      },
+                      {
+                        "x": "05:00",
+                        "y": 30
+                      },
+                      {
+                        "x": "06:00",
+                        "y": 41
+                      },
+                      {
+                        "x": "07:00",
+                        "y": 52
+                      },
+                      {
+                        "x": "08:00",
+                        "y": 63
+                      },
+                      {
+                        "x": "09:00",
+                        "y": 74
+                      },
+                      {
+                        "x": "10:00",
+                        "y": 30
+                      },
+                      {
+                        "x": "11:00",
+                        "y": 41
+                      }
+                    ]
+                  },
+                  "legend": {
+                    "position": "right"
+                  },
+                  "series": [
+                    {
+                      "candlestick": {
+                        "appearance": {
+                          "deriveFieldsFromData": {
+                            "fill": {
+                              "color": "",
+                              "opacity": ""
+                            },
+                            "stroke": {
+                              "color": "",
+                              "opacity": "",
+                              "width": ""
+                            }
+                          },
+                          "fill": {
+                            "color": "",
+                            "opacity": 1
+                          },
+                          "heatRules": {
+                            "dataField": "",
+                            "enabled": false,
+                            "max": "",
+                            "min": ""
+                          },
+                          "stacked": false,
+                          "stroke": {
+                            "color": "",
+                            "opacity": 1,
+                            "width": 1
+                          }
+                        },
+                        "high": {
+                          "x": "",
+                          "y": ""
+                        },
+                        "low": {
+                          "x": "",
+                          "y": ""
+                        },
+                        "open": {
+                          "x": "",
+                          "y": ""
+                        }
+                      },
+                      "column": {
+                        "appearance": {
+                          "deriveFieldsFromData": {
+                            "fill": {
+                              "color": "",
+                              "opacity": ""
+                            },
+                            "stroke": {
+                              "color": "",
+                              "opacity": "",
+                              "width": ""
+                            }
+                          },
+                          "fill": {
+                            "color": "#28A745",
+                            "opacity": 0.85
+                          },
+                          "heatRules": {
+                            "dataField": "",
+                            "enabled": false,
+                            "max": "",
+                            "min": ""
+                          },
+                          "height": null,
+                          "stacked": false,
+                          "stroke": {
+                            "color": "#28A745",
+                            "opacity": 1,
+                            "width": 1
+                          },
+                          "width": null
+                        },
+                        "open": {
+                          "x": "",
+                          "y": ""
+                        }
+                      },
+                      "data": {
+                        "source": "Good Units",
+                        "x": "x",
+                        "y": "y"
+                      },
+                      "defaultState": {
+                        "visible": true
+                      },
+                      "hiddenInLegend": false,
+                      "label": {
+                        "text": "Good Units"
+                      },
+                      "line": {
+                        "appearance": {
+                          "bullets": [
+                            {
+                              "deriveFieldsFromData": {
+                                "fill": {
+                                  "color": "",
+                                  "opacity": ""
+                                },
+                                "rotation": "",
+                                "stroke": {
+                                  "color": "",
+                                  "opacity": "",
+                                  "width": ""
+                                }
+                              },
+                              "enabled": false,
+                              "fill": {
+                                "color": "",
+                                "opacity": 1
+                              },
+                              "heatRules": {
+                                "dataField": "",
+                                "enabled": false,
+                                "max": 100,
+                                "min": 2
+                              },
+                              "label": {
+                                "hideOversized": true,
+                                "position": {
+                                  "dx": 0,
+                                  "dy": 0
+                                },
+                                "text": "{value}",
+                                "truncate": true
+                              },
+                              "radius": 5,
+                              "render": "circle",
+                              "rotation": 0,
+                              "stroke": {
+                                "color": "",
+                                "opacity": 1,
+                                "width": 1
+                              },
+                              "tooltip": {
+                                "background": {
+                                  "color": "",
+                                  "opacity": 1
+                                },
+                                "cornerRadius": 3,
+                                "enabled": true,
+                                "getFillFromObject": true,
+                                "pointerLength": 4,
+                                "text": "{name}: [bold]{valueY}[/]"
+                              }
+                            }
+                          ],
+                          "connect": true,
+                          "fill": {
+                            "color": "",
+                            "opacity": 0
+                          },
+                          "minDistance": 0.5,
+                          "stroke": {
+                            "color": "",
+                            "dashArray": "",
+                            "opacity": 1,
+                            "width": 3
+                          },
+                          "tensionX": 1,
+                          "tensionY": 1
+                        },
+                        "open": {
+                          "x": "",
+                          "y": ""
+                        }
+                      },
+                      "name": "Good Units",
+                      "render": "column",
+                      "stepLine": {
+                        "appearance": {
+                          "bullets": [
+                            {
+                              "deriveFieldsFromData": {
+                                "fill": {
+                                  "color": "",
+                                  "opacity": ""
+                                },
+                                "rotation": "",
+                                "stroke": {
+                                  "color": "",
+                                  "opacity": "",
+                                  "width": ""
+                                }
+                              },
+                              "enabled": true,
+                              "fill": {
+                                "color": "",
+                                "opacity": 1
+                              },
+                              "heatRules": {
+                                "dataField": "",
+                                "enabled": false,
+                                "max": 100,
+                                "min": 2
+                              },
+                              "label": {
+                                "hideOversized": true,
+                                "position": {
+                                  "dx": 0,
+                                  "dy": 0
+                                },
+                                "text": "{value}",
+                                "truncate": true
+                              },
+                              "radius": 5,
+                              "render": "circle",
+                              "rotation": 0,
+                              "stroke": {
+                                "color": "",
+                                "opacity": 1,
+                                "width": 1
+                              },
+                              "tooltip": {
+                                "background": {
+                                  "color": "",
+                                  "opacity": 1
+                                },
+                                "cornerRadius": 3,
+                                "enabled": true,
+                                "getFillFromObject": true,
+                                "pointerLength": 4,
+                                "text": "{name}: [bold]{valueY}[/]"
+                              }
+                            }
+                          ],
+                          "connect": true,
+                          "fill": {
+                            "color": "",
+                            "opacity": 0
+                          },
+                          "minDistance": 0.5,
+                          "stroke": {
+                            "color": "",
+                            "dashArray": "",
+                            "opacity": 1,
+                            "width": 3
+                          },
+                          "tensionX": 1,
+                          "tensionY": 1
+                        },
+                        "open": {
+                          "x": "",
+                          "y": ""
+                        }
+                      },
+                      "tooltip": {
+                        "background": {
+                          "color": "",
+                          "opacity": 1
+                        },
+                        "cornerRadius": 3,
+                        "enabled": true,
+                        "pointerLength": 4,
+                        "text": "{name}: [bold]{valueY}[/]"
+                      },
+                      "visible": true,
+                      "xAxis": "hour",
+                      "yAxis": "units",
+                      "zIndex": 0
+                    },
+                    {
+                      "column": {
+                        "appearance": {
+                          "fill": {
+                            "color": "#D9202A",
+                            "opacity": 0.85
+                          },
+                          "stroke": {
+                            "color": "#D9202A",
+                            "opacity": 1,
+                            "width": 1
+                          }
+                        }
+                      },
+                      "data": {
+                        "source": "Scrap",
+                        "x": "x",
+                        "y": "y"
+                      },
+                      "label": {
+                        "text": "Scrap"
+                      },
+                      "name": "Scrap",
+                      "render": "column",
+                      "visible": true,
+                      "xAxis": "hour",
+                      "yAxis": "units"
+                    }
+                  ],
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "overflow": "visible"
+                  },
+                  "title": {
+                    "style": {
+                      "fontSize": "14px",
+                      "fontWeight": "600"
+                    },
+                    "text": "Units Produced - Hourly"
+                  },
+                  "xAxes": [
+                    {
+                      "appearance": {
+                        "font": {
+                          "size": "",
+                          "weight": 500
+                        },
+                        "grid": {
+                          "color": "#DDE1E6",
+                          "dashArray": "",
+                          "enabled": true,
+                          "minDistance": null,
+                          "opacity": 1,
+                          "position": 0.5
+                        },
+                        "inside": false,
+                        "labels": {
+                          "color": "",
+                          "horizontalCenter": "middle",
+                          "opacity": 1,
+                          "rotation": 0,
+                          "verticalCenter": "middle"
+                        },
+                        "opposite": false
+                      },
+                      "category": {
+                        "break": {
+                          "enabled": false,
+                          "endCategory": "",
+                          "size": 0.05,
+                          "startCategory": ""
+                        }
+                      },
+                      "date": {
+                        "baseInterval": {
+                          "count": 1,
+                          "enabled": false,
+                          "skipEmptyPeriods": false,
+                          "timeUnit": "hour"
+                        },
+                        "break": {
+                          "enabled": false,
+                          "endDate": "",
+                          "size": 0.05,
+                          "startDate": ""
+                        },
+                        "format": "M/d/yyyy HH:mm:ss",
+                        "inputFormat": "yyyy-MM-dd kk:mm:ss",
+                        "range": {
+                          "max": "",
+                          "min": "",
+                          "useStrict": false
+                        }
+                      },
+                      "inversed": false,
+                      "label": {
+                        "color": "",
+                        "enabled": true,
+                        "text": "Hour"
+                      },
+                      "name": "hour",
+                      "render": "category",
+                      "tooltip": {
+                        "background": {
+                          "color": "",
+                          "opacity": 1
+                        },
+                        "cornerRadius": 3,
+                        "enabled": true,
+                        "pointerLength": 4,
+                        "text": ""
+                      },
+                      "value": {
+                        "break": {
+                          "enabled": false,
+                          "endValue": 100,
+                          "size": 0.05,
+                          "startValue": 0
+                        },
+                        "format": "#,###.##",
+                        "logarithmic": false,
+                        "range": {
+                          "max": "",
+                          "min": "",
+                          "useStrict": false
+                        }
+                      },
+                      "visible": true
+                    }
+                  ],
+                  "yAxes": [
+                    {
+                      "appearance": {
+                        "font": {
+                          "size": "",
+                          "weight": 500
+                        },
+                        "grid": {
+                          "color": "#DDE1E6",
+                          "dashArray": "",
+                          "enabled": true,
+                          "minDistance": null,
+                          "opacity": 1,
+                          "position": 0.5
+                        },
+                        "inside": false,
+                        "labels": {
+                          "color": "",
+                          "horizontalCenter": "middle",
+                          "opacity": 1,
+                          "rotation": 0,
+                          "verticalCenter": "middle"
+                        },
+                        "opposite": false
+                      },
+                      "category": {
+                        "break": {
+                          "enabled": false,
+                          "endCategory": "",
+                          "size": 0.05,
+                          "startCategory": ""
+                        }
+                      },
+                      "date": {
+                        "baseInterval": {
+                          "count": 1,
+                          "enabled": false,
+                          "skipEmptyPeriods": false,
+                          "timeUnit": "hour"
+                        },
+                        "break": {
+                          "enabled": false,
+                          "endDate": "",
+                          "size": 0.05,
+                          "startDate": ""
+                        },
+                        "format": "M/d/yyyy HH:mm:ss",
+                        "inputFormat": "yyyy-MM-dd kk:mm:ss",
+                        "range": {
+                          "max": "",
+                          "min": "",
+                          "useStrict": false
+                        }
+                      },
+                      "inversed": false,
+                      "label": {
+                        "color": "",
+                        "enabled": true,
+                        "text": "Units"
+                      },
+                      "name": "units",
+                      "render": "value",
+                      "tooltip": {
+                        "background": {
+                          "color": "",
+                          "opacity": 1
+                        },
+                        "cornerRadius": 3,
+                        "enabled": true,
+                        "pointerLength": 4,
+                        "text": ""
+                      },
+                      "value": {
+                        "break": {
+                          "enabled": false,
+                          "endValue": 100,
+                          "size": 0.05,
+                          "startValue": 0
+                        },
+                        "format": "#,###.##",
+                        "logarithmic": false,
+                        "range": {
+                          "max": "",
+                          "min": "",
+                          "useStrict": false
+                        }
+                      },
+                      "visible": true
+                    }
+                  ]
+                },
+                "type": "ia.chart.xy"
+              }
+            ],
+            "meta": {
+              "name": "LiveTrendsRow"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "gap": "12px",
+                "height": "295px",
+                "minHeight": "280px",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "EquipmentCaption"
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "display": "block",
+                "fontSize": "12px",
+                "fontWeight": "600",
+                "letterSpacing": "0.06em",
+                "minHeight": "24px",
+                "textTransform": "uppercase"
+              },
+              "text": "Equipment Overview"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "MotorM101"
+                },
+                "props": {
+                  "label": {
+                    "position": "bottom",
+                    "text": "M-101"
+                  },
+                  "state": "running",
+                  "style": {
+                    "height": "120px",
+                    "width": "120px"
+                  },
+                  "value": {
+                    "enabled": true,
+                    "text": "1742 rpm"
+                  }
+                },
+                "type": "ia.symbol.motor"
+              },
+              {
+                "meta": {
+                  "name": "PumpP201"
+                },
+                "props": {
+                  "label": {
+                    "position": "bottom",
+                    "text": "P-201"
+                  },
+                  "state": "running",
+                  "style": {
+                    "height": "120px",
+                    "width": "120px"
+                  },
+                  "value": {
+                    "enabled": true,
+                    "text": "12.4 GPM"
+                  }
+                },
+                "type": "ia.symbol.pump"
+              },
+              {
+                "meta": {
+                  "name": "ValveV301"
+                },
+                "props": {
+                  "label": {
+                    "position": "bottom",
+                    "text": "V-301"
+                  },
+                  "state": "open",
+                  "style": {
+                    "height": "120px",
+                    "width": "120px"
+                  },
+                  "value": {
+                    "enabled": true
+                  }
+                },
+                "type": "ia.symbol.valve"
+              },
+              {
+                "meta": {
+                  "name": "VesselTK401"
+                },
+                "props": {
+                  "label": {
+                    "position": "bottom",
+                    "text": "TK-401"
+                  },
+                  "liquidColor": "#2E86C1",
+                  "style": {
+                    "height": "140px",
+                    "width": "100px"
+                  },
+                  "value": {
+                    "enabled": true,
+                    "text": "62%"
+                  }
+                },
+                "type": "ia.symbol.vessel"
+              }
+            ],
+            "meta": {
+              "name": "EquipmentRow"
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-around",
+              "style": {
+                "alignItems": "flex-end",
+                "flexWrap": "nowrap",
+                "gap": "24px",
+                "minHeight": "160px",
+                "overflow": "visible",
+                "padding": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "LegendMotor"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Motor"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "LegendPump"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Pump"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "LegendValve"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Valve"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "LegendVessel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Vessel"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "EquipmentLegend"
+            },
+            "props": {
+              "alignItems": "flex-start",
+              "justify": "space-around",
+              "style": {
+                "gap": "24px",
+                "justifyContent": "space-around",
+                "minHeight": "32px",
+                "overflow": "visible",
+                "padding": "0 16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "AlarmsCaption"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "display": "block",
+                    "fontSize": "12px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.06em",
+                    "minHeight": "24px",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Active and Recent Alarms"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "AlarmsTable"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "columns": [
+                    {
+                      "field": "tag",
+                      "header": {
+                        "title": "Tag"
+                      },
+                      "justify": "left",
+                      "render": "string",
+                      "resizable": true,
+                      "sortable": true
+                    },
+                    {
+                      "field": "description",
+                      "header": {
+                        "title": "Description"
+                      },
+                      "justify": "left",
+                      "render": "string",
+                      "resizable": true,
+                      "sortable": true
+                    },
+                    {
+                      "field": "priority",
+                      "header": {
+                        "title": "Priority"
+                      },
+                      "justify": "center",
+                      "render": "string",
+                      "resizable": true,
+                      "sortable": true
+                    },
+                    {
+                      "field": "state",
+                      "header": {
+                        "title": "State"
+                      },
+                      "justify": "center",
+                      "render": "string",
+                      "resizable": true,
+                      "sortable": true
+                    },
+                    {
+                      "field": "time",
+                      "header": {
+                        "title": "Time"
+                      },
+                      "justify": "center",
+                      "render": "string",
+                      "resizable": true,
+                      "sortable": true
+                    },
+                    {
+                      "field": "acknowledged",
+                      "header": {
+                        "title": "Acknowledged"
+                      },
+                      "justify": "center",
+                      "render": "string",
+                      "resizable": true,
+                      "sortable": true
+                    }
+                  ],
+                  "data": [
+                    {
+                      "acknowledged": "No",
+                      "description": "Tank Level High",
+                      "priority": "High",
+                      "state": "Active",
+                      "tag": "TK-401.Level",
+                      "time": "10:42"
+                    },
+                    {
+                      "acknowledged": "Yes",
+                      "description": "Motor Current Spike",
+                      "priority": "Medium",
+                      "state": "Active",
+                      "tag": "M-101.Current",
+                      "time": "10:39"
+                    },
+                    {
+                      "acknowledged": "No",
+                      "description": "Discharge Pressure Low",
+                      "priority": "High",
+                      "state": "Active",
+                      "tag": "P-201.Discharge",
+                      "time": "10:33"
+                    },
+                    {
+                      "acknowledged": "Yes",
+                      "description": "Valve Position Deviation",
+                      "priority": "Low",
+                      "state": "Cleared",
+                      "tag": "V-301.Position",
+                      "time": "10:21"
+                    },
+                    {
+                      "acknowledged": "No",
+                      "description": "Reactor Temp Out of Range",
+                      "priority": "Critical",
+                      "state": "Active",
+                      "tag": "ReactorA.Temp",
+                      "time": "10:18"
+                    },
+                    {
+                      "acknowledged": "Yes",
+                      "description": "Conveyor Speed Low",
+                      "priority": "Low",
+                      "state": "Cleared",
+                      "tag": "Conveyor.Speed",
+                      "time": "10:05"
+                    },
+                    {
+                      "acknowledged": "Yes",
+                      "description": "Boiler Pressure Rising",
+                      "priority": "Medium",
+                      "state": "Acknowledged",
+                      "tag": "Boiler.Pressure",
+                      "time": "09:58"
+                    }
+                  ],
+                  "rows": {
+                    "height": 32
+                  },
+                  "style": {
+                    "height": "300px"
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "name": "AlarmsSection"
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "6px",
+                "minHeight": "320px",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "OperatorActionsCaption"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "display": "block",
+                    "fontSize": "12px",
+                    "fontWeight": "600",
+                    "letterSpacing": "0.06em",
+                    "minHeight": "24px",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Operator Actions - demo mock-up, buttons do nothing"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\t# Demo mock-up (AcknowledgeAlarms): sample text for the translation demo, deliberately a no-op.\n\tpass"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "AckAlarmsButton",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Demo mock-up: this button does nothing. It is here as sample text for the translation demo."
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/translation/raised",
+                        "minWidth": "140px"
+                      },
+                      "text": "Acknowledge Alarms"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\t# Demo mock-up (StartLine): sample text for the translation demo, deliberately a no-op.\n\tpass"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "StartLineButton",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Demo mock-up: this button does nothing. It is here as sample text for the translation demo."
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/translation/raised",
+                        "minWidth": "140px"
+                      },
+                      "text": "Start Line"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\t# Demo mock-up (StopLine): sample text for the translation demo, deliberately a no-op.\n\tpass"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "StopLineButton",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Demo mock-up: this button does nothing. It is here as sample text for the translation demo."
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/translation/raised",
+                        "minWidth": "140px"
+                      },
+                      "text": "Stop Line"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\t# Demo mock-up (PrintReport): sample text for the translation demo, deliberately a no-op.\n\tpass"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "PrintReportButton",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Demo mock-up: this button does nothing. It is here as sample text for the translation demo."
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/translation/raised",
+                        "minWidth": "140px"
+                      },
+                      "text": "Print Report"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\t# Demo mock-up (ResetCounters): sample text for the translation demo, deliberately a no-op.\n\tpass"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "ResetButton",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Demo mock-up: this button does nothing. It is here as sample text for the translation demo."
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/translation/raised",
+                        "minWidth": "140px"
+                      },
+                      "text": "Reset Counters"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "config": {
+                            "script": "\t# Demo mock-up (EmergencyStop): sample text for the translation demo, deliberately a no-op.\n\tpass"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "EStopButton",
+                      "tooltip": {
+                        "enabled": true,
+                        "text": "Demo mock-up: this is NOT an emergency stop and does nothing. It is here as sample text for the translation demo."
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "style": {
+                        "classes": "exchange/translation/raised",
+                        "minWidth": "140px"
+                      },
+                      "text": "Emergency Stop (mock-up)"
+                    },
+                    "type": "ia.input.button"
+                  }
+                ],
+                "meta": {
+                  "name": "OperatorActions"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "flexWrap": "wrap",
+                  "style": {
+                    "flexWrap": "wrap",
+                    "gap": "12px",
+                    "minHeight": "48px",
+                    "overflow": "visible"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "OperatorActionsSection"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": "6px",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "FooterShift"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Shift A"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FooterOperator"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Operator: j.smith"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FooterTags"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Connected Tags: 1,284"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FooterGateway"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Gateway: prod-gw-01"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FooterUptime"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Uptime: 14d 06h"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FooterLastScan"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Last Scan: 2 min ago"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "FooterVersion"
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-80)",
+                    "display": "block",
+                    "fontSize": "11px"
+                  },
+                  "text": "Ignition 8.1.32"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "FooterStatusBar"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "justify": "space-between",
+              "style": {
+                "backgroundColor": "var(--neutral-10)",
+                "borderRadius": "8px",
+                "flexWrap": "wrap",
+                "gap": "12px",
+                "minHeight": "48px",
+                "overflow": "visible",
+                "padding": "12px 16px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "DashboardSection"
+        },
+        "position": {
+          "grow": 1,
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-20)",
+            "border": "1px solid var(--neutral-30)",
+            "borderRadius": "12px",
+            "gap": "16px",
+            "overflow": "visible",
+            "padding": "16px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "gap": "16px",
+        "overflow": "visible",
+        "padding": "24px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

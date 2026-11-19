@@ -1,0 +1,479 @@
+{
+  "custom": {
+    "agentFilter": "All",
+    "status": {}
+  },
+  "params": {},
+  "propConfig": {
+    "custom.status": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "expression": "runScript(\"exchange.issueReport.ui.pipelineStatus\", 2000, {view.custom.agentFilter})"
+        },
+        "type": "expr"
+      },
+      "persistent": false
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 768,
+      "width": 1366
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "20px",
+                "fontWeight": 600
+              },
+              "text": "Issue Pipeline"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Spacer"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {},
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "RunningChip"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "concat(toString({view.custom.status.summary.running}), \u0027  running\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "border": "1px solid var(--neutral-30)",
+                "borderRadius": "12px",
+                "color": "var(--neutral-90)",
+                "fontSize": "12px",
+                "padding": "4px 12px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "OkChip"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "concat(toString({view.custom.status.summary.ok}), \u0027  ok\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "rgba(36,161,72,0.15)",
+                "border": "1px solid #24a148",
+                "borderRadius": "12px",
+                "color": "#24a148",
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "padding": "4px 12px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "ErrorChip"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.opacity": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.status.summary.error} \u003e 0, 1, 0.35)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "concat(toString({view.custom.status.summary.error}), \u0027  failed\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "rgba(218,30,40,0.15)",
+                "border": "1px solid #da1e28",
+                "borderRadius": "12px",
+                "color": "#da1e28",
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "padding": "4px 12px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "CheckedAt"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "concat(\u0027updated \u0027, {view.custom.status.checkedAt})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "11px"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closeDock(\u0027issue-pipeline\u0027)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "CloseDock"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/close"
+                }
+              },
+              "style": {
+                "fontWeight": 600
+              },
+              "text": "Close"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": "10px",
+            "padding": "12px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "StagesHeading"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "11px",
+            "fontWeight": 600,
+            "letterSpacing": "0.08em",
+            "padding": "0 16px 4px 16px"
+          },
+          "text": "BOARD COLUMNS"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Stages"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.status.stages"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "row",
+          "elementPosition": {
+            "basis": "210px",
+            "grow": 1,
+            "shrink": 0
+          },
+          "instances": [],
+          "path": "Exchange/Report Issue Agent/Pipeline Stage Chip",
+          "style": {
+            "gap": "10px",
+            "padding": "0 16px 10px 16px"
+          },
+          "useDefaultViewHeight": true
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "FilterLabel"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "11px",
+                "fontWeight": 600,
+                "letterSpacing": "0.08em"
+              },
+              "text": "AGENT ACTIVITY"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "AgentFilter"
+            },
+            "position": {
+              "basis": "230px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.options": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.status.agentOptions"
+                  },
+                  "type": "property"
+                }
+              },
+              "props.value": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.custom.agentFilter"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "options": [],
+              "value": "All"
+            },
+            "type": "ia.input.dropdown"
+          },
+          {
+            "meta": {
+              "name": "RowCount"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "concat(toString(len({view.custom.status.activity})), \u0027 logged run(s)\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "11px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "ActivityHeader"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": "12px",
+            "padding": "4px 16px 6px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Activity"
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.status.activity"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "field": "status",
+              "header": {
+                "title": "Status"
+              },
+              "width": 70
+            },
+            {
+              "field": "agent",
+              "header": {
+                "title": "Agent"
+              },
+              "width": 150
+            },
+            {
+              "field": "stage",
+              "header": {
+                "title": "Stage"
+              },
+              "width": 100
+            },
+            {
+              "field": "issue",
+              "header": {
+                "title": "Ticket"
+              },
+              "width": 80
+            },
+            {
+              "field": "started_at",
+              "header": {
+                "title": "Started"
+              },
+              "width": 160
+            },
+            {
+              "align": "center",
+              "field": "duration_secs",
+              "header": {
+                "title": "Secs"
+              },
+              "width": 60
+            },
+            {
+              "field": "summary",
+              "header": {
+                "title": "Outcome"
+              },
+              "width": 560
+            }
+          ],
+          "emptyMessage": "No agent activity logged yet. Move a ticket to Validate or Implement.",
+          "pager": {
+            "hide": false
+          },
+          "selection": {
+            "mode": "single"
+          },
+          "style": {
+            "backgroundColor": "var(--neutral-20)",
+            "border": "1px solid var(--neutral-40)",
+            "borderRadius": "6px",
+            "classes": "exchange/issue-report/pipeline-table",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.display.table"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "basis": "100%",
+      "grow": 1
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "padding": "8px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

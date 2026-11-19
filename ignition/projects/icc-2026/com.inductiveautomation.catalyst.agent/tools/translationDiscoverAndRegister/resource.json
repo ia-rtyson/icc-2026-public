@@ -1,0 +1,50 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "lastModificationSignature": "8129dfe320a0651f18f007fad67853acb8b8ff22d0415b197577a8a6f87cc337",
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-22T15:50:23Z"
+    },
+    "description": "Read a Perspective root view and recursively follow static ia.display.view paths, collect unbound literal translatable text, and add identity translations for a target locale. Does not edit views or invent semantic keys.",
+    "title": "translationDiscoverAndRegister",
+    "parameters": [
+      {
+        "name": "viewPath",
+        "description": "Root Perspective view path, e.g. Exchange/Translation Agent/Translation Manager",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "targetLocale",
+        "description": "Target locale such as es-MX",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "pageUrl",
+        "description": "Perspective page URL/path supplied by the session",
+        "type": "STRING",
+        "required": false
+      },
+      {
+        "name": "pageParams",
+        "description": "Current Perspective page params",
+        "type": "OBJECT",
+        "required": false
+      },
+      {
+        "name": "viewParams",
+        "description": "Current root view params",
+        "type": "OBJECT",
+        "required": false
+      }
+    ]
+  }
+}

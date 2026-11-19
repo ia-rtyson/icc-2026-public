@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "An example of a M-F 8am-5pm schedule with a lunch break",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2026-04-08T22:35:18Z"
+    },
+    "uuid": "2730373a-8c41-480a-8b84-7f8d199bd84b",
+    "lastModificationSignature": "a19bcd76b0b2107b931be33296ec8563a36a567fff36011c1ad4eadf9fc7bbdd",
+    "enabled": true
+  }
+}

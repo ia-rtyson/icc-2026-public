@@ -1,0 +1,753 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozZGZkNDdlMy03Y2FkLTRmNzEtYjk1Ny1mNjczYWRmNGUyNjYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaNgZNeR56STa8lR3oZ23j2kAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpkNWNiNDkwYi04NWIzLTRhYzUtYTkzZS04ZTU4NTNmN2ZmZWNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNod/E50zoKTUQSqpTW3TIdNQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggFokBlcLl/Q9ZI+ebw345mCGMgWkMdcJ7MUbWxnKn/H+kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaDnLlDIouueB8GDme+uby8YAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCA4Q4a+oLQ7IKozI7uH7KoLZCGBz/9/4NasNnRFpwHs/GRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiZZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjNkZmQ0N2UzLTdjYWQtNGY3MS1iOTU3LWY2NzNhZGY0ZTI2Ni9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmIwMDE2NTgwLTVlMGYtNDI5Zi1hNmE1LWFlMGQwNjM5ZmRkOHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAWiQGVwuX9D1kj55vDfjmYIYyBaQx1wnsxRtbGcqf8f6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggB8zOaB+oefq2R/3N6jz264dtRRc6AZmaH1EjdfE8Oa+iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg29nJxh/bXkLQOsTT9lGMNTGVgBdHkdbfaN058UcKXw90Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQNtvpHsVYtUd2uFlp+Ut33dETn/V1S5CulYxB5qGbDd75Bs1C9gkEGD1VdIDKpax7IR5QVMd3jSE0lgjxT3ZBYw=</c2pa:manifest></metadata>
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e2638"/>
+      <stop offset="100%" stop-color="#0f141d"/>
+    </linearGradient>
+
+    <!-- Metal Steel Gradients -->
+    <linearGradient id="metalDark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a3242"/>
+      <stop offset="50%" stop-color="#455168"/>
+      <stop offset="100%" stop-color="#1d232f"/>
+    </linearGradient>
+
+    <linearGradient id="metalLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8ca0ba"/>
+      <stop offset="20%" stop-color="#e2e9f3"/>
+      <stop offset="50%" stop-color="#aac0d8"/>
+      <stop offset="100%" stop-color="#47566b"/>
+    </linearGradient>
+
+    <linearGradient id="metalAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#0072ff"/>
+    </linearGradient>
+
+    <linearGradient id="conveyorBelt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#151921"/>
+      <stop offset="50%" stop-color="#2c3545"/>
+      <stop offset="100%" stop-color="#151921"/>
+    </linearGradient>
+
+    <!-- Station Accent Colors -->
+    <linearGradient id="heatGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ff3300" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ff9900" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffcc00" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="liquidGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00b4db"/>
+      <stop offset="100%" stop-color="#0083b0"/>
+    </linearGradient>
+
+    <linearGradient id="doughGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6d365"/>
+      <stop offset="100%" stop-color="#fda085"/>
+    </linearGradient>
+
+    <linearGradient id="cookedGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b77033"/>
+      <stop offset="100%" stop-color="#623412"/>
+    </linearGradient>
+
+    <!-- Glass/Glow Effects -->
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Reusable Conveyor Segment Definition -->
+    <g id="conveyorSegment">
+      <!-- Legs -->
+      <rect x="20" y="550" width="12" height="170" fill="url(#metalDark)"/>
+      <rect x="260" y="550" width="12" height="170" fill="url(#metalDark)"/>
+      <path d="M 20 620 L 272 620" stroke="#1d232f" stroke-width="6"/>
+      <path d="M 20 570 L 272 670" stroke="#1d232f" stroke-width="4"/>
+      <path d="M 20 670 L 272 570" stroke="#1d232f" stroke-width="4"/>
+      <!-- Main Frame -->
+      <rect x="0" y="530" width="292" height="30" rx="6" fill="url(#metalLight)" filter="url(#shadow)"/>
+      <!-- Belt Track -->
+      <rect x="5" y="520" width="282" height="14" rx="4" fill="url(#conveyorBelt)"/>
+      <!-- Rollers -->
+      <g>
+        <circle cx="20" cy="545" r="8" fill="#0f141d"/>
+        <circle cx="20" cy="545" r="4" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 20 545" to="360 20 545" dur="2s" repeatCount="indefinite" />
+      </g>
+      <g>
+        <circle cx="70" cy="545" r="8" fill="#0f141d"/>
+        <circle cx="70" cy="545" r="4" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 70 545" to="360 70 545" dur="2s" repeatCount="indefinite" />
+      </g>
+      <g>
+        <circle cx="120" cy="545" r="8" fill="#0f141d"/>
+        <circle cx="120" cy="545" r="4" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 120 545" to="360 120 545" dur="2s" repeatCount="indefinite" />
+      </g>
+      <g>
+        <circle cx="170" cy="545" r="8" fill="#0f141d"/>
+        <circle cx="170" cy="545" r="4" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 170 545" to="360 170 545" dur="2s" repeatCount="indefinite" />
+      </g>
+      <g>
+        <circle cx="220" cy="545" r="8" fill="#0f141d"/>
+        <circle cx="220" cy="545" r="4" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 220 545" to="360 220 545" dur="2s" repeatCount="indefinite" />
+      </g>
+      <g>
+        <circle cx="272" cy="545" r="8" fill="#0f141d"/>
+        <circle cx="272" cy="545" r="4" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 272 545" to="360 272 545" dur="2s" repeatCount="indefinite" />
+      </g>
+      <!-- Direction Arrows -->
+      <path d="M 100 537 L 115 537 L 110 533 M 115 537 L 110 541" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 180 537 L 195 537 L 190 533 M 195 537 L 190 541" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Signal Light Template -->
+    <g id="signalLight">
+      <rect x="-6" y="-25" width="12" height="50" rx="3" fill="#151921"/>
+      <circle cx="0" cy="-15" r="4" fill="#ff3333"/>
+      <circle cx="0" cy="0" r="4" fill="#ffcc00"/>
+      <circle cx="0" cy="15" r="4" fill="#00ff66" filter="url(#neonGlow)"/>
+    </g>
+
+    <!-- Mini Belt Window: shows the conveyor belt running through a machine's interior -->
+    <g id="miniBelt">
+      <rect x="0" y="0" width="140" height="14" rx="4" fill="url(#conveyorBelt)"/>
+      <g>
+        <circle cx="10" cy="7" r="6" fill="#0f141d"/>
+        <circle cx="10" cy="7" r="3" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 10 7" to="360 10 7" dur="2s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <circle cx="70" cy="7" r="6" fill="#0f141d"/>
+        <circle cx="70" cy="7" r="3" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 70 7" to="360 70 7" dur="2s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <circle cx="130" cy="7" r="6" fill="#0f141d"/>
+        <circle cx="130" cy="7" r="3" fill="#8ca0ba"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 130 7" to="360 130 7" dur="2s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- ============================================================
+         Level Gauge template (for Perspective Symbol binding)
+         Usage: <use href="#levelGauge" transform="translate(gaugeX, gaugeBottomY)"/>
+         Then inside the instance, target the child id="...-fill" (see each
+         call site below) with a Symbol Dynamic Property:
+             Property: Scale, Axis: Y, Value: {Tag}/100  (0..1)
+         The fill rect is drawn full-height above the group's own (0,0),
+         which sits at the BOTTOM of the gauge, so Scale Y shrinks it
+         downward from a full column - a standard tank/bin fill trick.
+         ============================================================ -->
+    <g id="levelGaugeFrame">
+      <rect x="-2" y="-84" width="28" height="86" rx="4" fill="#0b0e14" stroke="#455168" stroke-width="2"/>
+    </g>
+
+    <!-- Status Lamp template: small circle meant for a Fill Color dynamic
+         property bound to an expression on the station's Status tag, e.g.
+             if({Status}="Running","#00ff66", if({Status}="Warning","#ffaa00",
+             if({Status}="Fault","#ff2222", if({Status}="Blocked","#ff8800",
+             if({Status}="Holding","#ffe066", if({Status}="Stopped","#8a94a6",
+             if({Status}="Recovering","#3aa6ff","#666666")))))))                -->
+    <g id="statusLampFrame">
+      <circle r="9" fill="#151921" stroke="#0b0e14" stroke-width="1"/>
+    </g>
+  </defs>
+
+  <!-- Factory Floor & Grid Background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+  
+  <g opacity="0.05">
+    <path d="M 0 0 L 1600 0 M 0 100 L 1600 100 M 0 200 L 1600 200 M 0 300 L 1600 300 M 0 400 L 1600 400 M 0 500 L 1600 500 M 0 600 L 1600 600 M 0 700 L 1600 700 M 0 800 L 1600 800" stroke="#ffffff" stroke-width="1"/>
+    <path d="M 0 0 L 0 900 M 100 0 L 100 900 M 200 0 L 200 900 M 300 0 L 300 900 M 400 0 L 400 900 M 500 0 L 500 900 M 600 0 L 600 900 M 700 0 L 700 900 M 800 0 L 800 900 M 900 0 L 900 900 M 1000 0 L 1000 900 M 1100 0 L 1100 900 M 1200 0 L 1200 900 M 1300 0 L 1300 900 M 1400 0 L 1400 900 M 1500 0 L 1500 900" stroke="#ffffff" stroke-width="1"/>
+  </g>
+
+  <!-- Floor Line Perspective -->
+  <rect x="0" y="710" width="1600" height="190" fill="#0b0e14"/>
+  <path d="M 0 710 L 1600 710" stroke="#00d2ff" stroke-width="2" opacity="0.4"/>
+  <path d="M 0 720 L 1600 720" stroke="#ffcc00" stroke-width="4" stroke-dasharray="40 30" opacity="0.3"/>
+
+  <!-- TITLE AND HEADER -->
+  <text x="800" y="70" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="32" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="4">
+    AUTOMATED FOOD PROCESSING LINE
+  </text>
+  <text x="800" y="100" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#00d2ff" text-anchor="middle" letter-spacing="2">
+    CONTINUOUS INDUSTRIAL MANUFACTURING SEQUENCE
+  </text>
+
+  <!-- ==================== CONVEYOR BELTS (BEHIND/BETWEEN STATIONS) ==================== -->
+  
+  <!-- Kitting no longer connects via a conveyor - it feeds two material
+       chutes directly into the side of the Mixing tank (see inside the
+       Kitting station group below). -->
+  <!-- Conveyor B: Mixing -> Forming (discharge; no dedicated tag - gate on Mixing/Status and Forming/BufferLevel) -->
+  <use href="#conveyorSegment" x="540" y="0"/>
+  <!-- Conveyor C: Forming -> Cooking -->
+  <use href="#conveyorSegment" x="860" y="0"/>
+  <!-- Conveyor D: Cooking -> Packaging -->
+  <use href="#conveyorSegment" x="1180" y="0"/>
+
+
+  <!-- ==================== FLOW PRODUCTS ON CONVEYORS ====================
+       The decorative product journey (raw component through boxed output)
+       is rendered as a single set of animations at the end of this file,
+       id="line-flow-indicator", so it travels on top of every station and
+       is visible passing through each machine's belt window. -->
+
+
+
+  <!-- ==================== STATION 2: MIXING STATION ==================== -->
+  <g id="station-mixing" transform="translate(380, 0)">
+    <!-- Base / Structure -->
+    <rect x="20" y="660" width="160" height="60" rx="5" fill="url(#metalDark)" filter="url(#shadow)"/>
+    <rect x="30" y="380" width="140" height="280" fill="url(#metalDark)"/>
+    
+    <!-- Hopper/Funnel -->
+    <polygon points="10,220 190,220 150,340 50,340" fill="url(#metalLight)" filter="url(#shadow)"/>
+    <rect x="10" y="200" width="180" height="20" rx="4" fill="url(#metalDark)"/>
+    
+    <!-- Liquid Pipes -->
+    <path d="M -10 260 L 30 260 L 30 360" stroke="url(#metalAccent)" stroke-width="12" fill="none"/>
+    <g>
+        <path d="M 200 280 L 160 280 L 160 360" stroke="url(#liquidGrad)" stroke-width="10" fill="none" stroke-dasharray="20, 10"/>
+    </g>
+
+    <!-- Mixing Tank (Glass Window View) -->
+    <rect x="45" y="360" width="110" height="160" rx="10" fill="#1d232f" stroke="url(#metalLight)" stroke-width="6"/>
+    <rect x="55" y="370" width="90" height="140" rx="6" fill="url(#glass)"/>
+
+    <!-- Side Inlet Ports - where Kitting's two feed chutes connect into the tank wall -->
+    <rect x="32" y="403" width="16" height="14" rx="2" fill="url(#metalLight)"/>
+    <rect x="32" y="463" width="16" height="14" rx="2" fill="url(#metalLight)"/>
+    
+    <!-- Fluid inside Tank - bind id="mixing-tank-fill" Scale Y to {TankLevel}/100 -->
+    <g transform="translate(55, 510)">
+      <g id="mixing-tank-fill">
+        <rect x="0" y="-140" width="90" height="140" fill="url(#doughGrad)" opacity="0.85"/>
+        <path d="M 0 -140 Q 22 -132 45 -140 T 90 -140" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.4">
+          <animate attributeName="d" dur="2s" repeatCount="indefinite" values="M 0 -140 Q 22 -132 45 -140 T 90 -140; M 0 -140 Q 22 -148 45 -140 T 90 -140; M 0 -140 Q 22 -132 45 -140 T 90 -140"/>
+        </path>
+      </g>
+    </g>
+    
+    <!-- Mixer Shaft (fixed, no blades) -->
+    <rect x="95" y="320" width="10" height="120" fill="url(#metalLight)"/>
+
+    <!-- Motor/Top Unit -->
+    <rect x="65" y="160" width="70" height="40" rx="4" fill="url(#metalLight)"/>
+    <!-- Motor Cooling Fins -->
+    <line x1="75" y1="165" x2="75" y2="195" stroke="#1d232f" stroke-width="2"/>
+    <line x1="85" y1="165" x2="85" y2="195" stroke="#1d232f" stroke-width="2"/>
+    <line x1="95" y1="165" x2="95" y2="195" stroke="#1d232f" stroke-width="2"/>
+    <line x1="105" y1="165" x2="105" y2="195" stroke="#1d232f" stroke-width="2"/>
+    <line x1="115" y1="165" x2="115" y2="195" stroke="#1d232f" stroke-width="2"/>
+    <line x1="125" y1="165" x2="125" y2="195" stroke="#1d232f" stroke-width="2"/>
+
+    <!-- Outlet Chute -->
+    <polygon points="75,520 125,520 140,555 60,555" fill="url(#metalLight)"/>
+
+    <!-- Control Panel & Status -->
+    <use href="#signalLight" x="170" y="380"/>
+    <rect x="135" y="580" width="30" height="40" fill="#151921" rx="2"/>
+    <circle cx="150" cy="595" r="5" fill="#00d2ff" filter="url(#neonGlow)"/>
+    <rect x="142" y="608" width="16" height="4" fill="#ffffff"/>
+
+    <!-- Belt Window: shows the conveyor belt running through this machine -->
+    <use href="#miniBelt" x="25" y="505"/>
+
+    <!-- Station Label -->
+    <rect x="25" y="740" width="150" height="36" rx="6" fill="#151921" stroke="#00d2ff" stroke-width="2"/>
+    <text x="100" y="763" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#00d2ff" text-anchor="middle">2. MIXING</text>
+
+    <!-- Status Lamp - bind Fill Color to Status expression -->
+    <use href="#statusLampFrame" x="40" y="758"/>
+    <circle id="mixing-status-lamp" cx="40" cy="758" r="6" fill="#00ff66" filter="url(#neonGlow)"/>
+  </g>
+
+  <!-- ==================== STATION 3: FORMING STATION ==================== -->
+  <g id="station-forming" transform="translate(700, 0)">
+    <!-- Base Legs -->
+    <rect x="30" y="600" width="20" height="120" fill="url(#metalDark)"/>
+    <rect x="150" y="600" width="20" height="120" fill="url(#metalDark)"/>
+    
+    <!-- Main Body Frame -->
+    <rect x="20" y="320" width="160" height="280" rx="8" fill="url(#metalDark)" filter="url(#shadow)"/>
+    <rect x="35" y="335" width="130" height="250" rx="4" fill="#151921"/>
+
+    <!-- Feed Hopper from Conveyor 1 -->
+    <polygon points="30,320 80,320 65,390 45,390" fill="url(#metalLight)"/>
+
+    <!-- Hydraulic Press Mechanism -->
+    <rect x="80" y="220" width="40" height="120" fill="url(#metalLight)"/>
+    <g>
+        <rect x="88" y="170" width="24" height="80" fill="#8ca0ba"/> <!-- Piston Rod -->
+        <!-- dur/begin tuned so the bottom of this stroke (dur/2 into the cycle)
+             coincides with the traveling product reaching mid-Forming -->
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="0 30" dur="3.3333s" begin="1.1244s" repeatCount="indefinite" values="0 0; 0 30; 0 0"/>
+    </g>
+    <rect x="60" y="150" width="80" height="30" rx="4" fill="url(#metalDark)"/> <!-- Top Cylinder Header -->
+
+    <!-- Press Head / Mold Tool -->
+    <g>
+        <rect x="50" y="420" width="100" height="25" rx="2" fill="url(#metalLight)"/>
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="0 30" dur="3.3333s" begin="1.1244s" repeatCount="indefinite" values="0 0; 0 30; 0 0"/>
+    </g>
+    <!-- Piston Motion Indicators -->
+    <path d="M 100 370 L 100 410 M 95 405 L 100 410 L 105 405" stroke="#00ff66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 100 360 L 100 340" stroke="#00ff66" stroke-width="2" stroke-dasharray="4 3"/>
+
+    <!-- Mold Base / Die Belt Area -->
+    <rect x="40" y="510" width="120" height="20" fill="url(#metalLight)"/>
+    <circle cx="60" cy="520" r="5" fill="#2c3545"/>
+    <circle cx="100" cy="520" r="5" fill="#2c3545"/>
+    <circle cx="140" cy="520" r="5" fill="#2c3545"/>
+
+    <!-- Internal Work Light / Laser Sensor -->
+    <line x1="40" y1="490" x2="160" y2="490" stroke="#ff0055" stroke-width="1.5" stroke-dasharray="8 4" filter="url(#neonGlow)"/>
+
+    <!-- Status Indicator -->
+    <use href="#signalLight" x="165" y="300"/>
+
+    <!-- Belt Window: shows the conveyor belt running through this machine -->
+    <use href="#miniBelt" x="20" y="505"/>
+
+    <!-- Station Label -->
+    <rect x="25" y="740" width="150" height="36" rx="6" fill="#151921" stroke="#00d2ff" stroke-width="2"/>
+    <text x="100" y="763" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#00d2ff" text-anchor="middle">3. FORMING</text>
+
+    <!-- Status Lamp - bind Fill Color to Status expression -->
+    <use href="#statusLampFrame" x="40" y="758"/>
+    <circle id="forming-status-lamp" cx="40" cy="758" r="6" fill="#00ff66" filter="url(#neonGlow)"/>
+  </g>
+
+  <!-- ==================== STATION 1: KITTING STATION ==================== -->
+  <g id="station-kitting" transform="translate(60, 0)">
+    <!-- Main Frame Arch -->
+    <path d="M 20 680 L 20 280 A 20 20 0 0 1 40 260 L 160 260 A 20 20 0 0 1 180 280 L 180 680" fill="none" stroke="url(#metalDark)" stroke-width="24" filter="url(#shadow)"/>
+    <path d="M 20 680 L 20 280 A 20 20 0 0 1 40 260 L 160 260 A 20 20 0 0 1 180 280 L 180 680" fill="none" stroke="#151921" stroke-width="12"/>
+
+    <!-- Ingredient Feed Dispensers (Kitting Hoppers) -->
+    <!-- Hopper 1: Trays / dry components -->
+    <rect x="-10" y="320" width="50" height="90" rx="4" fill="url(#metalLight)" transform="rotate(15)"/>
+
+    <!-- Hopper 2: Additionals / Packets - wet/liquid ingredient -->
+    <rect x="150" y="300" width="50" height="90" rx="4" fill="url(#metalLight)" transform="rotate(-15)"/>
+
+    <!-- Feed Chute 1 (dry component, from Hopper 1) - runs from Kitting all the
+         way into the side of the Mixing tank. Local x=365 = absolute x=425,
+         the Mixing tank's left wall (Mixing station sits at translate(380,0)). -->
+    <path d="M 20 420 C 80 460, 220 470, 365 410" stroke="url(#metalLight)" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M 20 420 C 80 460, 220 470, 365 410" stroke="#8ca0ba" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="10 8">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Feed Chute 2 (liquid/binder, from Hopper 2) - also runs into the side
+         of the Mixing tank, entering lower than Chute 1 -->
+    <path d="M 170 400 C 220 480, 280 460, 365 470" stroke="url(#metalLight)" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M 170 400 C 220 480, 280 460, 365 470" stroke="url(#liquidGrad)" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="16 10">
+      <animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Automated Pick & Place Gantry Mechanism -->
+    <rect x="40" y="290" width="120" height="16" fill="url(#metalLight)"/>
+    
+    <!-- Arm 1 (Tray Placement) -->
+    <g>
+      <g transform="translate(60, 306)">
+        <rect x="0" y="0" width="16" height="60" fill="#455168"/>
+        <rect x="-4" y="60" width="24" height="40" fill="url(#metalLight)"/> <!-- Suction head -->
+        <path d="M 0 100 L -10 115 M 16 100 L 26 115" stroke="#00d2ff" stroke-width="3"/> <!-- Grippers -->
+      </g>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 30" dur="2s" repeatCount="indefinite" values="0 0; 0 30; 0 0"/>
+    </g>
+
+    <!-- Arm 2 (Component Dispenser) -->
+    <g>
+      <g transform="translate(120, 306)">
+        <rect x="0" y="0" width="16" height="100" fill="#455168"/>
+        <rect x="-4" y="100" width="24" height="30" fill="url(#metalLight)"/>
+        <circle cx="8" cy="135" r="8" fill="#3a9d23"/> <!-- Holding ingredient -->
+      </g>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 20" dur="2.4s" repeatCount="indefinite" values="0 0; 0 20; 0 0"/>
+    </g>
+
+    <!-- Sensor Array Bar -->
+    <rect x="35" y="480" width="130" height="10" fill="#151921"/>
+    <circle cx="50" cy="485" r="3" fill="#ff0000"/>
+    <circle cx="100" cy="485" r="3" fill="#00ff66" filter="url(#neonGlow)"/>
+    <circle cx="150" cy="485" r="3" fill="#ff0000"/>
+
+    <!-- Status Indicator -->
+    <use href="#signalLight" x="195" y="340"/>
+
+    <!-- Station Label -->
+    <rect x="25" y="740" width="150" height="36" rx="6" fill="#151921" stroke="#00d2ff" stroke-width="2"/>
+    <text x="100" y="763" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#00d2ff" text-anchor="middle">1. KITTING</text>
+
+    <!-- Status Lamp - bind Fill Color to Status expression, see levelGauge/statusLamp notes in defs -->
+    <use href="#statusLampFrame" x="40" y="758"/>
+    <circle id="kitting-status-lamp" cx="40" cy="758" r="6" fill="#00ff66" filter="url(#neonGlow)"/>
+  </g>
+
+  <!-- ==================== STATION 4: COOKING STATION ==================== -->
+  <g id="station-cooking" transform="translate(1020, 0)">
+    <!-- Oven Main Enclosure -->
+    <rect x="10" y="300" width="180" height="320" rx="10" fill="url(#metalDark)" filter="url(#shadow)"/>
+    <rect x="25" y="315" width="150" height="290" rx="6" fill="#10141d"/>
+
+    <!-- Insulated Tunnel Shielding -->
+    <rect x="-5" y="470" width="30" height="90" fill="url(#metalLight)"/>
+    <rect x="175" y="470" width="30" height="90" fill="url(#metalLight)"/>
+
+    <!-- Heating Chamber Window / Radiant Glow - bind id="cooking-oven-glow" Fill Color to
+         an expression on {OvenTemperature}: e.g.
+         if({OvenTemperature}>420,"#ff2200", if({OvenTemperature}>380,"#ff8800", if({OvenTemperature}>340,"#ffcc00","#996600"))) -->
+    <rect x="35" y="340" width="130" height="120" rx="6" fill="#220a00" stroke="url(#metalLight)" stroke-width="4"/>
+    <rect id="cooking-oven-glow" x="40" y="345" width="120" height="110" rx="4" fill="url(#heatGrad)"/>
+
+    <!-- Heating Elements / Coils Inside (shimmering heat-wave motion) -->
+    <path d="M 45 360 Q 65 350 85 360 T 125 360 T 155 360" stroke="#ffcc00" stroke-width="4" fill="none" filter="url(#neonGlow)">
+      <animate attributeName="d" dur="3.3s" repeatCount="indefinite" values="M 45 360 Q 65 350 85 360 T 125 360 T 155 360; M 45 360 Q 65 370 85 360 T 125 360 T 155 360; M 45 360 Q 65 350 85 360 T 125 360 T 155 360"/>
+    </path>
+    <path d="M 45 390 Q 65 380 85 390 T 125 390 T 155 390" stroke="#ff3300" stroke-width="4" fill="none" filter="url(#neonGlow)">
+      <animate attributeName="d" dur="3.3s" repeatCount="indefinite" values="M 45 390 Q 65 380 85 390 T 125 390 T 155 390; M 45 390 Q 65 400 85 390 T 125 390 T 155 390; M 45 390 Q 65 380 85 390 T 125 390 T 155 390"/>
+    </path>
+    <path d="M 45 420 Q 65 410 85 420 T 125 420 T 155 420" stroke="#ffcc00" stroke-width="4" fill="none" filter="url(#neonGlow)">
+      <animate attributeName="d" dur="3.3s" repeatCount="indefinite" values="M 45 420 Q 65 410 85 420 T 125 420 T 155 420; M 45 420 Q 65 430 85 420 T 125 420 T 155 420; M 45 420 Q 65 410 85 420 T 125 420 T 155 420"/>
+    </path>
+
+    <!-- Exhaust Stack / Chimney -->
+    <rect x="70" y="170" width="60" height="130" fill="url(#metalDark)"/>
+    <rect x="60" y="160" width="80" height="15" rx="3" fill="url(#metalLight)"/>
+
+    <!-- Status Indicator -->
+    <use href="#signalLight" x="175" y="280"/>
+
+    <!-- Belt Window: shows the conveyor belt running through this machine -->
+    <use href="#miniBelt" x="25" y="505"/>
+
+    <!-- Station Label -->
+    <rect x="25" y="740" width="150" height="36" rx="6" fill="#151921" stroke="#00d2ff" stroke-width="2"/>
+    <text x="100" y="763" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#00d2ff" text-anchor="middle">4. COOKING</text>
+
+    <!-- Status Lamp - bind Fill Color to Status expression -->
+    <use href="#statusLampFrame" x="40" y="758"/>
+    <circle id="cooking-status-lamp" cx="40" cy="758" r="6" fill="#00ff66" filter="url(#neonGlow)"/>
+  </g>
+
+  <!-- ==================== STATION 5: PACKAGING STATION ==================== -->
+  <g id="station-packaging" transform="translate(1340, 0)">
+    <!-- Base Support -->
+    <rect x="30" y="620" width="140" height="100" rx="4" fill="url(#metalDark)" filter="url(#shadow)"/>
+
+    <!-- Main Enclosure -->
+    <rect x="15" y="260" width="170" height="360" rx="8" fill="url(#metalDark)"/>
+    <rect x="25" y="275" width="150" height="330" rx="4" fill="#151921"/>
+
+    <!-- Box/Film Roll Feeder / Drive Motor (Top Unit) -->
+    <g>
+        <circle cx="100" cy="200" r="45" fill="url(#metalLight)"/>
+        <circle cx="100" cy="200" r="35" fill="#151921"/>
+        <circle cx="100" cy="200" r="12" fill="url(#metalLight)"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 100 200" to="360 100 200" dur="5s" repeatCount="indefinite" />
+    </g>
+    <!-- Cardboard/Film Web Path -->
+    <path d="M 135 200 L 145 320 L 120 320" stroke="#f6d365" stroke-width="6" fill="none"/>
+
+    <!-- Packaging Mechanism / Sealing Head -->
+    <rect x="40" y="330" width="120" height="80" rx="4" fill="url(#metalLight)"/>
+    <rect x="55" y="350" width="90" height="40" fill="#2a3242"/>
+    <text x="100" y="375" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="bold" fill="#00ff66" text-anchor="middle">SEALER OK</text>
+
+    <!-- Vertical Sealing Arms (fixed guide rails) -->
+    <path d="M 60 410 L 60 490 M 140 410 L 140 490" stroke="url(#metalLight)" stroke-width="12"/>
+
+    <!-- BELT INTACT state - bind Visible to NOT {ConveyorBeltStatus} (tag is True = broken) -->
+    <g id="packaging-belt-intact">
+      <!-- Heated Sealer Bar (moves up and down along the guide rails to seal the product).
+           dur/begin tuned so the top of this stroke (dur/2 into the cycle, the
+           actual sealing moment) coincides with the traveling product reaching
+           mid-Packaging -->
+      <g>
+          <rect x="45" y="460" width="110" height="20" rx="3" fill="#ff9900"/>
+          <animateTransform attributeName="transform" type="translate" values="0 0; 0 -30; 0 0" dur="3.3333s" begin="0.0399s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- Belt Window: shows the conveyor belt running through this machine -->
+      <use href="#miniBelt" x="25" y="503"/>
+
+      <!-- Completed Boxed Product Output (Moving off the line) -->
+      <g transform="translate(70, 500)">
+        <rect x="0" y="0" width="50" height="35" rx="3" fill="#c29b38" stroke="#8d6e1e" stroke-width="2"/>
+        <path d="M 0 10 L 50 10 M 25 10 L 25 35" stroke="#8d6e1e" stroke-width="1.5"/>
+        <!-- Green Check / Pass Stamp -->
+        <circle cx="38" cy="22" r="7" fill="#00ff66"/>
+        <path d="M 34 22 L 37 25 L 42 19" stroke="#151921" stroke-width="2" fill="none"/>
+      </g>
+    </g>
+
+    <!-- BELT BROKEN state - bind Visible to {ConveyorBeltStatus} (True = broken) -->
+    <g id="packaging-belt-broken">
+      <!-- Severed belt: two static stubs with a gap instead of a continuous loop -->
+      <rect x="25" y="503" width="45" height="14" rx="4" fill="url(#conveyorBelt)"/>
+      <rect x="95" y="503" width="70" height="14" rx="4" fill="url(#conveyorBelt)"/>
+      <path d="M 70 503 L 78 517 M 78 503 L 70 517" stroke="#ff2222" stroke-width="3" stroke-linecap="round"/>
+      <!-- Product piling up against the dead sealer, frozen in place -->
+      <g transform="translate(78, 500)">
+        <rect x="-30" y="0" width="26" height="20" rx="2" fill="#c29b38" stroke="#8d6e1e" stroke-width="1.5"/>
+        <rect x="-3" y="-4" width="26" height="20" rx="2" fill="#c29b38" stroke="#8d6e1e" stroke-width="1.5"/>
+      </g>
+    </g>
+
+    <!-- Scanner Laser Beam (Quality Control) -->
+    <path d="M 45 440 L 95 500 L 145 440" fill="url(#glass)" stroke="#00d2ff" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+    <!-- Control Screen -->
+    <rect x="-15" y="380" width="35" height="60" rx="3" fill="#1f2937" stroke="#455168" stroke-width="2"/>
+    <rect x="-10" y="388" width="25" height="30" fill="#00d2ff" opacity="0.8"/>
+    <circle cx="-2" cy="428" r="3" fill="#00ff66"/>
+
+    <!-- Drive Vibration Alarm Glow - bind Opacity (or Visible) to {DriveVibration} > 4.5 -->
+    <circle id="packaging-vibration-alarm" cx="100" cy="200" r="55" fill="none" stroke="#ff2222" stroke-width="4" opacity="0" filter="url(#neonGlow)"/>
+
+    <!-- Gearbox Temperature Badge - bind Fill Color to an expression on {GearboxTemp}, e.g.
+         if({GearboxTemp}>190,"#ff2222", if({GearboxTemp}>165,"#ff8800","#00d2ff")) -->
+    <rect id="packaging-gearbox-heat" x="-15" y="450" width="20" height="20" rx="4" fill="#00d2ff"/>
+
+    <!-- Status Indicator -->
+    <use href="#signalLight" x="175" y="240"/>
+
+    <!-- Station Label -->
+    <rect x="25" y="740" width="150" height="36" rx="6" fill="#151921" stroke="#00d2ff" stroke-width="2"/>
+    <text x="100" y="763" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#00d2ff" text-anchor="middle">5. PACKAGING</text>
+
+    <!-- Status Lamp - bind Fill Color to Status expression -->
+    <use href="#statusLampFrame" x="40" y="758"/>
+    <circle id="packaging-status-lamp" cx="40" cy="758" r="6" fill="#00ff66" filter="url(#neonGlow)"/>
+  </g>
+
+  <!-- ==================== INFRASTRUCTURE & PIPING (OVERHEAD) ==================== -->
+  <!-- Main Overhead Utility Line -->
+  <path d="M 0 120 L 1600 120" stroke="#2a3242" stroke-width="16"/>
+  <path d="M 0 114 L 1600 114" stroke="#455168" stroke-width="4"/>
+  <!-- Power & Fluid Drop Lines to Stations -->
+  <path d="M 150 128 L 150 160" stroke="#ffcc00" stroke-width="6"/> <!-- Power to Kit -->
+  <path d="M 470 128 L 470 150" stroke="#00d2ff" stroke-width="6"/> <!-- Power to Mix -->
+  <path d="M 800 128 L 800 260" stroke="#00d2ff" stroke-width="6"/> <!-- Pneumatic to Form -->
+  <path d="M 1110 128 L 1110 160" stroke="#ff3300" stroke-width="8"/> <!-- Power to Cook -->
+  <path d="M 1430 128 L 1430 200" stroke="#ffcc00" stroke-width="6"/> <!-- Power to Package -->
+
+  <!-- ==================== SIMULATION BANNER ====================
+       Placed below the station status row so it reads as a line-wide
+       summary under the individual station lamps.
+       Phase pill: bind Fill Color of id="sim-phase-dot" to an expression on {Simulator/Phase}, e.g.
+         if({Phase}="NORMAL","#00ff66", if({Phase}="DEGRADING","#ffcc00",
+         if({Phase}="FAULT","#ff2222", if({Phase}="CASCADE","#ff6600",
+         if({Phase}="HOLD","#a855f7", if({Phase}="RECOVERY","#3aa6ff","#666666"))))))
+       Bind Text of id="sim-phase-text" to {Simulator/Phase}.
+       Bind Text of id="sim-stage-text" to {Simulator/StageName}. -->
+  <rect x="500" y="800" width="600" height="30" rx="15" fill="#0b0e14" stroke="#455168" stroke-width="1.5"/>
+  <circle id="sim-phase-dot" cx="518" cy="815" r="7" fill="#00ff66" filter="url(#neonGlow)"/>
+  <text id="sim-phase-text" x="535" y="820" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#00d2ff" text-anchor="start">NORMAL</text>
+  <text id="sim-stage-text" x="800" y="820" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="400" fill="#e2e9f3" text-anchor="middle">Line running normally</text>
+
+  <!-- ==================== CONTINUOUS PRODUCT JOURNEY ====================
+       Kitting is a feeder into Mixing, not a shape-morph stage - it drops
+       raw components down two chutes into the side of the tank via its own
+       arm animation. The assembly-line product visual appears already
+       formed into an unformed ball right at the MIDDLE of the Mixing
+       station (not at its entrance), since that's where the tank has
+       actually mixed it into a workable ball. Six items travel from there
+       to Packaging's exit on one continuous 20s timeline, evenly staggered
+       so the line always looks busy. Each transforms shape at the
+       MIDPOINT of the station it's passing through:
+       unformed ball (mid-Mixing) -> formed patty (mid-Forming) -> cooked
+       product (mid-Cooking) -> sealed box (mid-Packaging).
+
+       This flow is decorative, not individually tag-bound per segment
+       (Perspective's Symbol dynamic properties don't expose animation
+       speed/pause). As a coarse approximation of the brief's "freeze in
+       place when stopped" rule, bind this whole block's (id below)
+       Visible dynamic property to NOT({Packaging/ConveyorBeltStatus}) so
+       the flow disappears the instant the belt breaks. For true
+       per-segment speed and pause fidelity, drive each conveyor's
+       roller/product Rotation or Position dynamic property from an
+       expression using {Simulator/TickCount} and the relevant speed ratio from
+       section 3 of the brief instead. -->
+  <g id="line-flow-indicator">
+  <g transform="translate(480, 515)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 1045 0" dur="20s" repeatCount="indefinite" begin="0.0s"/>
+      <!-- Stage 1: unformed ball, starts here at mid-Mixing, carries through Conveyor B, until mid-Forming -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="0.0s" keyTimes="0;0.2962;0.3062;1" values="1;1;0;0"/>
+        <circle r="12" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 2: formed patty, from mid-Forming through Conveyor C, until mid-Cooking -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="0.0s" keyTimes="0;0.2962;0.3062;0.6024;0.6124;1" values="0;0;1;1;0;0"/>
+        <ellipse rx="16" ry="6" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 3: cooked product, from mid-Cooking through Conveyor D, until mid-Packaging -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="0.0s" keyTimes="0;0.6024;0.6124;0.9087;0.9187;1" values="0;0;1;1;0;0"/>
+        <g><rect x="-18" y="-8" width="36" height="16" rx="3" fill="#cccccc"/><circle cx="-8" cy="0" r="5" fill="url(#cookedGrad)"/><circle cx="8" cy="0" r="5" fill="#276e18"/></g>
+      </g>
+      <!-- Stage 4: sealed box, from mid-Packaging through the exit, then the cycle resets -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="0.0s" keyTimes="0;0.9087;0.9187;1" values="0;0;1;1"/>
+        <g><rect x="-25" y="-17" width="50" height="35" rx="3" fill="#c29b38" stroke="#8d6e1e" stroke-width="2"/><path d="M -25 -7 L 25 -7 M 0 -7 L 0 18" stroke="#8d6e1e" stroke-width="1.5"/><circle cx="13" cy="5" r="7" fill="#00ff66"/><path d="M 9 5 L 12 8 L 17 2" stroke="#151921" stroke-width="2" fill="none"/></g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(480, 515)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 1045 0" dur="20s" repeatCount="indefinite" begin="-3.3333333333333335s"/>
+      <!-- Stage 1: unformed ball, starts here at mid-Mixing, carries through Conveyor B, until mid-Forming -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-3.3333333333333335s" keyTimes="0;0.2962;0.3062;1" values="1;1;0;0"/>
+        <circle r="12" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 2: formed patty, from mid-Forming through Conveyor C, until mid-Cooking -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-3.3333333333333335s" keyTimes="0;0.2962;0.3062;0.6024;0.6124;1" values="0;0;1;1;0;0"/>
+        <ellipse rx="16" ry="6" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 3: cooked product, from mid-Cooking through Conveyor D, until mid-Packaging -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-3.3333333333333335s" keyTimes="0;0.6024;0.6124;0.9087;0.9187;1" values="0;0;1;1;0;0"/>
+        <g><rect x="-18" y="-8" width="36" height="16" rx="3" fill="#cccccc"/><circle cx="-8" cy="0" r="5" fill="url(#cookedGrad)"/><circle cx="8" cy="0" r="5" fill="#276e18"/></g>
+      </g>
+      <!-- Stage 4: sealed box, from mid-Packaging through the exit, then the cycle resets -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-3.3333333333333335s" keyTimes="0;0.9087;0.9187;1" values="0;0;1;1"/>
+        <g><rect x="-25" y="-17" width="50" height="35" rx="3" fill="#c29b38" stroke="#8d6e1e" stroke-width="2"/><path d="M -25 -7 L 25 -7 M 0 -7 L 0 18" stroke="#8d6e1e" stroke-width="1.5"/><circle cx="13" cy="5" r="7" fill="#00ff66"/><path d="M 9 5 L 12 8 L 17 2" stroke="#151921" stroke-width="2" fill="none"/></g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(480, 515)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 1045 0" dur="20s" repeatCount="indefinite" begin="-6.666666666666667s"/>
+      <!-- Stage 1: unformed ball, starts here at mid-Mixing, carries through Conveyor B, until mid-Forming -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-6.666666666666667s" keyTimes="0;0.2962;0.3062;1" values="1;1;0;0"/>
+        <circle r="12" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 2: formed patty, from mid-Forming through Conveyor C, until mid-Cooking -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-6.666666666666667s" keyTimes="0;0.2962;0.3062;0.6024;0.6124;1" values="0;0;1;1;0;0"/>
+        <ellipse rx="16" ry="6" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 3: cooked product, from mid-Cooking through Conveyor D, until mid-Packaging -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-6.666666666666667s" keyTimes="0;0.6024;0.6124;0.9087;0.9187;1" values="0;0;1;1;0;0"/>
+        <g><rect x="-18" y="-8" width="36" height="16" rx="3" fill="#cccccc"/><circle cx="-8" cy="0" r="5" fill="url(#cookedGrad)"/><circle cx="8" cy="0" r="5" fill="#276e18"/></g>
+      </g>
+      <!-- Stage 4: sealed box, from mid-Packaging through the exit, then the cycle resets -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-6.666666666666667s" keyTimes="0;0.9087;0.9187;1" values="0;0;1;1"/>
+        <g><rect x="-25" y="-17" width="50" height="35" rx="3" fill="#c29b38" stroke="#8d6e1e" stroke-width="2"/><path d="M -25 -7 L 25 -7 M 0 -7 L 0 18" stroke="#8d6e1e" stroke-width="1.5"/><circle cx="13" cy="5" r="7" fill="#00ff66"/><path d="M 9 5 L 12 8 L 17 2" stroke="#151921" stroke-width="2" fill="none"/></g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(480, 515)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 1045 0" dur="20s" repeatCount="indefinite" begin="-10.0s"/>
+      <!-- Stage 1: unformed ball, starts here at mid-Mixing, carries through Conveyor B, until mid-Forming -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-10.0s" keyTimes="0;0.2962;0.3062;1" values="1;1;0;0"/>
+        <circle r="12" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 2: formed patty, from mid-Forming through Conveyor C, until mid-Cooking -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-10.0s" keyTimes="0;0.2962;0.3062;0.6024;0.6124;1" values="0;0;1;1;0;0"/>
+        <ellipse rx="16" ry="6" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 3: cooked product, from mid-Cooking through Conveyor D, until mid-Packaging -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-10.0s" keyTimes="0;0.6024;0.6124;0.9087;0.9187;1" values="0;0;1;1;0;0"/>
+        <g><rect x="-18" y="-8" width="36" height="16" rx="3" fill="#cccccc"/><circle cx="-8" cy="0" r="5" fill="url(#cookedGrad)"/><circle cx="8" cy="0" r="5" fill="#276e18"/></g>
+      </g>
+      <!-- Stage 4: sealed box, from mid-Packaging through the exit, then the cycle resets -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-10.0s" keyTimes="0;0.9087;0.9187;1" values="0;0;1;1"/>
+        <g><rect x="-25" y="-17" width="50" height="35" rx="3" fill="#c29b38" stroke="#8d6e1e" stroke-width="2"/><path d="M -25 -7 L 25 -7 M 0 -7 L 0 18" stroke="#8d6e1e" stroke-width="1.5"/><circle cx="13" cy="5" r="7" fill="#00ff66"/><path d="M 9 5 L 12 8 L 17 2" stroke="#151921" stroke-width="2" fill="none"/></g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(480, 515)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 1045 0" dur="20s" repeatCount="indefinite" begin="-13.333333333333334s"/>
+      <!-- Stage 1: unformed ball, starts here at mid-Mixing, carries through Conveyor B, until mid-Forming -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-13.333333333333334s" keyTimes="0;0.2962;0.3062;1" values="1;1;0;0"/>
+        <circle r="12" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 2: formed patty, from mid-Forming through Conveyor C, until mid-Cooking -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-13.333333333333334s" keyTimes="0;0.2962;0.3062;0.6024;0.6124;1" values="0;0;1;1;0;0"/>
+        <ellipse rx="16" ry="6" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 3: cooked product, from mid-Cooking through Conveyor D, until mid-Packaging -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-13.333333333333334s" keyTimes="0;0.6024;0.6124;0.9087;0.9187;1" values="0;0;1;1;0;0"/>
+        <g><rect x="-18" y="-8" width="36" height="16" rx="3" fill="#cccccc"/><circle cx="-8" cy="0" r="5" fill="url(#cookedGrad)"/><circle cx="8" cy="0" r="5" fill="#276e18"/></g>
+      </g>
+      <!-- Stage 4: sealed box, from mid-Packaging through the exit, then the cycle resets -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-13.333333333333334s" keyTimes="0;0.9087;0.9187;1" values="0;0;1;1"/>
+        <g><rect x="-25" y="-17" width="50" height="35" rx="3" fill="#c29b38" stroke="#8d6e1e" stroke-width="2"/><path d="M -25 -7 L 25 -7 M 0 -7 L 0 18" stroke="#8d6e1e" stroke-width="1.5"/><circle cx="13" cy="5" r="7" fill="#00ff66"/><path d="M 9 5 L 12 8 L 17 2" stroke="#151921" stroke-width="2" fill="none"/></g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(480, 515)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 1045 0" dur="20s" repeatCount="indefinite" begin="-16.666666666666668s"/>
+      <!-- Stage 1: unformed ball, starts here at mid-Mixing, carries through Conveyor B, until mid-Forming -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-16.666666666666668s" keyTimes="0;0.2962;0.3062;1" values="1;1;0;0"/>
+        <circle r="12" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 2: formed patty, from mid-Forming through Conveyor C, until mid-Cooking -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-16.666666666666668s" keyTimes="0;0.2962;0.3062;0.6024;0.6124;1" values="0;0;1;1;0;0"/>
+        <ellipse rx="16" ry="6" fill="url(#doughGrad)"/>
+      </g>
+      <!-- Stage 3: cooked product, from mid-Cooking through Conveyor D, until mid-Packaging -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-16.666666666666668s" keyTimes="0;0.6024;0.6124;0.9087;0.9187;1" values="0;0;1;1;0;0"/>
+        <g><rect x="-18" y="-8" width="36" height="16" rx="3" fill="#cccccc"/><circle cx="-8" cy="0" r="5" fill="url(#cookedGrad)"/><circle cx="8" cy="0" r="5" fill="#276e18"/></g>
+      </g>
+      <!-- Stage 4: sealed box, from mid-Packaging through the exit, then the cycle resets -->
+      <g>
+        <animate attributeName="opacity" dur="20s" repeatCount="indefinite" begin="-16.666666666666668s" keyTimes="0;0.9087;0.9187;1" values="0;0;1;1"/>
+        <g><rect x="-25" y="-17" width="50" height="35" rx="3" fill="#c29b38" stroke="#8d6e1e" stroke-width="2"/><path d="M -25 -7 L 25 -7 M 0 -7 L 0 18" stroke="#8d6e1e" stroke-width="1.5"/><circle cx="13" cy="5" r="7" fill="#00ff66"/><path d="M 9 5 L 12 8 L 17 2" stroke="#151921" stroke-width="2" fill="none"/></g>
+      </g>
+    </g>
+  </g>
+  </g>
+
+</svg>

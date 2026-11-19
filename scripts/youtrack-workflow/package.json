@@ -1,0 +1,6 @@
+{
+  "name": "ignition-stage-hook",
+  "title": "Ignition Stage Hook",
+  "version": "1.0.0",
+  "description": "POSTs to the Ignition gateway when an Ignition Issues card changes column, so the Validate and Implement agents fire."
+}

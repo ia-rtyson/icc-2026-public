@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "Gateway + icc-2026 project audit log on the postgres connection; 7-day retention.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "unknown",
+      "timestamp": "2026-09-30T15:59:29Z"
+    },
+    "uuid": "c44594d5-9cd8-4032-bf2e-c77e20191911",
+    "lastModificationSignature": "dab9b0090613dd522a7cdc7ba3c399fa47f78f9f93853a8baf436acc3ee1c86e",
+    "enabled": true
+  }
+}

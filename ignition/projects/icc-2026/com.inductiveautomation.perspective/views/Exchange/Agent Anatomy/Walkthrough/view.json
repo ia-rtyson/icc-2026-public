@@ -1,0 +1,1175 @@
+{
+  "custom": {
+    "modelClass": "exchange/agent-anatomy/part exchange/agent-anatomy/model exchange/agent-anatomy/live",
+    "promptClass": "exchange/agent-anatomy/part exchange/agent-anatomy/prompt exchange/agent-anatomy/live",
+    "stageClass": "exchange/agent-anatomy/stage exchange/agent-anatomy/on-model exchange/agent-anatomy/on-prompt exchange/agent-anatomy/on-tools",
+    "step": 3,
+    "toolsClass": "exchange/agent-anatomy/part exchange/agent-anatomy/tools exchange/agent-anatomy/live"
+  },
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 900,
+      "width": 1600
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-100)",
+                    "fontSize": "26px",
+                    "fontWeight": 700
+                  },
+                  "text": "What is an AI agent?"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Titles"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": 2
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "gap": 14
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "N"
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "16px",
+                            "fontWeight": 700
+                          },
+                          "text": "2"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Badge"
+                    },
+                    "position": {
+                      "basis": "34px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "direction": "column",
+                      "justify": "center",
+                      "style": {
+                        "classes": "exchange/agent-anatomy/badge",
+                        "height": "34px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Glyph"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#3987E5",
+                      "path": "material/description",
+                      "style": {
+                        "height": 22,
+                        "width": 22
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Kicker"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#3987E5",
+                            "fontSize": "15px",
+                            "fontWeight": 700,
+                            "letterSpacing": "0.08em"
+                          },
+                          "text": "SYSTEM PROMPT"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Sub"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-60)",
+                            "fontSize": "12.5px"
+                          },
+                          "text": "What it is, and how it works."
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "HeadText"
+                    },
+                    "position": {
+                      "basis": "0px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": 1
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Head"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "row",
+                  "style": {
+                    "gap": 12
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Text"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-90)",
+                        "fontFamily": "\u0027Roboto Mono\u0027, \u0027Consolas\u0027, monospace",
+                        "fontSize": "13px",
+                        "lineHeight": "1.45",
+                        "whiteSpace": "pre-wrap"
+                      },
+                      "text": "You are an alarm notification assistant for an\nIgnition SCADA system. You get only the metadata\nfor a newly active alarm. Investigate it yourself.\n\nStep 1. Browse from the alarm\u0027s source tag out to\nsiblings on the same equipment, then to upstream\nand downstream equipment. Invent nothing.\n\nStep 2. Query tag history once -- seconds_back\u003d60,\nevery tag path in one call. Judge each trend\nyourself: rising, falling or steady, how fast.\n\nThen write a plain-text email, four to six short\nsentences. Never state a value you did not read.\n\nExample:\n  The Belt Snap alarm on Conveyor 3 is active.\n\n  Problem: This conveyor feeds Packaging Infeed.\n  Current and speed dropped to zero at the snap.\n\n  Potential Disruption: Packaging Infeed runs\n  empty in roughly 8 to 10 minutes.\n\n  Resolution: Inspect belt tension and alignment\n  before restarting."
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "borderRadius": "8px",
+                    "classes": "exchange/agent-anatomy/code",
+                    "minHeight": "0px",
+                    "overflow": "auto",
+                    "padding": "14px 16px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Foot"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12.5px",
+                    "whiteSpace": "normal"
+                  },
+                  "text": "Written once, in plain English. Change it and the agent\u0027s behaviour changes on the next question."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "PromptCard"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.promptClass"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "borderRadius": "10px",
+                "classes": "exchange/agent-anatomy/part exchange/agent-anatomy/prompt exchange/agent-anatomy/live",
+                "gap": 14,
+                "minHeight": "0px",
+                "overflow": "hidden",
+                "padding": "18px 20px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "N"
+                            },
+                            "props": {
+                              "style": {
+                                "fontSize": "16px",
+                                "fontWeight": 700
+                              },
+                              "text": "1"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "Badge"
+                        },
+                        "position": {
+                          "basis": "34px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "alignItems": "center",
+                          "direction": "column",
+                          "justify": "center",
+                          "style": {
+                            "classes": "exchange/agent-anatomy/badge",
+                            "height": "34px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "Glyph"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "color": "#199E70",
+                          "path": "material/psychology",
+                          "style": {
+                            "height": 22,
+                            "width": 22
+                          }
+                        },
+                        "type": "ia.display.icon"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Kicker"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "#199E70",
+                                "fontSize": "15px",
+                                "fontWeight": 700,
+                                "letterSpacing": "0.08em"
+                              },
+                              "text": "MODEL CONNECTIVITY"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Sub"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "12.5px"
+                              },
+                              "text": "The brain of the operation."
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "HeadText"
+                        },
+                        "position": {
+                          "basis": "0px",
+                          "grow": 1
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "gap": 1
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Head"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "direction": "row",
+                      "style": {
+                        "gap": 12
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Key"
+                            },
+                            "position": {
+                              "basis": "82px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "11px",
+                                "fontWeight": 700,
+                                "letterSpacing": "0.08em"
+                              },
+                              "text": "PROVIDER"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-90)",
+                                "fontFamily": "\u0027Roboto Mono\u0027, \u0027Consolas\u0027, monospace",
+                                "fontSize": "13px",
+                                "whiteSpace": "normal"
+                              },
+                              "text": "OpenRouter, OpenAI, Ollama (locally hosted) or Anthropic"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "ProviderRow"
+                        },
+                        "props": {
+                          "alignItems": "baseline",
+                          "direction": "row",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Key"
+                            },
+                            "position": {
+                              "basis": "82px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-60)",
+                                "fontSize": "11px",
+                                "fontWeight": 700,
+                                "letterSpacing": "0.08em"
+                              },
+                              "text": "MODEL"
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "Value"
+                            },
+                            "props": {
+                              "style": {
+                                "color": "var(--neutral-90)",
+                                "fontFamily": "\u0027Roboto Mono\u0027, \u0027Consolas\u0027, monospace",
+                                "fontSize": "13px",
+                                "whiteSpace": "normal"
+                              },
+                              "text": "Bring your own model"
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "ModelRow"
+                        },
+                        "props": {
+                          "alignItems": "baseline",
+                          "direction": "row",
+                          "style": {
+                            "gap": 10
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Body"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": 7
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Foot"
+                    },
+                    "props": {
+                      "style": {
+                        "color": "var(--neutral-60)",
+                        "fontSize": "12.5px",
+                        "whiteSpace": "normal"
+                      },
+                      "text": "Swap this for a better model and the same agent gets better. The prompt and the tools do not change."
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "name": "ModelCard"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.classes": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.modelClass"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "backgroundColor": "var(--neutral-20)",
+                    "borderRadius": "10px",
+                    "classes": "exchange/agent-anatomy/part exchange/agent-anatomy/model exchange/agent-anatomy/live",
+                    "gap": 10,
+                    "minHeight": "0px",
+                    "overflow": "hidden",
+                    "padding": "15px 20px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Figure"
+                    },
+                    "position": {
+                      "basis": "0px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "elements": [
+                        {
+                          "cx": "220",
+                          "cy": "176",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "id": "aura",
+                          "name": "circle",
+                          "r": "150",
+                          "stroke": {
+                            "dasharray": "3 15",
+                            "linecap": "round",
+                            "linejoin": "round",
+                            "paint": "#3C464E",
+                            "width": "1.2"
+                          },
+                          "type": "circle"
+                        },
+                        {
+                          "cx": "220",
+                          "cy": "176",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "id": "aura2",
+                          "name": "circle",
+                          "r": "120",
+                          "stroke": {
+                            "dasharray": "2 20",
+                            "linecap": "round",
+                            "linejoin": "round",
+                            "paint": "#2E373E",
+                            "width": "1"
+                          },
+                          "type": "circle"
+                        },
+                        {
+                          "d": "M 0 176 L 440 176 L 440 330 L 0 330 Z",
+                          "fill": {
+                            "paint": "var(--neutral-10)"
+                          },
+                          "id": "aura-mask",
+                          "name": "path",
+                          "stroke": {
+                            "paint": "none"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "elements": [
+                            {
+                              "cx": "220",
+                              "cy": "86",
+                              "fill": {
+                                "paint": "var(--neutral-10)"
+                              },
+                              "id": "head",
+                              "name": "circle",
+                              "r": "44",
+                              "stroke": {
+                                "linecap": "round",
+                                "linejoin": "round",
+                                "paint": "#4D5358",
+                                "width": "10"
+                              },
+                              "type": "circle"
+                            },
+                            {
+                              "cx": "220",
+                              "cy": "86",
+                              "fill": {
+                                "paint": "#199E70"
+                              },
+                              "id": "core",
+                              "name": "circle",
+                              "opacity": "0",
+                              "r": "16",
+                              "type": "circle"
+                            },
+                            {
+                              "d": "M 126 292 C 126 212 168 172 220 172 C 272 172 314 212 314 292",
+                              "fill": {
+                                "paint": "var(--neutral-10)"
+                              },
+                              "id": "torso",
+                              "name": "path",
+                              "stroke": {
+                                "linecap": "round",
+                                "linejoin": "round",
+                                "paint": "#4D5358",
+                                "width": "10"
+                              },
+                              "type": "path"
+                            },
+                            {
+                              "cx": "126",
+                              "cy": "266",
+                              "fill": {
+                                "paint": "#4D5358"
+                              },
+                              "id": "hand-l",
+                              "name": "circle",
+                              "r": "11",
+                              "type": "circle"
+                            },
+                            {
+                              "cx": "314",
+                              "cy": "266",
+                              "fill": {
+                                "paint": "#4D5358"
+                              },
+                              "id": "hand-r",
+                              "name": "circle",
+                              "r": "11",
+                              "type": "circle"
+                            }
+                          ],
+                          "id": "figure",
+                          "name": "group",
+                          "type": "group"
+                        },
+                        {
+                          "d": "M 114 266 L 8 266",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "id": "link-prompt",
+                          "name": "path",
+                          "stroke": {
+                            "linecap": "butt",
+                            "linejoin": "round",
+                            "paint": "#3987E5",
+                            "width": "2"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "M 326 266 L 432 266",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "id": "link-tools",
+                          "name": "path",
+                          "stroke": {
+                            "linecap": "butt",
+                            "linejoin": "round",
+                            "paint": "#D95926",
+                            "width": "2"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "d": "M 220 36 L 220 4",
+                          "fill": {
+                            "paint": "none"
+                          },
+                          "id": "link-model",
+                          "name": "path",
+                          "stroke": {
+                            "linecap": "butt",
+                            "linejoin": "round",
+                            "paint": "#199E70",
+                            "width": "2"
+                          },
+                          "type": "path"
+                        },
+                        {
+                          "cx": "8",
+                          "cy": "266",
+                          "fill": {
+                            "paint": "#3987E5"
+                          },
+                          "id": "dot-prompt",
+                          "name": "circle",
+                          "opacity": "0",
+                          "r": "5",
+                          "type": "circle"
+                        },
+                        {
+                          "cx": "432",
+                          "cy": "266",
+                          "fill": {
+                            "paint": "#D95926"
+                          },
+                          "id": "dot-tools",
+                          "name": "circle",
+                          "opacity": "0",
+                          "r": "5",
+                          "type": "circle"
+                        },
+                        {
+                          "cx": "220",
+                          "cy": "4",
+                          "fill": {
+                            "paint": "#199E70"
+                          },
+                          "id": "dot-model",
+                          "name": "circle",
+                          "opacity": "0",
+                          "r": "5",
+                          "type": "circle"
+                        },
+                        {
+                          "fill": {
+                            "paint": "#F2F4F8"
+                          },
+                          "fontSize": "28",
+                          "id": "caption",
+                          "name": "text",
+                          "text": "THE AGENT",
+                          "textAnchor": "middle",
+                          "type": "text",
+                          "x": "220",
+                          "y": "326"
+                        }
+                      ],
+                      "preserveAspectRatio": "xMidYMid",
+                      "style": {
+                        "height": "100%",
+                        "width": "100%"
+                      },
+                      "viewBox": "0 0 440 330"
+                    },
+                    "type": "ia.shapes.svg"
+                  }
+                ],
+                "meta": {
+                  "name": "FigureWrap"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.style.classes": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.stageClass"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/agent-anatomy/stage exchange/agent-anatomy/on-model exchange/agent-anatomy/on-prompt exchange/agent-anatomy/on-tools",
+                    "minHeight": "0px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "Center"
+            },
+            "position": {
+              "basis": "500px",
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gap": 14,
+                "minHeight": "0px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "N"
+                        },
+                        "props": {
+                          "style": {
+                            "fontSize": "16px",
+                            "fontWeight": 700
+                          },
+                          "text": "3"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "Badge"
+                    },
+                    "position": {
+                      "basis": "34px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "direction": "column",
+                      "justify": "center",
+                      "style": {
+                        "classes": "exchange/agent-anatomy/badge",
+                        "height": "34px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Glyph"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "color": "#D95926",
+                      "path": "material/build",
+                      "style": {
+                        "height": 22,
+                        "width": 22
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Kicker"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D95926",
+                            "fontSize": "15px",
+                            "fontWeight": 700,
+                            "letterSpacing": "0.08em"
+                          },
+                          "text": "TOOLS"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Sub"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-60)",
+                            "fontSize": "12.5px"
+                          },
+                          "text": "What it can actually do."
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "HeadText"
+                    },
+                    "position": {
+                      "basis": "0px",
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "gap": 1
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Head"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "direction": "row",
+                  "style": {
+                    "gap": 12
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Name"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D95926",
+                            "fontFamily": "\u0027Roboto Mono\u0027, \u0027Consolas\u0027, monospace",
+                            "fontSize": "13.5px",
+                            "fontWeight": 700
+                          },
+                          "text": "browse_tags"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Desc"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-80)",
+                            "fontSize": "12.5px",
+                            "whiteSpace": "normal"
+                          },
+                          "text": "Lists one folder level of the tag tree -- what equipment and tags exist. How it finds the alarm\u0027s siblings and its upstream and downstream neighbours."
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Args"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-60)",
+                            "fontFamily": "\u0027Roboto Mono\u0027, \u0027Consolas\u0027, monospace",
+                            "fontSize": "11.5px",
+                            "whiteSpace": "normal"
+                          },
+                          "text": "path"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "BrowseTagsTool"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "borderRadius": "7px",
+                        "classes": "exchange/agent-anatomy/tool",
+                        "gap": 3,
+                        "padding": "11px 13px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Name"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "#D95926",
+                            "fontFamily": "\u0027Roboto Mono\u0027, \u0027Consolas\u0027, monospace",
+                            "fontSize": "13.5px",
+                            "fontWeight": 700
+                          },
+                          "text": "query_tag_history"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Desc"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-80)",
+                            "fontSize": "12.5px",
+                            "whiteSpace": "normal"
+                          },
+                          "text": "Time-series values for one or more tags, one column each. Batched on purpose: every tag in a single call, so the agent can see which value moved first."
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Args"
+                        },
+                        "props": {
+                          "style": {
+                            "color": "var(--neutral-60)",
+                            "fontFamily": "\u0027Roboto Mono\u0027, \u0027Consolas\u0027, monospace",
+                            "fontSize": "11.5px",
+                            "whiteSpace": "normal"
+                          },
+                          "text": "tag_paths[]  ·  seconds_back  ·  event_id  ·  aggregation_mode"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "QueryTagHistoryTool"
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "borderRadius": "7px",
+                        "classes": "exchange/agent-anatomy/tool",
+                        "gap": 3,
+                        "padding": "11px 13px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Body"
+                },
+                "position": {
+                  "basis": "0px",
+                  "grow": 1
+                },
+                "props": {
+                  "direction": "column",
+                  "style": {
+                    "gap": 10,
+                    "minHeight": "0px",
+                    "overflow": "auto"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Foot"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12.5px",
+                    "whiteSpace": "normal"
+                  },
+                  "text": "Two named functions, both read-only, pointed at the tag tree and the historian. Nothing else is reachable."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "ToolsCard"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.toolsClass"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "borderRadius": "10px",
+                "classes": "exchange/agent-anatomy/part exchange/agent-anatomy/tools exchange/agent-anatomy/live",
+                "gap": 14,
+                "minHeight": "0px",
+                "overflow": "hidden",
+                "padding": "18px 20px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Stage"
+        },
+        "position": {
+          "basis": "0px",
+          "grow": 1
+        },
+        "props": {
+          "alignItems": "stretch",
+          "direction": "row",
+          "style": {
+            "gap": 18,
+            "minHeight": "0px",
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "gap": 16,
+        "overflow": "hidden",
+        "padding": "18px 24px 22px 24px"
+      }
+    },
+    "scripts": {
+      "componentScriptExtensions": null,
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-24T00:00:00Z"
+    },
+    "title": "read_tag_values",
+    "description": "Reads the current (live) value, quality, and timestamp for one or more tags. Use this to check the present state of the line during or after an alarm flood -- e.g. whether a process value is still out of range, whether equipment has recovered, or what a station's status is right now. Paths without a [provider] prefix are assumed to be in the [default] provider. At most 50 paths per call. This is a read-only operation.",
+    "parameters": [
+      {
+        "name": "tag_paths",
+        "description": "One or more tag paths, either comma-separated or as a JSON array string. Paths without a [provider] prefix are assumed [default], e.g. 'Exchange/Alarm Flood/Site1/Area1/Line1/Kitting/BinLevel'.",
+        "type": "STRING",
+        "required": true
+      }
+    ]
+  }
+}

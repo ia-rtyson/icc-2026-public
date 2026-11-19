@@ -1,0 +1,76 @@
+{
+  "custom": {},
+  "params": {
+    "header": "",
+    "footer": "",
+    "tagPath": "",
+    "valueName": ""
+  },
+  "propConfig": {
+    "params.header": { "paramDirection": "input", "persistent": true },
+    "params.footer": { "paramDirection": "input", "persistent": true },
+    "params.tagPath": { "paramDirection": "input", "persistent": true },
+    "params.valueName": { "paramDirection": "input", "persistent": true }
+  },
+  "props": {
+    "defaultSize": { "height": 260, "width": 260 }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": { "name": "Header" },
+        "position": { "basis": "auto", "grow": 0, "shrink": 0 },
+        "propConfig": {
+          "props.text": { "binding": { "config": { "path": "view.params.header" }, "type": "property" } }
+        },
+        "props": { "style": { "fontSize": "13px", "fontWeight": 600 } },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": { "name": "Gauge" },
+        "position": { "basis": "auto", "grow": 1 },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "expression",
+                "tagPath": "{view.params.tagPath}"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "label": { "units": "" }
+        },
+        "type": "ia.chart.simple-gauge"
+      },
+      {
+        "meta": { "name": "Caption" },
+        "position": { "basis": "auto", "grow": 0, "shrink": 0 },
+        "propConfig": {
+          "props.text": { "binding": { "config": { "path": "view.params.valueName" }, "type": "property" } }
+        },
+        "props": { "style": { "color": "var(--neutral-50)", "fontSize": "12px", "textAlign": "center" } },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": { "name": "Footer" },
+        "position": { "basis": "auto", "grow": 0, "shrink": 0 },
+        "propConfig": {
+          "props.text": { "binding": { "config": { "path": "view.params.footer" }, "type": "property" } }
+        },
+        "props": { "style": { "color": "var(--neutral-50)", "fontSize": "11px" } },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": { "name": "root" },
+    "props": {
+      "alignItems": "center",
+      "direction": "column",
+      "style": { "padding": "4px" }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,608 @@
+{
+  "custom": {
+    "pageStatus": {
+      "missing": {
+        "deDE": 0,
+        "enUS": 0,
+        "esMX": 0,
+        "frFR": 0
+      },
+      "missingText": {
+        "deDE": "",
+        "enUS": "",
+        "esMX": "",
+        "frFR": ""
+      },
+      "terms": 0,
+      "translated": {
+        "deDE": false,
+        "enUS": true,
+        "esMX": false,
+        "frFR": false
+      }
+    },
+    "translateStatus": "Ready"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.pagePath": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "path": "page.props.path"
+        },
+        "type": "property"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\t# A new page starts on its own status, not the last page\u0027s \"Done: ...\"\n\tself.custom.translateStatus \u003d \u0027Ready\u0027"
+      }
+    },
+    "custom.pageStatus": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "expression": "runScript(\u0027exchange.translation.ui.pageStatus\u0027, 0, {view.custom.pagePath}, {view.custom.translateStatus})"
+        },
+        "type": "expr"
+      },
+      "persistent": false
+    },
+    "custom.translateStatus": {
+      "access": "PRIVATE",
+      "persistent": false
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 43,
+      "width": 775
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "100%"
+            },
+            "propConfig": {
+              "props.path": {
+                "binding": {
+                  "config": {
+                    "expression": "if({parent.custom.dockIsOpen}, \u0027material/menu_open\u0027, \u0027material/menu\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "custom": {
+          "dockIsOpen": 0
+        },
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tif self.custom.dockIsOpen \u003d\u003d 1:\n\t\tsystem.perspective.closeDock(\u0027leftNavigation\u0027)\n\t\tself.custom.dockIsOpen \u003d 0\n\telse:\n\t\tsystem.perspective.openDock(\u0027leftNavigation\u0027)\n\t\tself.custom.dockIsOpen \u003d 1"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "FlexIcon"
+        },
+        "position": {
+          "basis": "52.5px"
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "expression": "{page.props.dimensions.primaryView.width}\u003c650"
+              },
+              "enabled": false,
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "zoom",
+            "cursor": "pointer",
+            "overflow": "hidden",
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 5
+          }
+        },
+        "scripts": {
+          "componentScriptExtensions": null,
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "dockInteraction",
+              "pageScope": false,
+              "script": "\tif payload[\u0027interaction\u0027] \u003d\u003d \u0027open\u0027:\n\t\tself.custom.dockIsOpen \u003d 1\n\tif payload[\u0027interaction\u0027] \u003d\u003d \u0027close\u0027:\n\t\tself.custom.dockIsOpen \u003d 0\n\t\t",
+              "sessionScope": true,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Logo"
+            },
+            "props": {
+              "altText": "Ignition",
+              "fit": {
+                "mode": "contain"
+              },
+              "source": "/system/images/exchange/demo/ignition-logo.png"
+            },
+            "type": "ia.display.image"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.navigate(\u0027/\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "FlexLogo"
+        },
+        "position": {
+          "basis": "52.5px"
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "zoom",
+            "cursor": "pointer",
+            "overflow": "hidden",
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 5
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "FlexSpace"
+        },
+        "position": {
+          "basis": "150px",
+          "grow": 1
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "overflow": "hidden",
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 5
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# session.props.locale is the switch: writing it re-renders every\n\t# open view in that language using whatever terms are registered.\n\tself.session.props.locale \u003d \u0027en-US\u0027\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_loc_EN"
+            },
+            "position": {
+              "basis": "42px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.pageStatus.translated.enUS}, \u0027var(--success)\u0027, \u0027var(--neutral-40)\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.boxShadow": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027en-US\u0027, \u00270 0 0 2px var(--callToAction)\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.fontWeight": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027en-US\u0027, \u0027bold\u0027, \u0027normal\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "12px",
+                "height": "30px",
+                "minHeight": "30px",
+                "padding": "0 4px"
+              },
+              "text": "EN"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# session.props.locale is the switch: writing it re-renders every\n\t# open view in that language using whatever terms are registered.\n\tself.session.props.locale \u003d \u0027es-MX\u0027\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_loc_ES"
+            },
+            "position": {
+              "basis": "42px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.pageStatus.translated.esMX}, \u0027var(--success)\u0027, \u0027var(--neutral-40)\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.boxShadow": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027es-MX\u0027, \u00270 0 0 2px var(--callToAction)\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.fontWeight": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027es-MX\u0027, \u0027bold\u0027, \u0027normal\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "12px",
+                "height": "30px",
+                "minHeight": "30px",
+                "padding": "0 4px"
+              },
+              "text": "ES"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# session.props.locale is the switch: writing it re-renders every\n\t# open view in that language using whatever terms are registered.\n\tself.session.props.locale \u003d \u0027de-DE\u0027\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_loc_DE"
+            },
+            "position": {
+              "basis": "42px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.pageStatus.translated.deDE}, \u0027var(--success)\u0027, \u0027var(--neutral-40)\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.boxShadow": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027de-DE\u0027, \u00270 0 0 2px var(--callToAction)\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.fontWeight": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027de-DE\u0027, \u0027bold\u0027, \u0027normal\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "12px",
+                "height": "30px",
+                "minHeight": "30px",
+                "padding": "0 4px"
+              },
+              "text": "DE"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# session.props.locale is the switch: writing it re-renders every\n\t# open view in that language using whatever terms are registered.\n\tself.session.props.locale \u003d \u0027fr-FR\u0027\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_loc_FR"
+            },
+            "position": {
+              "basis": "42px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.backgroundColor": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.pageStatus.translated.frFR}, \u0027var(--success)\u0027, \u0027var(--neutral-40)\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.boxShadow": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027fr-FR\u0027, \u00270 0 0 2px var(--callToAction)\u0027, \u0027none\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.style.fontWeight": {
+                "binding": {
+                  "config": {
+                    "expression": "if({session.props.locale} \u003d \u0027fr-FR\u0027, \u0027bold\u0027, \u0027normal\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "12px",
+                "height": "30px",
+                "minHeight": "30px",
+                "padding": "0 4px"
+              },
+              "text": "FR"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.translateStatus \u003d \u0027Translating...\u0027\n\tself.view.custom.translateStatus \u003d exchange.translation.ui.translatePage(self.view.custom.pagePath, self.session.props.locale)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Button_translate"
+            },
+            "position": {
+              "basis": "100px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "expression": "!(case({session.props.locale}, \u0027es-MX\u0027, {view.custom.pageStatus.translated.esMX}, \u0027de-DE\u0027, {view.custom.pageStatus.translated.deDE}, \u0027fr-FR\u0027, {view.custom.pageStatus.translated.frFR}, true)) \u0026\u0026 {view.custom.pageStatus.terms} \u003e 0"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "12px",
+                "height": "30px",
+                "minHeight": "30px",
+                "padding": "0 10px"
+              },
+              "text": "Translate"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "StatusLabel",
+              "tooltip": {
+                "enabled": false,
+                "text": ""
+              }
+            },
+            "position": {
+              "basis": "150px"
+            },
+            "propConfig": {
+              "meta.tooltip.enabled": {
+                "binding": {
+                  "config": {
+                    "expression": "len(case({session.props.locale}, \u0027es-MX\u0027, {view.custom.pageStatus.missingText.esMX}, \u0027de-DE\u0027, {view.custom.pageStatus.missingText.deDE}, \u0027fr-FR\u0027, {view.custom.pageStatus.missingText.frFR}, \u0027\u0027)) \u003e 0"
+                  },
+                  "type": "expr"
+                }
+              },
+              "meta.tooltip.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\u0027Untranslated:\n\u0027 + case({session.props.locale}, \u0027es-MX\u0027, {view.custom.pageStatus.missingText.esMX}, \u0027de-DE\u0027, {view.custom.pageStatus.missingText.deDE}, \u0027fr-FR\u0027, {view.custom.pageStatus.missingText.frFR}, \u0027\u0027)"
+                  },
+                  "type": "expr"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if({view.custom.translateStatus} !\u003d \u0027Ready\u0027, {view.custom.translateStatus}, if({view.custom.pageStatus.terms} \u003d 0, \u0027Nothing to translate\u0027, if({session.props.locale} \u003d \u0027en-US\u0027, \u0027English (source)\u0027, if(case({session.props.locale}, \u0027es-MX\u0027, {view.custom.pageStatus.translated.esMX}, \u0027de-DE\u0027, {view.custom.pageStatus.translated.deDE}, \u0027fr-FR\u0027, {view.custom.pageStatus.translated.frFR}, true), \u0027Translated\u0027, case({session.props.locale}, \u0027es-MX\u0027, {view.custom.pageStatus.missing.esMX}, \u0027de-DE\u0027, {view.custom.pageStatus.missing.deDE}, \u0027fr-FR\u0027, {view.custom.pageStatus.missing.frFR}, 0) + \u0027 terms untranslated\u0027))))"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "11px",
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap"
+              },
+              "text": "Ready"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "FlexTranslate"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "flex-end",
+          "style": {
+            "gap": "4px",
+            "overflow": "visible",
+            "paddingRight": "8px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.toggleDock(\u0027page-info\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Icon",
+              "tooltip": {
+                "enabled": true,
+                "location": "s",
+                "text": "About this page"
+              }
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "props": {
+              "path": "material/info"
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "FlexInfo"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "justify": "center",
+          "style": {
+            "classes": "zoom",
+            "cursor": "pointer",
+            "overflow": "hidden",
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 5
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "backgroundColor": "var(--neutral-30)",
+        "overflow": "hidden"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

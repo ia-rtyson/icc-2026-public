@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "Same SQLite file as launchpad_oee, but with a 99-connection pool",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "idp:default:/usr:admin",
+      "timestamp": "2026-09-17T20:45:26Z"
+    },
+    "uuid": "91613bfd-f233-4f17-a925-9e45350863ab",
+    "lastModificationSignature": "3c420e20cbbd145bd4beda5dcf3c39a02b3cb08fd755bb041d64e62940d9c5b5",
+    "enabled": true
+  }
+}

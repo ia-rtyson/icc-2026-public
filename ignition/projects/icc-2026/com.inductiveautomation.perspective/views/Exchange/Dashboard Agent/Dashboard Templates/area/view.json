@@ -1,0 +1,156 @@
+{
+  "custom": {
+    "payload": {}
+  },
+  "params": {
+    "footer": "",
+    "header": "",
+    "minutesBack": 30,
+    "points": 180,
+    "tagPaths": ""
+  },
+  "propConfig": {
+    "custom.payload": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "expression": "runScript(\"exchange.dashboard.widgets.historySeries\", 5000, {view.params.tagPaths}, {view.params.minutesBack}, {view.params.points})"
+        },
+        "type": "expr"
+      }
+    },
+    "params.footer": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.header": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.minutesBack": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.points": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPaths": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 240,
+      "width": 480
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.header"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-90)",
+            "fontSize": "12px",
+            "fontWeight": 600,
+            "letterSpacing": "0.04em",
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "textTransform": "uppercase",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Chart"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.payload.data"
+              },
+              "type": "property"
+            }
+          },
+          "props.series": {
+            "binding": {
+              "config": {
+                "path": "view.custom.payload.series"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {},
+        "type": "ia.canvas-charts.area"
+      },
+      {
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.footer"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "11px",
+            "overflow": "hidden",
+            "textOverflow": "ellipsis",
+            "whiteSpace": "nowrap"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "gap": "6px",
+        "padding": "12px 14px 10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

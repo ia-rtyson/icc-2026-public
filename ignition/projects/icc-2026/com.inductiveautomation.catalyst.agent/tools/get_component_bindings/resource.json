@@ -1,0 +1,41 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-28T00:00:00Z"
+    },
+    "title": "get_component_bindings",
+    "description": "Returns the binding definitions on a Perspective component: binding type, full config, any script/expression transforms, and the tag paths the binding depends on. Indirect tag bindings are resolved against the view's saved custom and param values, so you get the literal tag path that will actually be requested at runtime -- that resolved path is normally where a broken tile's defect lives. Use this after get_view_json has told you which component to look at, then feed the resolved tag path to diagnose_tag_reference. Read-only.",
+    "parameters": [
+      {
+        "name": "view_path",
+        "description": "The Designer view path, e.g. 'Exchange/Report Issue Agent/Line Overview'.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "component_path",
+        "description": "Optional. Slash-separated chain of component meta.name values starting at root, e.g. 'root/Body/TorqueCard/TorqueValue'. Omit for the view root.",
+        "type": "STRING",
+        "required": false
+      },
+      {
+        "name": "include_descendants",
+        "description": "If true, also return bindings on every child of the target component. Use when you know the card but not which label inside it is failing. Defaults to false.",
+        "type": "BOOLEAN",
+        "required": false
+      }
+    ]
+  }
+}

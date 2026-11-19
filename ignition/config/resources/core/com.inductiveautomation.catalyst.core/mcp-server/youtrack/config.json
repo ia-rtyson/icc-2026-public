@@ -1,0 +1,18 @@
+{
+  "authorizationHeader": {
+    "data": {
+      "ciphertext": "9H3QmiLs9PUNkrn7VAh5OevbkhKHRPOdJrDo3MMfCwjlbnQ6DeDH8TZVkFSQyr_03mlkr9OcimNDP3T0UPE",
+      "encrypted_key": "gpC4Pm8MSXc1c_Fh9ty9gdy5BwlDn07L2Ic8R561ndS-i6OQCKUD-A",
+      "iv": "y6VFCqSaMe4NEFHw",
+      "protected": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIiwiaWF0IjoxNzg1MjY3MjU0LCJ6aXAiOiJERUYifQ",
+      "tag": "CcvKO8TU_ACu8X8mtH1L1w"
+    },
+    "type": "Embedded"
+  },
+  "customHeaders": [],
+  "permissions": {
+    "securityLevels": [],
+    "type": "AnyOf"
+  },
+  "url": "http://youtrack:8080/mcp"
+}

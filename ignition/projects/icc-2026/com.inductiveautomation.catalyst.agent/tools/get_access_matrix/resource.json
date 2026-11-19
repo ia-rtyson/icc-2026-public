@@ -1,0 +1,22 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "get_access_matrix",
+    "description": "Return the role-to-page access matrix: for every registered page URL, which roles can reach it and why. Already formatted as a Markdown table in 'markdown' -- paste that verbatim rather than rebuilding it, because the cell values carry a distinction you cannot reconstruct from a summary: 'ALL' means the page requires nothing and every session reaches it, which is not the same as a role having been granted access.",
+    "parameters": []
+  }
+}

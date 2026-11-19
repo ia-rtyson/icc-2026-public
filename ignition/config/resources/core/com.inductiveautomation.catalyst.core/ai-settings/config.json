@@ -1,0 +1,16 @@
+{
+  "defaultModel": {
+    "modelId": "claude-sonnet-5-5",
+    "providerName": "Anthropic"
+  },
+  "diagnosticDigestAnalysisModel": {
+    "modelId": "claude-haiku-5-5",
+    "providerName": "Anthropic"
+  },
+  "diagnosticDigestMode": "ON_DEMAND",
+  "diagnosticDigestOverviewModel": {
+    "modelId": "claude-haiku-5-5",
+    "providerName": "Anthropic"
+  },
+  "transcribeDiagnosticDigests": true
+}

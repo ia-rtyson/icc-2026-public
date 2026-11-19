@@ -1,0 +1,184 @@
+{
+  "custom": {
+    "tagPaths": [
+      {
+        "aggregate": "Average",
+        "alias": "Value",
+        "path": ""
+      }
+    ]
+  },
+  "params": {
+    "footer": "",
+    "header": "",
+    "tagPath": "",
+    "valueName": ""
+  },
+  "propConfig": {
+    "custom.tagPaths": {
+      "access": "PRIVATE"
+    },
+    "custom.tagPaths[0].alias": {
+      "binding": {
+        "config": {
+          "expression": "if(len({view.params.valueName}) \u003e 0, {view.params.valueName}, \u0027Value\u0027)"
+        },
+        "type": "expr"
+      }
+    },
+    "custom.tagPaths[0].path": {
+      "binding": {
+        "config": {
+          "path": "view.params.tagPath"
+        },
+        "type": "property"
+      }
+    },
+    "params.footer": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.header": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.valueName": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 260,
+      "width": 320
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.header"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "13px",
+            "fontWeight": 600
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Trend"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "aggregate": "MinMax",
+                "avoidScanClassValidation": true,
+                "dateRange": {
+                  "mostRecent": "60",
+                  "mostRecentUnits": "MIN"
+                },
+                "enableValueCache": true,
+                "ignoreBadQuality": false,
+                "polling": {
+                  "enabled": true,
+                  "rate": "10"
+                },
+                "preventInterpolation": false,
+                "returnFormat": "Wide",
+                "returnSize": {
+                  "numRows": "150",
+                  "type": "FIXED"
+                },
+                "tags": "{view.custom.tagPaths}",
+                "valueFormat": "DATASET"
+              },
+              "type": "tag-history"
+            }
+          }
+        },
+        "props": {
+          "legend": {
+            "visible": false
+          },
+          "series": [
+            {
+              "name": "Value"
+            }
+          ],
+          "timeAxis": {
+            "tick": {
+              "label": {
+                "angled": false
+              }
+            }
+          }
+        },
+        "type": "ia.chart.timeseries"
+      },
+      {
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.footer"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-50)",
+            "fontSize": "11px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "4px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

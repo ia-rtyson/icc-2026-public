@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-11T00:00:00Z"
+    },
+    "title": "create_proposed_structure",
+    "description": "Creates the ENTIRE accepted proposal in one call -- every UDT definition, then every instance, then every standalone tag, batched one gateway write per folder. This is the only tool you need to build the structure; do not create tags one at a time. It reads the proposal back from the database, so what gets built is exactly what the user reviewed -- you do not re-send it. Refuses with status 'not_accepted' until accept_proposal has been called. Returns per-type counts and a 'failures' list; a single bad item does not stop the rest.",
+    "parameters": [
+      {
+        "name": "proposal_id",
+        "description": "Id returned by save_proposal. Omit to build the most recent accepted proposal.",
+        "type": "INTEGER",
+        "required": false
+      }
+    ]
+  }
+}

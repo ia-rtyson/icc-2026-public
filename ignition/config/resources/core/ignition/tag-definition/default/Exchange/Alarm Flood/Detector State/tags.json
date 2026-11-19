@@ -1,0 +1,56 @@
+[
+  {
+    "dataType": "DateTime",
+    "defaultValue": 1789443801713,
+    "name": "DetectedTs",
+    "tagType": "AtomicTag",
+    "value": 1789443801713,
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": false,
+    "name": "FloodActive",
+    "tagType": "AtomicTag",
+    "value": false,
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Int8",
+    "defaultValue": 0,
+    "name": "LastEventId",
+    "tagType": "AtomicTag",
+    "value": 64,
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Int4",
+    "defaultValue": 0,
+    "name": "LowStreak",
+    "tagType": "AtomicTag",
+    "value": 0,
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Int4",
+    "defaultValue": 0,
+    "name": "PeakRate",
+    "tagType": "AtomicTag",
+    "value": 0,
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "DateTime",
+    "defaultValue": 1789443771713,
+    "name": "WindowStart",
+    "tagType": "AtomicTag",
+    "value": 1789443771713,
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  }
+]

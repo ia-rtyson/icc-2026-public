@@ -1,0 +1,35 @@
+{
+  "connectURL": ":sqlite:${data}/launchpad_oee_sqlite.db",
+  "connectionProps": "",
+  "connectionResetParams": "",
+  "defaultTransactionLevel": "DEFAULT",
+  "driver": "SQLite",
+  "evictionRate": -1,
+  "evictionTests": 3,
+  "evictionTime": 1800000,
+  "failoverMode": "STANDARD",
+  "includeSchemaInTableName": false,
+  "password": {
+    "data": {
+      "ciphertext": "lQ0",
+      "encrypted_key": "_x76-VwSafDZc2zcwen8sW68qyAX3TXjDU3nR6bPuSDmP_1z-dU0IA",
+      "iv": "DU9bZGs5IvLuG_we",
+      "protected": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIiwiaWF0IjoxNzc1Njg3NzE5LCJ6aXAiOiJERUYifQ",
+      "tag": "O7J17GiahuLqvXpFA6HXnA"
+    },
+    "type": "Embedded"
+  },
+  "poolInitSize": 0,
+  "poolMaxActive": 8,
+  "poolMaxIdle": 8,
+  "poolMaxWait": 5000,
+  "poolMinIdle": 0,
+  "slowQueryLogThreshold": 60000,
+  "testOnBorrow": true,
+  "testOnReturn": false,
+  "testWhileIdle": false,
+  "translator": "SQLITE",
+  "username": "",
+  "validationQuery": "SELECT 1",
+  "validationSleepTime": 10000
+}

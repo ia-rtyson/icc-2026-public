@@ -1,0 +1,10 @@
+{
+  "profile": {
+    "requestTimeoutSeconds": 180,
+    "type": "Anthropic"
+  },
+  "settings": {
+    "baseUrl": "https://api.anthropic.com/v1",
+    "defaultModel": "claude-sonnet-5-5"
+  }
+}

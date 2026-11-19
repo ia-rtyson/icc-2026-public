@@ -1,0 +1,138 @@
+[
+  {
+    "dataType": "Int4",
+    "defaultValue": 10,
+    "name": "DegradeSecs",
+    "tagType": "AtomicTag",
+    "value": 10,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "name": "Enabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Int4",
+    "defaultValue": 60,
+    "name": "HoldSecs",
+    "tagType": "AtomicTag",
+    "value": 30,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "String",
+    "defaultValue": "",
+    "name": "LastError",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "DateTime",
+    "defaultValue": 1789583681370,
+    "name": "LastTickTs",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Boolean",
+    "defaultValue": true,
+    "name": "NuisanceEnabled",
+    "tagType": "AtomicTag",
+    "value": true,
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "String",
+    "defaultValue": "NORMAL",
+    "name": "Phase",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Int4",
+    "defaultValue": 0,
+    "name": "PhaseElapsed",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "DateTime",
+    "defaultValue": 1789443842497,
+    "name": "PhaseStartTs",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Float4",
+    "defaultValue": 0.0,
+    "name": "Progress",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "String",
+    "defaultValue": "PackagingConveyorJam",
+    "name": "Scenario",
+    "tagType": "AtomicTag",
+    "value": "PackagingConveyorJam",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "String",
+    "defaultValue": "",
+    "name": "ScenarioLabel",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "DateTime",
+    "defaultValue": 1789443787278,
+    "name": "ScenarioStartTs",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Int4",
+    "defaultValue": 0,
+    "name": "StageIndex",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "String",
+    "defaultValue": "Normal operation",
+    "name": "StageName",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "String",
+    "defaultValue": "Site1/Area1/Line1",
+    "name": "TargetLine",
+    "tagType": "AtomicTag",
+    "value": "Site1/Area1/Line1",
+    "valueSource": "memory"
+  },
+  {
+    "dataType": "Int8",
+    "defaultValue": 0,
+    "name": "TickCount",
+    "tagType": "AtomicTag",
+    "valuePersistence": "Database",
+    "valueSource": "memory"
+  }
+]

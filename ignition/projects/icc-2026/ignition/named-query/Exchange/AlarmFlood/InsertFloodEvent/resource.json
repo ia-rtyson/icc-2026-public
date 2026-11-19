@@ -1,0 +1,44 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 1,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "postgres",
+    "fallbackEnabled": false,
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-30T00:00:00Z"
+    },
+    "parameters": [
+      {"type": "Parameter", "identifier": "status", "sqlType": 7},
+      {"type": "Parameter", "identifier": "detectedTs", "sqlType": 8},
+      {"type": "Parameter", "identifier": "windowStart", "sqlType": 8},
+      {"type": "Parameter", "identifier": "windowEnd", "sqlType": 8},
+      {"type": "Parameter", "identifier": "alarmCount", "sqlType": 2},
+      {"type": "Parameter", "identifier": "distinctSourceCount", "sqlType": 2},
+      {"type": "Parameter", "identifier": "peakRate", "sqlType": 2},
+      {"type": "Parameter", "identifier": "thresholdCount", "sqlType": 2},
+      {"type": "Parameter", "identifier": "thresholdWindowSecs", "sqlType": 2},
+      {"type": "Parameter", "identifier": "summaryJson", "sqlType": 7}
+    ]
+  }
+}

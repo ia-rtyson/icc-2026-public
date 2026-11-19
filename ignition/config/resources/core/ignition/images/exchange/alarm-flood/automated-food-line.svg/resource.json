@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "automated-food-line.svg"
+  ],
+  "attributes": {
+    "width": 0,
+    "format": "SVG",
+    "lastModification": {
+      "actor": "Unauthenticated",
+      "timestamp": "2026-09-04T15:56:23Z"
+    },
+    "size": 52802,
+    "lastModificationSignature": "c5ee505cfdf52f69632d549a23de17a1ca32382379be3de1e08528d35f468186",
+    "height": 0
+  }
+}

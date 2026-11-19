@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "iggy.png"
+  ],
+  "attributes": {
+    "width": 1566,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2026-04-13T04:21:41Z"
+    },
+    "size": 1683803,
+    "lastModificationSignature": "811fef13f5233f1f437ddb8a5bb9bf963389d7619eba812785da0c9bfdd2c7f0",
+    "height": 1893
+  }
+}

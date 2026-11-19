@@ -1,0 +1,151 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 900,
+      "width": 1400
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "22px",
+                    "fontWeight": 600
+                  },
+                  "text": "Security Audit"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "TitleRow"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "direction": "row",
+              "style": {
+                "gap": "12px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Subtitle"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-70)",
+                "fontSize": "13px"
+              },
+              "text": "Ask the agent about users, roles, security levels, page access, or the permissions on this gateway\u0027s AI agents and endpoints. Every finding it reports cites the config file it came from."
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "gap": "6px",
+            "padding": "16px 18px 10px 18px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "AiChat"
+        },
+        "position": {
+          "basis": "0",
+          "grow": 1,
+          "shrink": 1
+        },
+        "propConfig": {
+          "props.context.gatewayName": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[System]Gateway/SystemName"
+              },
+              "type": "tag"
+            }
+          },
+          "props.context.roles": {
+            "binding": {
+              "config": {
+                "path": "session.props.auth.user.roles"
+              },
+              "type": "property"
+            }
+          },
+          "props.context.username": {
+            "binding": {
+              "config": {
+                "path": "session.props.auth.user.userName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "agentIcon": "material/lock",
+          "agentName": "Security Audit Agent",
+          "suggestedPrompts": [
+            "Run a full gateway security audit",
+            "Show me the role to page access matrix",
+            "Which users hold administrator privileges, and should they?",
+            "Are my AI agents and MCP server secured?"
+          ]
+        },
+        "type": "ia.ai.chat"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "grow": 1
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "height": "100%"
+      }
+    },
+    "scripts": {
+      "componentScriptExtensions": null,
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.flex"
+  }
+}

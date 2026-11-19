@@ -1,0 +1,22 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-10T00:00:00Z"
+    },
+    "title": "list_reference_documents",
+    "description": "Lists the source documents hosted on this gateway for the Tag Import demo -- the Studio 5000 controller tag export and the ladder logic export. Call this first to see what is available, then read_reference_document to read one. Nothing is uploaded in this demo; these files are the input.",
+    "parameters": []
+  }
+}

@@ -1,0 +1,949 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "basis": "38px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "classes": "exchange/demo/home-title"
+              },
+              "text": "Ignition 2027 AI Demos"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "60px",
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "classes": "exchange/demo/home-header"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/person",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "What is an Agent?"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "A four-click explainer: the agent, then its system prompt, its tools and its model connection, built up one part at a time."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/what-is-an-agent\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "WhatIsAnAgentCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#3987E5",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/alarm",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Alarm Flood Agent"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "Break a packaging line and watch the cascade walk upstream, then ask the agent to reconstruct the root cause from tag history."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/alarm-flood-event\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "AlarmFloodEventCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#ff4d4f",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/bug_report",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Report Issue Agent"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "Operators describe a problem in plain language; the agent triages it. Pipeline status slides out over the same page."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/report-issue\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "ReportIssueCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#ffa940",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/account_tree",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Tag Import Agent"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "The agent reads a Studio 5000 controller export hosted here, proposes a UDT structure, and builds all 117 tags when you tell it to."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/tag-import\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "TagImportCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#40a9ff",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/lock",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Security Audit"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "End-to-end gateway security audit with deterministic findings, cited sources and recommended fixes."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/security-audit\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "SecurityAuditCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#73d13d",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/dashboard",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Dashboard Agent"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "Describe the dashboard you want and the agent builds it from the live production line, widget by widget."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/dashboard-agent\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "DashboardAgentCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#36cfc9",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/edit",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Drawing Agent"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "Ask for a graphic and get a real, editable Ignition SVG -- not a picture of one."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/drawing\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "DrawingCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#b37feb",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/translate",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Translation Manager"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "Register every hardcoded label on a finished screen, then let the agent reach the text a literal scan cannot see."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/translation-manager\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "TranslationManagerCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#9254de",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Icon"
+                    },
+                    "position": {
+                      "basis": "24px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "path": "material/table_chart",
+                      "style": {
+                        "classes": "exchange/demo/demo-card-icon"
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "IconBadge"
+                },
+                "position": {
+                  "basis": "44px",
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "center",
+                  "style": {
+                    "classes": "exchange/demo/demo-card-badge"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "basis": "26px",
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-title"
+                  },
+                  "text": "Designer Embeds"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Description"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "style": {
+                    "classes": "exchange/demo/demo-card-desc"
+                  },
+                  "text": "A filtered event log -- filter panel, named query and paged table -- built by the AI inside the Designer."
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.navigate(\"/designer-embeds-example\")"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "DesignerEmbedsExampleCard"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "--card-accent": "#8c8c8c",
+                "classes": "exchange/demo/demo-card"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "CardGrid"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "alignItems": "flex-start",
+          "direction": "row",
+          "justify": "center",
+          "style": {
+            "classes": "exchange/demo/home-grid",
+            "gap": "20px",
+            "padding": "10px"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "exchange/demo/home-root"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

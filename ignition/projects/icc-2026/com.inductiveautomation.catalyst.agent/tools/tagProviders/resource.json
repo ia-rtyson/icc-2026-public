@@ -1,0 +1,23 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "lastModificationSignature": "a5c8dfdb05acb1f642f7cc77dfcc805147ce0becc85743cedcb3a3d72e0ed9b0",
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-22T15:50:23Z"
+    },
+    "description": "Returns the list of tag providers as JSON {count, providers: [{name, fullPath, tagType, hasChildren}]}.",
+    "title": "tagProviders",
+    "parameters": []
+  }
+}

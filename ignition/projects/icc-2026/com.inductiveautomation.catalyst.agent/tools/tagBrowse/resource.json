@@ -1,0 +1,36 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "lastModificationSignature": "66456e9d4e9d386313f20afeade905f10665940a9e2ca78626e1603f86d4b14f",
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-22T15:50:23Z"
+    },
+    "description": "Browse for tags at the given path. Returns JSON {path, count, results: [{name, fullPath, tagType, hasChildren, dataType, ...}], truncated}. At most 500 results per call (filter maxResults is capped at 500); truncated is true when the cap was reached.",
+    "title": "tagBrowse",
+    "parameters": [
+      {
+        "name": "path",
+        "description": "The path that will be browsed, typically to a folder or UDT instance, usually including the tag provider too.\nlike [default]folder",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "filter",
+        "description": "Filter Keys\n\nThe following keys represent filter criteria that can be used by the filter parameter.\n\n    name - The name of the item. Utilizes the * character as a wildcard character.\n\n    # Literally search for \"MyTag\"\n    {\"name\":\"MyTag\"}\n\n    # Searches for any names that contain \"Tag\" in their name\n    {\"name\":\"*Tag*\"}\n\n    dataType - Represents the data type on the tag. Valid values can be found on the Tag Properties page.\n\n    {\"dataType\":\"Int4\"}\n\n    valueSource - Represents how the node derives its value. Generally only used by nodes with a tag type of \"AtomicTag\". Valid values can be found on the Value Source description on the Tag Properties page.\n\n    {\"valueSource\":\"opc\"}\n\n    tagType - The type of the node (tag, folder, UDT instance, etc). A list of possible types can be found on the Tag Properties page.\n\n    {\"tagType\":\"AtomicTag\"}\n\n    typeId - Represents the UDT type of the node. If the node is a UDT definition, then the value will be None. If the node is not a UDT, then this filter choice will not remove the element. As such, this filter functions best when paired with a tagType filter with a value of UdtInstance.\n\n    {\"typeId\":\"myUDT\", \"tagType\":\"UdtInstance\"}\n\n    quality - Represents the quality on the node. While there are many types of quality codes, this function only recognizes \"Bad\" and \"Good\". More granular quality codes are ignored.\n\n    {\"quality\":\"Good\"}\n\n    maxResults - Limits the amount of results that will be returned by the function.\n\n    {\"maxResults\":10}\n\n    recursive - Allows the browse to find all tags inside the starting folder or UDT instance, even if they are inside nested folders or UDT instances themselves. Accepted values are True and False. False is the default, meaning that the browse will only return tags directly inside the starting folder or UDT instance.\n\n    {\"recursive\":True}",
+        "type": "OBJECT",
+        "required": true
+      }
+    ]
+  }
+}

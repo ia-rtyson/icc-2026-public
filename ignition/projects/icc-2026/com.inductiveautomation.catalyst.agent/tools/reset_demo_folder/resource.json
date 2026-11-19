@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-11T00:00:00Z"
+    },
+    "title": "reset_demo_folder",
+    "description": "Deletes every tag and UDT definition under the two 'Exchange/Tag Import Agent' root folders, so the demo can be run again from empty. Nothing outside those folders can be reached by this tool. Destructive: call it only when the user explicitly asks to clear, reset, or delete the old demo tags, and pass confirm=true to acknowledge that. Report the count it removed.",
+    "parameters": [
+      {
+        "name": "confirm",
+        "description": "Must be true. Set it only when the user has asked for the delete in this conversation.",
+        "type": "BOOLEAN",
+        "required": true
+      }
+    ]
+  }
+}

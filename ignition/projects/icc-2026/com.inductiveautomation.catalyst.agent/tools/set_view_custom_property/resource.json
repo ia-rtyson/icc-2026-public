@@ -1,0 +1,53 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-28T00:00:00Z"
+    },
+    "title": "set_view_custom_property",
+    "description": "Changes one entry in a Perspective view's top-level 'custom' object and reloads the project so running sessions pick it up. This is the only tool that WRITES to a project resource, so it is two-phase: call it with confirm=false to see the exact before/after and prove the guard holds, then with confirm=true to apply. expected_current_value is mandatory -- you must state the value you believe you are replacing, read from get_view_json. If the guard fails the write is refused; re-read the resource rather than retrying, because it means the ticket is stale or the fix is already in.",
+    "parameters": [
+      {
+        "name": "view_path",
+        "description": "The Designer view path, e.g. 'Exchange/Report Issue Agent/Line Overview'.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "property_name",
+        "description": "Key inside the view's 'custom' object, e.g. 'torqueTagName'. The property must already exist.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "new_value",
+        "description": "The corrected value to write, e.g. 'MotorTorque'.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "expected_current_value",
+        "description": "The value you believe the property holds right now, e.g. 'MotorTorqe'. Read it with get_view_json first. The write is refused if it does not match.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "confirm",
+        "description": "false (default) is a dry run returning the before/after diff. true applies the change and reloads the project.",
+        "type": "BOOLEAN",
+        "required": false
+      }
+    ]
+  }
+}

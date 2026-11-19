@@ -1,0 +1,1345 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 768,
+      "width": 1627
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "AiChat"
+        },
+        "position": {
+          "height": "100%",
+          "width": "40%",
+          "x": "60%"
+        },
+        "propConfig": {
+          "props.context.elements": {
+            "binding": {
+              "config": {
+                "path": "../Drawing.props.elements"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "agentIcon": "material/edit",
+          "agentName": "Drawing Agent",
+          "suggestedPrompts": [
+            "Draw a pharmaceutical tablet press with a hopper feeding it.",
+            "Draw a data center server rack with cooling fans.",
+            "Draw a solar panel array on a tilted mount.",
+            "Draw a wastewater clarifier tank with a skimmer arm."
+          ]
+        },
+        "scripts": {
+          "componentScriptExtensions": {
+            "ai.tools": [
+              {
+                "code": "\n\tself.getSibling(\"Drawing\").props.elements \u003d elements",
+                "description": "Sets the elements of the component",
+                "parameters": [
+                  {
+                    "description": "The elements object of the componnet",
+                    "name": "elements",
+                    "required": true,
+                    "type": "ARRAY"
+                  }
+                ],
+                "permissions": {
+                  "securityLevels": [],
+                  "type": "AllOf"
+                },
+                "title": "setElements"
+              },
+              {
+                "code": "\treturn self.getSibling(\"Drawing\").props.viewBox",
+                "description": "Gets the viewBox property",
+                "parameters": [],
+                "permissions": {
+                  "securityLevels": [],
+                  "type": "AllOf"
+                },
+                "title": "getViewBox"
+              },
+              {
+                "code": "\tself.getSibling(\"Drawing\").props.viewBox \u003d viewBox",
+                "description": "Sets teh viewBox property",
+                "parameters": [
+                  {
+                    "description": "The viewBox string",
+                    "name": "viewBox",
+                    "required": true,
+                    "type": "STRING"
+                  }
+                ],
+                "permissions": {
+                  "securityLevels": [],
+                  "type": "AllOf"
+                },
+                "title": "setViewBox"
+              },
+              {
+                "code": "\treturn self.getSibling(\"Drawing\").props.preserveAspectRatio",
+                "description": "Gets teh preserveAspectRatio property",
+                "parameters": [],
+                "permissions": {
+                  "securityLevels": [],
+                  "type": "AllOf"
+                },
+                "title": "getPreserveAspectRatio"
+              },
+              {
+                "code": "\tself.getSibling(\"Drawing\").props.preserveAspectRatio \u003d preserveAspectRatio",
+                "description": "Sets teh preserveAspectRation property",
+                "parameters": [
+                  {
+                    "description": "The preserveAspectRatio string",
+                    "name": "preserveAspectRatio",
+                    "required": true,
+                    "type": "STRING"
+                  }
+                ],
+                "permissions": {
+                  "securityLevels": [],
+                  "type": "AllOf"
+                },
+                "title": "setPreserveAspectRatio"
+              }
+            ]
+          },
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": []
+        },
+        "type": "ia.ai.chat"
+      },
+      {
+        "meta": {
+          "name": "Drawing"
+        },
+        "position": {
+          "height": "100%",
+          "width": "60%",
+          "x": 0.1875
+        },
+        "props": {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "offset": "0%",
+                      "style": {
+                        "stopColor": "#ffffff",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "58%",
+                      "style": {
+                        "stopColor": "#f4f8fc",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "100%",
+                      "style": {
+                        "stopColor": "#e7eef6",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    }
+                  ],
+                  "id": "badgeBgG",
+                  "type": "linearGradient",
+                  "x1": "0%",
+                  "x2": "0%",
+                  "y1": "0%",
+                  "y2": "100%"
+                },
+                {
+                  "elements": [
+                    {
+                      "offset": "0%",
+                      "style": {
+                        "stopColor": "#0b2d5c",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "55%",
+                      "style": {
+                        "stopColor": "#1769aa",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "100%",
+                      "style": {
+                        "stopColor": "#25a7df",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    }
+                  ],
+                  "id": "headerG",
+                  "type": "linearGradient",
+                  "x1": "0%",
+                  "x2": "100%",
+                  "y1": "0%",
+                  "y2": "100%"
+                },
+                {
+                  "elements": [
+                    {
+                      "offset": "0%",
+                      "style": {
+                        "stopColor": "#111827",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "45%",
+                      "style": {
+                        "stopColor": "#1b4f9c",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "100%",
+                      "style": {
+                        "stopColor": "#00a3d7",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    }
+                  ],
+                  "id": "lanyardG",
+                  "type": "linearGradient",
+                  "x1": "0%",
+                  "x2": "100%",
+                  "y1": "0%",
+                  "y2": "100%"
+                },
+                {
+                  "elements": [
+                    {
+                      "offset": "0%",
+                      "style": {
+                        "stopColor": "#8df7ff",
+                        "stopOpacity": 0.9
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "45%",
+                      "style": {
+                        "stopColor": "#cda7ff",
+                        "stopOpacity": 0.65
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "100%",
+                      "style": {
+                        "stopColor": "#ffd66e",
+                        "stopOpacity": 0.85
+                      },
+                      "type": "stop"
+                    }
+                  ],
+                  "id": "holoG",
+                  "type": "linearGradient",
+                  "x1": "0%",
+                  "x2": "100%",
+                  "y1": "0%",
+                  "y2": "100%"
+                },
+                {
+                  "elements": [
+                    {
+                      "offset": "0%",
+                      "style": {
+                        "stopColor": "#d8e7f4",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    },
+                    {
+                      "offset": "100%",
+                      "style": {
+                        "stopColor": "#7ea0bd",
+                        "stopOpacity": 1
+                      },
+                      "type": "stop"
+                    }
+                  ],
+                  "id": "photoG",
+                  "type": "linearGradient",
+                  "x1": "0%",
+                  "x2": "0%",
+                  "y1": "0%",
+                  "y2": "100%"
+                }
+              ],
+              "type": "defs"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "d": "M 122,-20 C 132,60 164,98 192,136",
+                      "fill": "none",
+                      "name": "Left Lanyard Strap",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "url(#lanyardG)",
+                        "width": 22
+                      },
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 298,-20 C 288,60 256,98 228,136",
+                      "fill": "none",
+                      "name": "Right Lanyard Strap",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "url(#lanyardG)",
+                        "width": 22
+                      },
+                      "type": "path"
+                    },
+                    {
+                      "d": "M 122,-20 C 132,60 164,98 192,136 M 298,-20 C 288,60 256,98 228,136",
+                      "fill": "none",
+                      "name": "Lanyard Center Stitch",
+                      "stroke": {
+                        "dasharray": "10 10",
+                        "linecap": "round",
+                        "opacity": 0.45,
+                        "paint": "#ffffff",
+                        "width": 2
+                      },
+                      "type": "path"
+                    },
+                    {
+                      "fill": {
+                        "url": "url(#badgeBgG)"
+                      },
+                      "height": 50,
+                      "name": "Metal Badge Clip",
+                      "rx": 10,
+                      "stroke": {
+                        "paint": "#6b7c8c",
+                        "width": 2
+                      },
+                      "type": "rect",
+                      "width": 74,
+                      "x": 173,
+                      "y": 98
+                    },
+                    {
+                      "fill": "#253241",
+                      "height": 12,
+                      "name": "Clip Slot",
+                      "rx": 6,
+                      "type": "rect",
+                      "width": 40,
+                      "x": 190,
+                      "y": 111
+                    },
+                    {
+                      "name": "Clip Spring Detail",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "#9aabba",
+                        "width": 3
+                      },
+                      "type": "line",
+                      "x1": 184,
+                      "x2": 236,
+                      "y1": 137,
+                      "y2": 137
+                    }
+                  ],
+                  "name": "Lanyard and Clip",
+                  "type": "group"
+                },
+                {
+                  "elements": [
+                    {
+                      "fill": "#000000",
+                      "height": 470,
+                      "name": "Drop Shadow",
+                      "opacity": 0.18,
+                      "rx": 26,
+                      "type": "rect",
+                      "width": 300,
+                      "x": 66,
+                      "y": 103
+                    },
+                    {
+                      "fill": {
+                        "url": "url(#badgeBgG)"
+                      },
+                      "height": 470,
+                      "name": "White Badge Body",
+                      "rx": 26,
+                      "stroke": {
+                        "paint": "#c1ceda",
+                        "width": 2
+                      },
+                      "type": "rect",
+                      "width": 300,
+                      "x": 60,
+                      "y": 96
+                    },
+                    {
+                      "fill": {
+                        "url": "url(#headerG)"
+                      },
+                      "height": 118,
+                      "name": "Blue Header Panel",
+                      "rx": 26,
+                      "type": "rect",
+                      "width": 300,
+                      "x": 60,
+                      "y": 96
+                    },
+                    {
+                      "fill": {
+                        "url": "url(#headerG)"
+                      },
+                      "height": 34,
+                      "name": "Squared Header Bottom",
+                      "type": "rect",
+                      "width": 300,
+                      "x": "60",
+                      "y": "180"
+                    },
+                    {
+                      "fill": "#071b34",
+                      "height": 18,
+                      "name": "Badge Punch Hole",
+                      "opacity": 0.92,
+                      "rx": 9,
+                      "type": "rect",
+                      "width": 90,
+                      "x": 165,
+                      "y": 115
+                    },
+                    {
+                      "fill": "#ffffff",
+                      "fontFamily": "Arial, Helvetica, sans-serif",
+                      "fontSize": 46,
+                      "fontWeight": "800",
+                      "name": "ICC Wordmark",
+                      "text": "ICC",
+                      "textAnchor": "middle",
+                      "type": "text",
+                      "x": 210,
+                      "y": 166
+                    },
+                    {
+                      "fill": "#d9f6ff",
+                      "fontFamily": "Arial, Helvetica, sans-serif",
+                      "fontSize": 28,
+                      "fontWeight": "700",
+                      "name": "Year",
+                      "text": "2026",
+                      "textAnchor": "middle",
+                      "type": "text",
+                      "x": 210,
+                      "y": 196
+                    },
+                    {
+                      "fill": "#123a63",
+                      "fontFamily": "Arial, Helvetica, sans-serif",
+                      "fontSize": 18,
+                      "fontWeight": "700",
+                      "name": "Conference Title",
+                      "text": "ANNUAL CONFERENCE",
+                      "textAnchor": "middle",
+                      "type": "text",
+                      "x": 210,
+                      "y": 250
+                    },
+                    {
+                      "fill": "#0b2d5c",
+                      "fontFamily": "Arial, Helvetica, sans-serif",
+                      "fontSize": 38,
+                      "fontWeight": "800",
+                      "name": "Attendee Role",
+                      "text": "ATTENDEE",
+                      "textAnchor": "middle",
+                      "type": "text",
+                      "x": 210,
+                      "y": 282
+                    },
+                    {
+                      "name": "Role Divider",
+                      "stroke": {
+                        "linecap": "round",
+                        "paint": "#25a7df",
+                        "width": 4
+                      },
+                      "type": "line",
+                      "x1": 98,
+                      "x2": 322,
+                      "y1": 302,
+                      "y2": 302
+                    },
+                    {
+                      "elements": [
+                        {
+                          "cx": 127,
+                          "cy": 362,
+                          "fill": {
+                            "url": "url(#photoG)"
+                          },
+                          "name": "Avatar Circle",
+                          "r": 48,
+                          "stroke": {
+                            "paint": "#ffffff",
+                            "width": 5
+                          },
+                          "type": "circle"
+                        },
+                        {
+                          "cx": 127,
+                          "cy": 345,
+                          "fill": "#eef6fb",
+                          "name": "Avatar Head",
+                          "r": 15,
+                          "type": "circle"
+                        },
+                        {
+                          "d": "M 94,390 C 104,365 150,365 160,390 Z",
+                          "fill": "#eef6fb",
+                          "name": "Avatar Shoulders",
+                          "type": "path"
+                        },
+                        {
+                          "fill": "#1f2937",
+                          "fontFamily": "Arial, Helvetica, sans-serif",
+                          "fontSize": "16",
+                          "fontWeight": "700",
+                          "name": "Name Placeholder",
+                          "text": "IGGY",
+                          "type": "text",
+                          "x": 215,
+                          "y": 342
+                        },
+                        {
+                          "fill": "#526170",
+                          "fontFamily": "Arial, Helvetica, sans-serif",
+                          "fontSize": 15,
+                          "name": "Company Placeholder",
+                          "text": "Automation Partner",
+                          "type": "text",
+                          "x": 215,
+                          "y": 370
+                        },
+                        {
+                          "fill": "#64748b",
+                          "fontFamily": "Arial, Helvetica, sans-serif",
+                          "fontSize": 14,
+                          "name": "Location Placeholder",
+                          "text": "Sacremento, CA",
+                          "type": "text",
+                          "x": 215,
+                          "y": 394
+                        }
+                      ],
+                      "name": "Avatar and Name Area",
+                      "type": "group"
+                    },
+                    {
+                      "elements": [
+                        {
+                          "fill": "#ffffff",
+                          "height": 82,
+                          "name": "QR Border",
+                          "rx": 7,
+                          "stroke": {
+                            "paint": "#d0d8e1",
+                            "width": 2
+                          },
+                          "type": "rect",
+                          "width": 82,
+                          "x": 92,
+                          "y": 430
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 18,
+                          "type": "rect",
+                          "width": 18,
+                          "x": 103,
+                          "y": 441
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 18,
+                          "type": "rect",
+                          "width": 18,
+                          "x": 145,
+                          "y": 441
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 18,
+                          "type": "rect",
+                          "width": 18,
+                          "x": 103,
+                          "y": 483
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 8,
+                          "type": "rect",
+                          "width": 8,
+                          "x": 127,
+                          "y": 441
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 8,
+                          "type": "rect",
+                          "width": 12,
+                          "x": 134,
+                          "y": 456
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 8,
+                          "type": "rect",
+                          "width": 8,
+                          "x": 151,
+                          "y": 466
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 8,
+                          "type": "rect",
+                          "width": 14,
+                          "x": 127,
+                          "y": 477
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 8,
+                          "type": "rect",
+                          "width": 19,
+                          "x": 144,
+                          "y": 493
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 8,
+                          "type": "rect",
+                          "width": 8,
+                          "x": 105,
+                          "y": 466
+                        },
+                        {
+                          "fill": "#111827",
+                          "height": 8,
+                          "type": "rect",
+                          "width": 8,
+                          "x": 124,
+                          "y": 496
+                        }
+                      ],
+                      "name": "QR Code Block",
+                      "type": "group"
+                    },
+                    {
+                      "elements": [
+                        {
+                          "fill": "#123a63",
+                          "fontFamily": "Arial, Helvetica, sans-serif",
+                          "fontSize": 16,
+                          "fontWeight": "700",
+                          "name": "Date",
+                          "text": "Sept 22-24, 2026",
+                          "type": "text",
+                          "x": 205,
+                          "y": 447
+                        },
+                        {
+                          "fill": "#64748b",
+                          "fontFamily": "Arial, Helvetica, sans-serif",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "name": "Venue",
+                          "text": "ICC",
+                          "type": "text",
+                          "x": 205,
+                          "y": 472
+                        },
+                        {
+                          "fill": "#64748b",
+                          "fontFamily": "Arial, Helvetica, sans-serif",
+                          "fontSize": 12,
+                          "name": "Badge ID",
+                          "text": "BADGE ID  ICC26-A-1048",
+                          "type": "text",
+                          "x": 205,
+                          "y": 496
+                        }
+                      ],
+                      "name": "Event Details",
+                      "type": "group"
+                    },
+                    {
+                      "fill": {
+                        "url": "url(#holoG)"
+                      },
+                      "height": 46,
+                      "name": "Holographic Seal",
+                      "opacity": 0.9,
+                      "rx": 10,
+                      "stroke": {
+                        "paint": "#ffffff",
+                        "width": 2
+                      },
+                      "type": "rect",
+                      "width": 46,
+                      "x": "151",
+                      "y": "309"
+                    },
+                    {
+                      "d": "M173 313L179 327 194 328 182 337 186 350 173 342 160 350 164 337 152 328 167 327Z",
+                      "fill": "none",
+                      "name": "Hologram Star",
+                      "stroke": {
+                        "linejoin": "round",
+                        "opacity": 0.75,
+                        "paint": "#ffffff",
+                        "width": 2
+                      },
+                      "type": "path"
+                    },
+                    {
+                      "fill": "#0b2d5c",
+                      "height": 40,
+                      "name": "Bottom Color Bar",
+                      "rx": 0,
+                      "type": "rect",
+                      "width": 300,
+                      "x": 60,
+                      "y": 526
+                    },
+                    {
+                      "fill": "#25a7df",
+                      "height": 40,
+                      "name": "Bottom Accent Bar",
+                      "type": "rect",
+                      "width": 118,
+                      "x": 60,
+                      "y": 526
+                    },
+                    {
+                      "fill": "#ffffff",
+                      "fontFamily": "Arial, Helvetica, sans-serif",
+                      "fontSize": 17,
+                      "fontWeight": "800",
+                      "name": "Access Level",
+                      "text": "FULL ACCESS PASS",
+                      "textAnchor": "middle",
+                      "type": "text",
+                      "x": 210,
+                      "y": 552
+                    }
+                  ],
+                  "name": "Badge Card",
+                  "type": "group"
+                }
+              ],
+              "name": "ICC 2026 Attendee Badge",
+              "type": "group"
+            }
+          ],
+          "viewBox": "0 0 420 620"
+        },
+        "type": "ia.shapes.svg"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "elements": [
+        {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "offset": "0%",
+                  "style": {
+                    "stopColor": "#e74c3c",
+                    "stopOpacity": 1
+                  },
+                  "type": "stop"
+                },
+                {
+                  "offset": "100%",
+                  "style": {
+                    "stopColor": "#c0392b",
+                    "stopOpacity": 1
+                  },
+                  "type": "stop"
+                }
+              ],
+              "id": "bodyGrad",
+              "type": "linearGradient",
+              "x1": "0%",
+              "x2": "0%",
+              "y1": "0%",
+              "y2": "100%"
+            },
+            {
+              "elements": [
+                {
+                  "offset": "0%",
+                  "style": {
+                    "stopColor": "#85C1E9",
+                    "stopOpacity": 1
+                  },
+                  "type": "stop"
+                },
+                {
+                  "offset": "100%",
+                  "style": {
+                    "stopColor": "#5DADE2",
+                    "stopOpacity": 1
+                  },
+                  "type": "stop"
+                }
+              ],
+              "id": "windowGrad",
+              "type": "linearGradient",
+              "x1": "0%",
+              "x2": "0%",
+              "y1": "0%",
+              "y2": "100%"
+            },
+            {
+              "elements": [
+                {
+                  "offset": "0%",
+                  "style": {
+                    "stopColor": "#555555",
+                    "stopOpacity": 1
+                  },
+                  "type": "stop"
+                },
+                {
+                  "offset": "100%",
+                  "style": {
+                    "stopColor": "#222222",
+                    "stopOpacity": 1
+                  },
+                  "type": "stop"
+                }
+              ],
+              "id": "wheelGrad",
+              "type": "linearGradient",
+              "x1": "0%",
+              "x2": "0%",
+              "y1": "0%",
+              "y2": "100%"
+            }
+          ],
+          "type": "defs"
+        },
+        {
+          "elements": [
+            {
+              "elements": [
+                {
+                  "d": "M 60,200 Q 50,200 50,190 L 50,170 L 350,170 L 350,190 Q 350,200 340,200 Z",
+                  "fill": {
+                    "url": "url(#bodyGrad)"
+                  },
+                  "name": "lower-body",
+                  "stroke": {
+                    "paint": "#922B21",
+                    "width": 1.5
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M 70,170 L 100,120 L 270,120 L 310,170 Z",
+                  "fill": {
+                    "url": "url(#bodyGrad)"
+                  },
+                  "name": "upper-body",
+                  "stroke": {
+                    "paint": "#922B21",
+                    "width": 1.5
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M 100,120 Q 105,110 115,110 L 255,110 Q 265,110 270,120",
+                  "fill": "none",
+                  "name": "roof",
+                  "stroke": {
+                    "linecap": "round",
+                    "paint": "#922B21",
+                    "width": 1.5
+                  },
+                  "type": "path"
+                }
+              ],
+              "name": "body",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "d": "M 110,125 L 130,165 L 185,165 L 185,125 Z",
+                  "fill": {
+                    "url": "url(#windowGrad)"
+                  },
+                  "name": "rear-window",
+                  "stroke": {
+                    "paint": "#2C3E50",
+                    "width": 1
+                  },
+                  "type": "path"
+                },
+                {
+                  "d": "M 190,125 L 190,165 L 260,165 L 295,165 L 265,125 Z",
+                  "fill": {
+                    "url": "url(#windowGrad)"
+                  },
+                  "name": "front-window",
+                  "stroke": {
+                    "paint": "#2C3E50",
+                    "width": 1
+                  },
+                  "type": "path"
+                },
+                {
+                  "name": "window-divider",
+                  "stroke": {
+                    "paint": "#922B21",
+                    "width": 2
+                  },
+                  "type": "line",
+                  "x1": 187.5,
+                  "x2": 187.5,
+                  "y1": 125,
+                  "y2": 165
+                }
+              ],
+              "name": "windows",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "fill": {
+                    "paint": "#BDC3C7"
+                  },
+                  "height": 16,
+                  "name": "front-bumper",
+                  "rx": 3,
+                  "stroke": {
+                    "paint": "#7F8C8D",
+                    "width": 1
+                  },
+                  "type": "rect",
+                  "width": 18,
+                  "x": 335,
+                  "y": 178
+                },
+                {
+                  "fill": {
+                    "paint": "#BDC3C7"
+                  },
+                  "height": 16,
+                  "name": "rear-bumper",
+                  "rx": 3,
+                  "stroke": {
+                    "paint": "#7F8C8D",
+                    "width": 1
+                  },
+                  "type": "rect",
+                  "width": 15,
+                  "x": 47,
+                  "y": 178
+                },
+                {
+                  "cx": 348,
+                  "cy": 173,
+                  "fill": {
+                    "paint": "#F9E79F"
+                  },
+                  "name": "headlight",
+                  "rx": 8,
+                  "ry": 5,
+                  "stroke": {
+                    "paint": "#F4D03F",
+                    "width": 1
+                  },
+                  "type": "ellipse"
+                },
+                {
+                  "cx": 54,
+                  "cy": 173,
+                  "fill": {
+                    "paint": "#E74C3C"
+                  },
+                  "name": "taillight",
+                  "rx": 6,
+                  "ry": 5,
+                  "stroke": {
+                    "paint": "#C0392B",
+                    "width": 1
+                  },
+                  "type": "ellipse"
+                },
+                {
+                  "fill": {
+                    "paint": "#BDC3C7"
+                  },
+                  "height": 3,
+                  "name": "door-handle-rear",
+                  "rx": 1.5,
+                  "stroke": {
+                    "paint": "#7F8C8D",
+                    "width": 0.5
+                  },
+                  "type": "rect",
+                  "width": 16,
+                  "x": 155,
+                  "y": 160
+                },
+                {
+                  "fill": {
+                    "paint": "#BDC3C7"
+                  },
+                  "height": 3,
+                  "name": "door-handle-front",
+                  "rx": 1.5,
+                  "stroke": {
+                    "paint": "#7F8C8D",
+                    "width": 0.5
+                  },
+                  "type": "rect",
+                  "width": 16,
+                  "x": 230,
+                  "y": 160
+                },
+                {
+                  "name": "body-line",
+                  "stroke": {
+                    "dasharray": "0",
+                    "paint": "#922B21",
+                    "width": 1
+                  },
+                  "type": "line",
+                  "x1": 65,
+                  "x2": 335,
+                  "y1": 182,
+                  "y2": 182
+                },
+                {
+                  "fill": {
+                    "paint": "#c0392b"
+                  },
+                  "height": 12,
+                  "name": "side-mirror",
+                  "rx": 3,
+                  "stroke": {
+                    "paint": "#922B21",
+                    "width": 1
+                  },
+                  "type": "rect",
+                  "width": 10,
+                  "x": 305,
+                  "y": 140
+                }
+              ],
+              "name": "details",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "elements": [
+                    {
+                      "cx": 120,
+                      "cy": 205,
+                      "fill": {
+                        "url": "url(#wheelGrad)"
+                      },
+                      "name": "rear-tire",
+                      "r": 25,
+                      "stroke": {
+                        "paint": "#111111",
+                        "width": 2
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "cx": 120,
+                      "cy": 205,
+                      "fill": {
+                        "paint": "#BDC3C7"
+                      },
+                      "name": "rear-hubcap",
+                      "r": 14,
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "cx": 120,
+                      "cy": 205,
+                      "fill": {
+                        "paint": "#7F8C8D"
+                      },
+                      "name": "rear-hub-center",
+                      "r": 5,
+                      "stroke": {
+                        "paint": "#5D6D7E",
+                        "width": 1
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 120,
+                      "x2": 120,
+                      "y1": 191,
+                      "y2": 196
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 120,
+                      "x2": 120,
+                      "y1": 214,
+                      "y2": 219
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 106,
+                      "x2": 111,
+                      "y1": 205,
+                      "y2": 205
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 129,
+                      "x2": 134,
+                      "y1": 205,
+                      "y2": 205
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 110,
+                      "x2": 113.5,
+                      "y1": 195,
+                      "y2": 198.5
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 126.5,
+                      "x2": 130,
+                      "y1": 211.5,
+                      "y2": 215
+                    }
+                  ],
+                  "name": "rear-wheel",
+                  "type": "group"
+                },
+                {
+                  "elements": [
+                    {
+                      "cx": 285,
+                      "cy": 205,
+                      "fill": {
+                        "url": "url(#wheelGrad)"
+                      },
+                      "name": "front-tire",
+                      "r": 25,
+                      "stroke": {
+                        "paint": "#111111",
+                        "width": 2
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "cx": 285,
+                      "cy": 205,
+                      "fill": {
+                        "paint": "#BDC3C7"
+                      },
+                      "name": "front-hubcap",
+                      "r": 14,
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "cx": 285,
+                      "cy": 205,
+                      "fill": {
+                        "paint": "#7F8C8D"
+                      },
+                      "name": "front-hub-center",
+                      "r": 5,
+                      "stroke": {
+                        "paint": "#5D6D7E",
+                        "width": 1
+                      },
+                      "type": "circle"
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 285,
+                      "x2": 285,
+                      "y1": 191,
+                      "y2": 196
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 285,
+                      "x2": 285,
+                      "y1": 214,
+                      "y2": 219
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 271,
+                      "x2": 276,
+                      "y1": 205,
+                      "y2": 205
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 294,
+                      "x2": 299,
+                      "y1": 205,
+                      "y2": 205
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 275,
+                      "x2": 278.5,
+                      "y1": 195,
+                      "y2": 198.5
+                    },
+                    {
+                      "stroke": {
+                        "paint": "#95A5A6",
+                        "width": 1.5
+                      },
+                      "type": "line",
+                      "x1": 291.5,
+                      "x2": 295,
+                      "y1": 211.5,
+                      "y2": 215
+                    }
+                  ],
+                  "name": "front-wheel",
+                  "type": "group"
+                }
+              ],
+              "name": "wheels",
+              "type": "group"
+            },
+            {
+              "elements": [
+                {
+                  "cx": 200,
+                  "cy": 233,
+                  "fill": {
+                    "opacity": 0.15,
+                    "paint": "#000000"
+                  },
+                  "rx": 160,
+                  "ry": 5,
+                  "type": "ellipse"
+                }
+              ],
+              "name": "ground-shadow",
+              "type": "group"
+            }
+          ],
+          "name": "car",
+          "type": "group"
+        }
+      ]
+    },
+    "type": "ia.container.coord"
+  }
+}

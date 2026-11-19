@@ -1,0 +1,809 @@
+{
+  "custom": {
+    "linePath": "Exchange/Alarm Flood/Site1/Area1/Line1",
+    "tagPaths": [
+      {
+        "aggregate": "Average",
+        "alias": "Torque",
+        "path": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/MotorTorque"
+      },
+      {
+        "aggregate": "Average",
+        "alias": "BeltSpeed",
+        "path": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/BeltSpeed"
+      },
+      {
+        "aggregate": "Average",
+        "alias": "Vibration",
+        "path": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/DriveVibration"
+      }
+    ],
+    "torqueTagName": "MotorTorqe"
+  },
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 768,
+      "width": 1366
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "20px",
+                "fontWeight": 600
+              },
+              "text": "Packaging Line 1 — Drive Health"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Spacer"
+            },
+            "position": {
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.toggleDock(\u0027issue-pipeline\u0027)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "PipelineStatus"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/timeline"
+                }
+              },
+              "style": {
+                "fontWeight": 600
+              },
+              "text": "Pipeline Status"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# YouTrack sits beside this gateway on its own port; exchange.demo.hosts derives the URL\n\t# from the host the browser actually used.\n\texchange.demo.hosts.openYouTrack(self.session.props.gateway.address)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "OpenYouTrack"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/open_in_new"
+                }
+              },
+              "style": {
+                "fontWeight": 600
+              },
+              "text": "YouTrack"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\texchange.issueReport.ui.openReportDock(self.view, self.session, self.page)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "ReportIssue"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "var(--neutral-90)",
+                "color": "var(--neutral-10)",
+                "fontWeight": 600
+              },
+              "text": "Report an Issue"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "gap": "10px",
+            "padding": "12px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "CardLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "letterSpacing": "0.06em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Drive Torque (%)"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "TorqueValue"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "line": "{view.custom.linePath}",
+                          "metric": "{view.custom.torqueTagName}"
+                        },
+                        "tagPath": "[default]{line}/Packaging/{metric}"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "numberFormat({value}, \u0027#0.0\u0027)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "34px",
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "TorqueCard"
+            },
+            "position": {
+              "basis": "220px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "borderRadius": "6px",
+                "gap": "6px",
+                "padding": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "CardLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "letterSpacing": "0.06em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Belt Speed (ft/min)"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "BeltSpeedValue"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/BeltSpeed"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "numberFormat({value}, \u0027#0.0\u0027)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "34px",
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "BeltSpeedCard"
+            },
+            "position": {
+              "basis": "220px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "borderRadius": "6px",
+                "gap": "6px",
+                "padding": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "CardLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "letterSpacing": "0.06em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Drive Vibration (mm/s)"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "VibrationValue"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/DriveVibration"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "numberFormat({value}, \u0027#0.00\u0027)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "34px",
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "VibrationCard"
+            },
+            "position": {
+              "basis": "220px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "borderRadius": "6px",
+                "gap": "6px",
+                "padding": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "CardLabel"
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-60)",
+                    "fontSize": "12px",
+                    "letterSpacing": "0.06em",
+                    "textTransform": "uppercase"
+                  },
+                  "text": "Drive Current (A)"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "CurrentValue"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "direct",
+                        "tagPath": "[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/MotorCurrent"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "numberFormat({value}, \u0027#0.0\u0027)",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "tag"
+                    }
+                  }
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "34px",
+                    "fontWeight": 600
+                  }
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "CurrentCard"
+            },
+            "position": {
+              "basis": "220px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "borderRadius": "6px",
+                "gap": "6px",
+                "padding": "16px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Body"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "flexWrap": "wrap",
+            "gap": "12px",
+            "padding": "0 16px 16px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "FlowHeading"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "11px",
+            "fontWeight": 600,
+            "letterSpacing": "0.08em",
+            "padding": "0 16px 8px 16px"
+          },
+          "text": "PRODUCT FLOW · UPSTREAM TO DOWNSTREAM"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "KittingTile"
+            },
+            "position": {
+              "basis": "190px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "bufferLabel": "Bin",
+                "bufferTag": "BinLevel",
+                "linePath": "Exchange/Alarm Flood/Site1/Area1/Line1",
+                "rateLabel": "Pick rate",
+                "rateTag": "PickRate",
+                "rateUnits": "picks/min",
+                "station": "Kitting"
+              },
+              "path": "Exchange/Report Issue Agent/Station Tile"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Arrow1"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "color": "var(--neutral-50)",
+              "path": "material/arrow_forward",
+              "style": {
+                "height": "18px",
+                "width": "18px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "MixingTile"
+            },
+            "position": {
+              "basis": "190px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "bufferLabel": "Tank",
+                "bufferTag": "TankLevel",
+                "linePath": "Exchange/Alarm Flood/Site1/Area1/Line1",
+                "rateLabel": "Mixer load",
+                "rateTag": "MixerMotorCurrent",
+                "rateUnits": "A",
+                "station": "Mixing"
+              },
+              "path": "Exchange/Report Issue Agent/Station Tile"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Arrow2"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "color": "var(--neutral-50)",
+              "path": "material/arrow_forward",
+              "style": {
+                "height": "18px",
+                "width": "18px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "FormingTile"
+            },
+            "position": {
+              "basis": "190px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "bufferLabel": "Buffer",
+                "bufferTag": "BufferLevel",
+                "linePath": "Exchange/Alarm Flood/Site1/Area1/Line1",
+                "rateLabel": "Cycle rate",
+                "rateTag": "FormerCycleRate",
+                "rateUnits": "cyc/min",
+                "station": "Forming"
+              },
+              "path": "Exchange/Report Issue Agent/Station Tile"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Arrow3"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "color": "var(--neutral-50)",
+              "path": "material/arrow_forward",
+              "style": {
+                "height": "18px",
+                "width": "18px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "CookingTile"
+            },
+            "position": {
+              "basis": "190px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "bufferLabel": "Exit buf",
+                "bufferTag": "ExitBufferLevel",
+                "linePath": "Exchange/Alarm Flood/Site1/Area1/Line1",
+                "rateLabel": "Belt speed",
+                "rateTag": "OvenBeltSpeed",
+                "rateUnits": "ft/min",
+                "station": "Cooking"
+              },
+              "path": "Exchange/Report Issue Agent/Station Tile"
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "meta": {
+              "name": "Arrow4"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "color": "var(--neutral-50)",
+              "path": "material/arrow_forward",
+              "style": {
+                "height": "18px",
+                "width": "18px"
+              }
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "PackagingTile"
+            },
+            "position": {
+              "basis": "190px",
+              "grow": 1
+            },
+            "props": {
+              "params": {
+                "bufferLabel": "Infeed",
+                "bufferTag": "InfeedBufferLevel",
+                "linePath": "Exchange/Alarm Flood/Site1/Area1/Line1",
+                "rateLabel": "Throughput",
+                "rateTag": "PackagesPerMinute",
+                "rateUnits": "pkg/min",
+                "station": "Packaging"
+              },
+              "path": "Exchange/Report Issue Agent/Station Tile"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "name": "ProductFlow"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "style": {
+            "flexWrap": "wrap",
+            "gap": "8px",
+            "padding": "0 16px 4px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "TrendHeading"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-60)",
+            "fontSize": "11px",
+            "fontWeight": 600,
+            "letterSpacing": "0.08em",
+            "padding": "8px 16px 8px 16px"
+          },
+          "text": "PACKAGING DRIVE  ·  LAST 30 MINUTES"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "DriveTrend"
+            },
+            "position": {
+              "basis": "100px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.series[0].data": {
+                "binding": {
+                  "config": {
+                    "aggregate": "MinMax",
+                    "avoidScanClassValidation": true,
+                    "dateRange": {
+                      "mostRecent": "30",
+                      "mostRecentUnits": "MIN"
+                    },
+                    "enableValueCache": true,
+                    "ignoreBadQuality": false,
+                    "polling": {
+                      "enabled": true,
+                      "rate": "10"
+                    },
+                    "preventInterpolation": false,
+                    "returnFormat": "Wide",
+                    "returnSize": {
+                      "numRows": "300",
+                      "type": "FIXED"
+                    },
+                    "tags": "{view.custom.tagPaths}",
+                    "valueFormat": "DATASET"
+                  },
+                  "type": "tag-history"
+                }
+              }
+            },
+            "props": {
+              "legend": {
+                "position": "top",
+                "style": {
+                  "color": "var(--neutral-80)",
+                  "fontSize": "12px"
+                },
+                "visible": true
+              },
+              "plots": [
+                {
+                  "trends": [
+                    {
+                      "columns": [
+                        {
+                          "color": "#3987E5",
+                          "key": "Torque"
+                        },
+                        {
+                          "color": "#D95926",
+                          "key": "BeltSpeed"
+                        },
+                        {
+                          "color": "#199E70",
+                          "key": "Vibration"
+                        }
+                      ],
+                      "series": "Drive",
+                      "stack": false,
+                      "type": "line"
+                    }
+                  ]
+                }
+              ],
+              "series": [
+                {
+                  "name": "Drive"
+                }
+              ],
+              "style": {
+                "backgroundColor": "var(--neutral-20)",
+                "borderRadius": "6px",
+                "padding": "8px"
+              }
+            },
+            "type": "ia.chart.timeseries"
+          }
+        ],
+        "meta": {
+          "name": "TrendSection"
+        },
+        "position": {
+          "basis": "280px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "padding": "0 16px 8px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "basis": "100%",
+      "grow": 1
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "8px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

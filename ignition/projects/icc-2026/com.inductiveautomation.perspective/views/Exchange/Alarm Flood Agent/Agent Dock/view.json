@@ -1,0 +1,198 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 900,
+      "width": 520
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Title"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "style": {
+                    "color": "var(--neutral-90)",
+                    "fontSize": "18px",
+                    "fontWeight": 600
+                  },
+                  "text": "Alarm Flood Agent"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Spacer"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "text": ""
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tsystem.perspective.closeDock(\u0027alarm-flood-agent\u0027)\n"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Close"
+                },
+                "position": {
+                  "basis": "28px",
+                  "shrink": 0
+                },
+                "props": {
+                  "image": {
+                    "height": 18,
+                    "icon": {
+                      "color": "var(--neutral-90)",
+                      "path": "material/close"
+                    },
+                    "width": 18
+                  },
+                  "primary": false,
+                  "style": {
+                    "backgroundColor": "transparent",
+                    "border": "none",
+                    "borderRadius": "4px",
+                    "cursor": "pointer",
+                    "minHeight": "0px",
+                    "minWidth": "0px",
+                    "padding": "0px"
+                  },
+                  "text": ""
+                },
+                "type": "ia.input.button"
+              }
+            ],
+            "meta": {
+              "name": "TitleRow"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "direction": "row",
+              "style": {
+                "gap": "8px"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Subtitle"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "\u0027Investigates a stored flood event and reports a root cause with trend evidence. Target line: \u0027 + coalesce({[default]Exchange/Alarm Flood/Simulator/TargetLine}, \u0027n/a\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-70)",
+                "fontSize": "12px"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "borderBottom": "1px solid var(--neutral-40)",
+            "gap": "4px",
+            "padding": "14px 16px 10px 16px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "AiChat"
+        },
+        "position": {
+          "basis": "0",
+          "grow": 1,
+          "shrink": 1
+        },
+        "propConfig": {
+          "props.context.targetLine": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Exchange/Alarm Flood/Simulator/TargetLine"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "agentIcon": "material/alarm",
+          "agentName": "Alarm Flood Agent",
+          "suggestedPrompts": [
+            "Analyze the most recent alarm flood on this gateway and give me the root-cause report.",
+            "For the latest flood, what should the operator do right now, and what is the separate engineering fix?"
+          ]
+        },
+        "type": "ia.ai.chat"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "grow": 1
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "height": "100%"
+      }
+    },
+    "scripts": {
+      "componentScriptExtensions": null,
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": []
+    },
+    "type": "ia.container.flex"
+  }
+}

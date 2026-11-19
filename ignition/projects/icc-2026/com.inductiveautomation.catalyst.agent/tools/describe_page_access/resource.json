@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "describe_page_access",
+    "description": "Describe how one Perspective page is protected, or all of them. Returns the required security levels, the protection classification, and whether the page hosts an AI chat component. The classification distinguishes 'declared' (a permission block states an intent) from 'enforced' (a binding actually checks identity at runtime) -- keep that distinction in your answer, because a page that is declared-only reads as protected in a config review and is open to anyone who visits it.",
+    "parameters": [
+      {
+        "name": "url",
+        "description": "The page URL to describe, e.g. '/security-audit'. Omit to describe every registered page.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

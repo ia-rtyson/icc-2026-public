@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "run_security_audit",
+    "description": "Run a full gateway security audit and return every finding, the posture score, the inventory the findings cite, and the role-to-page access matrix. This is the primary tool -- call it first for any question about the gateway's security posture. The findings are computed deterministically by gateway code, not by you: do not invent, merge or re-grade them, and do not report a problem that is not in the list. Optionally pass 'domain' to narrow to one area when the user asks a focused follow-up question, which returns the same inventory with only that area's findings.",
+    "parameters": [
+      {
+        "name": "domain",
+        "description": "Narrow the findings to one area: 'users' (accounts, roles, password hygiene), 'gateway' (security properties, security levels, identity providers, API tokens), 'pages' (Perspective page and view access), or 'resources' (AI agents, MCP servers, tool bundles, WebDev endpoints). Omit for everything.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

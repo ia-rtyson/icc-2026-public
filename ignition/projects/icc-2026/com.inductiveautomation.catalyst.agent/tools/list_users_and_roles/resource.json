@@ -1,0 +1,22 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "list_users_and_roles",
+    "description": "List every user account and role across all user sources, with each account's roles, schedule, password age in days and contact count. Use this for direct questions about people and roles ('who has administrator', 'which accounts are stale') when a full audit would be more than the question needs. It reports the live gateway state, so it is authoritative for who exists right now.",
+    "parameters": []
+  }
+}

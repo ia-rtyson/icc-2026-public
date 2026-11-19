@@ -1,0 +1,42 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "lastModificationSignature": "78747e6852f45a291a933150aa857666f4efab76abf9697ab10e60b9be2c3f1e",
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-22T15:50:23Z"
+    },
+    "description": "Invoke one of a fixed allow-list of Ignition translation functions: util.translate, i18n.translate, i18n.listKeys (reads) and util.modifyTranslation, i18n.modifyTranslations (translation writes). Pass the dotted name without the system. prefix; positional args in args, keyword args in kwargs (a single dict in args is treated as kwargs). Any other function is refused with {ok: false, error, allowed}. Returns {ok: true, result} on success; Java-backed values are serialized via repr().",
+    "title": "systemCall",
+    "parameters": [
+      {
+        "name": "function",
+        "description": "one of: util.translate, i18n.translate, i18n.listKeys, util.modifyTranslation, i18n.modifyTranslations (\u0027system.\u0027 prefix optional)",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "args",
+        "description": "positional arguments for the call",
+        "type": "ARRAY",
+        "required": false
+      },
+      {
+        "name": "kwargs",
+        "description": "keyword arguments for the call",
+        "type": "OBJECT",
+        "required": false
+      }
+    ]
+  }
+}

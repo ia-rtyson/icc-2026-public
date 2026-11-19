@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "iagear.png"
+  ],
+  "attributes": {
+    "width": 300,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2026-04-13T04:21:41Z"
+    },
+    "size": 6746,
+    "lastModificationSignature": "a5a710d2c91ed940e375c7171fdf7ecb8beb12c4cdb41fc9666adc619432b495",
+    "height": 300
+  }
+}

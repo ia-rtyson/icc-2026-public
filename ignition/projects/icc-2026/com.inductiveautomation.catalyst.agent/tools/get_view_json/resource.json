@@ -1,0 +1,41 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-28T00:00:00Z"
+    },
+    "title": "get_view_json",
+    "description": "Reads the saved definition of a Perspective view from the project resources. Use mode='tree' first to get a cheap map of the view's component paths and types, then mode='full' with a component_path to pull the raw view.json for just the subtree you care about. This returns the persisted resource, NOT live runtime values -- for binding detail use get_component_bindings instead. If the view path is wrong, the tool returns the list of real view paths so you can retry. Read-only.",
+    "parameters": [
+      {
+        "name": "view_path",
+        "description": "The Designer view path, e.g. 'Exchange/Report Issue Agent/Line Overview'. No leading slash.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "component_path",
+        "description": "Optional. Slash-separated chain of component meta.name values starting at root, e.g. 'root/Body/TorqueCard/TorqueValue'. Omit to start at the view root.",
+        "type": "STRING",
+        "required": false
+      },
+      {
+        "name": "mode",
+        "description": "'tree' (default) returns a flat list of {path, type, name} for the subtree -- cheap, use this first. 'full' returns the raw view.json for the subtree.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

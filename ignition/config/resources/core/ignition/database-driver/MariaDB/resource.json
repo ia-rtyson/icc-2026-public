@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "description": "The MariaDB (a community-owned fork of MySQL) JDBC Driver - compatible with all MariaDB servers, MySQL 5.x (\u003e\u003d 5.5.3) and MySQL 8.0.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json",
+    "mariadb-java-client-3.3.3.jar"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "8.3-migration",
+      "timestamp": "2026-04-08T22:35:19Z"
+    },
+    "uuid": "665e50e3-7c48-4359-864d-7c705707a8d8",
+    "lastModificationSignature": "cf5ff0d308cb93e6766f7b0597575599f0e4b4b2be8d53879849682d2b71cf62",
+    "enabled": true
+  }
+}

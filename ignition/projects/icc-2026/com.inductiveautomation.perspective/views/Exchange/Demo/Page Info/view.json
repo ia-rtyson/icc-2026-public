@@ -1,0 +1,155 @@
+{
+  "custom": {
+    "pagePath": "/"
+  },
+  "params": {},
+  "propConfig": {
+    "custom.pagePath": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "path": "page.props.path"
+        },
+        "type": "property"
+      }
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 900,
+      "width": 420
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Heading"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 1,
+              "shrink": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "runScript(\u0027exchange.demo.pageInfo.title\u0027, 0, {view.custom.pagePath})"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "fontSize": "15px",
+                "fontWeight": 600
+              },
+              "text": ""
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.closeDock(\u0027page-info\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "path": "material/close",
+              "style": {
+                "color": "var(--neutral-60)",
+                "cursor": "pointer",
+                "height": "20px",
+                "width": "20px"
+              }
+            },
+            "type": "ia.display.icon"
+          }
+        ],
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "style": {
+            "borderBottom": "1px solid var(--neutral-30)",
+            "gap": "8px",
+            "paddingBottom": "8px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Body"
+        },
+        "position": {
+          "basis": "100px",
+          "grow": 1,
+          "shrink": 1
+        },
+        "propConfig": {
+          "props.source": {
+            "binding": {
+              "config": {
+                "expression": "runScript(\u0027exchange.demo.pageInfo.markdown\u0027, 0, {view.custom.pagePath})"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "sectionSpacing": 14,
+          "source": "",
+          "style": {
+            "fontSize": "13px",
+            "overflowY": "auto",
+            "paddingRight": "4px"
+          }
+        },
+        "type": "ia.display.markdown"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "basis": "100%",
+      "grow": 1
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-20)",
+        "gap": "10px",
+        "height": "100%",
+        "padding": "14px 16px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

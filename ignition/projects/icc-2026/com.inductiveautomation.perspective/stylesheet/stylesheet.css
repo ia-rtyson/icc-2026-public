@@ -1,0 +1,773 @@
+/* Direct stylesheet authoring is an advanced feature. Knowledge of CSS required.*/
+
+/*---------- Navigation Syles ----------*/
+.docked-view-left{width: auto !important}
+
+.psc-left-nav-collapsed {width: 50px; transition: width 0.25s}
+.psc-left-nav {width: 50px; transition: width 0.25s ease-in-out;}
+.psc-left-nav-open {width:200px; transition: width 0.25s ease-in-out;}
+
+/*.psc-nav-text {color: var(--neutral-70); fill: var(--neutral-70); }*/
+/*.psc-nav-text-hover {color: var(--neutral-100); fill: var(--neutral-100); background-color: rgba(255, 255, 255, 0.025);}*/
+
+.psc-nav-group-small {max-height: 50px; transition: max-height 0.5s ease-in-out;}
+.psc-nav-group {max-height: 1000px; transition: max-height 1s ease-in-out;}
+
+.psc-nav-group-icon-normal { transition: transform 0.5s ease;}
+.psc-nav-group-icon-turned { transition: transform 0.5s ease;}
+.psc-nav-group-icon-turned { transform: rotate(90deg);}
+
+/* Normal nav text/icon */
+.psc-nav-text {transition:color 200ms ease,
+       	     fill 200ms ease,
+               background-color 200ms ease,
+               transform 250ms ease;}
+
+/* Only apply hover behavior on mouse/trackpad-style devices */
+@media (hover: hover) and (pointer: fine)
+	   {.psc-nav-text:hover {color: var(--neutral-100);
+        					 fill: var(--neutral-100);
+       					 background-color: var(--neutral-30); /* was rgba(255, 255, 255, 0.025) */}
+	   .psc-nav-text.psc-zoom:hover {transform: scale(1.05);}}
+
+/*---------- Style for zooming when hovering ----------*/
+
+.psc-zoom {transition: transform 250ms;}
+.psc-zoom:hover {transform: scale(1.05);}
+
+/* Nav group icon (Exchange NavGroup template) -- the whole row is clickable. */
+.psc-clickable {cursor: pointer;}
+
+/*---------- Raised buttons ----------*/
+/* Translation Manager's OperatorActions buttons carry "exchange/translation/raised". It was never
+   defined, so they rendered flat; a soft two-layer shadow lifts them off the
+   dark card the way the rest of the app's raised surfaces do. */
+.psc-exchange\/translation\/raised {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.20);
+	transition: box-shadow 150ms ease, transform 150ms ease;
+}
+.psc-exchange\/translation\/raised:hover:not(:disabled) {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.40), 0 4px 10px rgba(0, 0, 0, 0.25);
+	transform: translateY(-1px);
+}
+
+/*---------- Markdown tables (AI-generated report content) ----------*/
+/* react-markdown renders GFM tables as plain <table>/<th>/<td> with no
+   Perspective styling of their own, so AI report replies (setpoint tables,
+   analyst summaries) otherwise show up with default browser table chrome
+   against the app's dark theme. Bare element selectors are safe here - the
+   ia.display.table grid component renders as divs, never a real <table>. */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 6px 0 14px;
+	font-size: 13px;
+}
+
+th, td {
+	padding: 6px 12px;
+	border: 1px solid var(--neutral-30);
+	text-align: left;
+}
+
+th {
+	background-color: var(--neutral-20);
+	color: var(--neutral-60);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+td {
+	color: var(--neutral-90);
+	background-color: var(--neutral-20);
+}
+
+/*---------- Tag Import reference document links ----------*/
+/* The markdown component renders plain <a> tags and the theme's own link rule
+   wins on specificity/order, so these need !important -- without it the links
+   stay the default blue, which is unreadable on the dark card.
+   NOTE: the component's style.classes value is the bare name
+   ("exchange/tag-import/reference-links") -- Perspective prepends "psc-"
+   itself, and the slashes are escaped in the selector. Writing a "psc-" prefix
+   there renders class="psc-psc-..." and this rule silently matches nothing. */
+.psc-exchange\/tag-import\/reference-links a,
+.psc-exchange\/tag-import\/reference-links a:link,
+.psc-exchange\/tag-import\/reference-links a:visited,
+.psc-exchange\/tag-import\/reference-links a:active {
+	color: inherit !important;
+	text-decoration: underline !important;
+	text-underline-offset: 2px;
+}
+
+.psc-exchange\/tag-import\/reference-links a:hover {
+	color: var(--neutral-100) !important;
+	text-decoration: underline !important;
+	text-decoration-thickness: 2px;
+}
+
+/*---------- Home landing page cards ----------*/
+/* Each card sets --card-accent as a static inline style and it inherits down to
+   the badge tint and the hover border. Static, not bound: a binding whose
+   propConfig key contains "--" never evaluates, and nothing here needs one.
+   The cards are emitted inline by scripts/gen_home_cards.py -- they used to be
+   instances of Shared/Demo Card, which is why they took ~3 s to populate. */
+
+.psc-exchange\/demo\/home-root {
+  padding: 28px 32px 32px 32px;
+  overflow: auto;
+}
+
+/* The title block above the grid (Home root/Header). */
+.psc-exchange\/demo\/home-header {
+  gap: 4px;
+}
+
+.psc-exchange\/demo\/home-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--neutral-90);
+}
+
+.psc-exchange\/demo\/home-grid {
+  align-content: flex-start;
+  overflow: auto;
+}
+
+/* --- the card ------------------------------------------------------------ */
+.psc-exchange\/demo\/demo-card {
+  /* Was Shared/Demo Card's defaultSize. The cards are plain flex children now,
+     so their geometry lives here. */
+  width: 324px;
+  height: 180px;
+  cursor: pointer;
+  padding: 18px;
+  border: 1px solid var(--neutral-30);
+  border-radius: 10px;
+  background-color: var(--neutral-20);
+  /* Only transform/box-shadow are transitioned. Never transition a property
+     Perspective delivers as a bound value -- it pins the computed value at its
+     initial value and the screen stops updating. */
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.psc-exchange\/demo\/demo-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--card-accent, var(--neutral-50));
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38);
+}
+
+/* --- icon badge --------------------------------------------------------- */
+/* The tint is a pseudo-element rather than a translucent background so the
+   accent can be one solid hex param and still read as a wash. */
+.psc-exchange\/demo\/demo-card-badge {
+  position: relative;
+  width: 44px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-grow: 0;
+}
+
+.psc-exchange\/demo\/demo-card-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--card-accent, var(--neutral-50));
+  opacity: 0.16;
+}
+
+.psc-exchange\/demo\/demo-card-badge > * {
+  position: relative;
+  z-index: 1;
+}
+
+.psc-exchange\/demo\/demo-card-icon {
+  color: var(--card-accent, var(--neutral-70));
+  fill: var(--card-accent, var(--neutral-70));
+}
+
+/* --- text --------------------------------------------------------------- */
+.psc-exchange\/demo\/demo-card-title {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--neutral-90);
+}
+
+.psc-exchange\/demo\/demo-card-desc {
+  margin-top: 4px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--neutral-60);
+  white-space: normal;
+}
+/*---------- end home landing page cards ----------*/
+
+/*---------- Resizable dock divider (dark theme) ----------*/
+/* PerspectiveClient.css hardcodes the drag handle light:
+       .docked-view .content-wrapper .dock-border.drag-border
+           { background-color: #e5e5e5 }
+   plus 1px #d3d8de edges, and the grip glyph is `fill: currentcolor`. Every
+   surface either side of it here is --neutral-10 (#121619), so the resizer
+   renders as a 22px near-white stripe down the page -- the only light chrome
+   left in the app. The module offers no theme variable for it, so it is
+   overridden by selector. Specificity has to match the module rule
+   (.docked-view .content-wrapper ...) or the hardcoded value wins. */
+.docked-view .content-wrapper .dock-border.drag-border {
+	background-color: var(--neutral-20);
+}
+
+.docked-view.docked-view-left .content-wrapper .dock-border.drag-border,
+.docked-view.docked-view-right .content-wrapper .dock-border.drag-border {
+	border-left: 1px solid var(--neutral-30);
+	border-right: 1px solid var(--neutral-30);
+}
+
+.docked-view.docked-view-top .content-wrapper .dock-border.drag-border,
+.docked-view.docked-view-bottom .content-wrapper .dock-border.drag-border {
+	border-top: 1px solid var(--neutral-30);
+	border-bottom: 1px solid var(--neutral-30);
+}
+
+/* The grip inherits `currentcolor`, which resolved to a near-white #dde1e6 --
+   glaring on the dark bar. Muted at rest, brightened on hover so the divider
+   still advertises that it is draggable. */
+.docked-view .content-wrapper .dock-border.drag-border .drag-icon {
+	fill: var(--neutral-60);
+}
+
+.docked-view .content-wrapper .dock-border.drag-border:hover {
+	background-color: var(--neutral-30);
+}
+
+.docked-view .content-wrapper .dock-border.drag-border:hover .drag-icon {
+	fill: var(--neutral-90);
+}
+/*---------- end resizable dock divider ----------*/
+
+/*---------- AI report images (trend charts) ----------*/
+/* render_trend_chart returns a Markdown image reference and the endpoint
+   serves an SVG carrying an intrinsic width="..."  attribute, so the <img>
+   lays out at its natural size regardless of how wide the chat actually is.
+   In the 800px agent dock a 960px chart overhung the message column, ignored
+   the body's padding (so it started at the text's left edge and ran past its
+   right one) and put a horizontal scrollbar on the whole report. Clamping to
+   the content box makes the chart obey the same gutters as the prose. */
+.ia_aiChatComponent img,
+.ai-message__body img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+/*---------- end AI report images ----------*/
+
+
+/*---------- Issue Pipeline activity table ----------*/
+/* `.ia_tableComponent` ships a ~1px border in rgb(250,250,251) -- the same
+   near-white the dashboard widgets had. On this dark theme that outline is the
+   brightest thing in the dock. The border itself is overridden on the
+   component (props.style), so all that is left here is the interior: the
+   platform draws no row separators and no cell padding at all, which is what
+   made the rows read as an undifferentiated block. */
+.psc-exchange\/issue-report\/pipeline-table .ia_table__head__header {
+	background-color: var(--neutral-30);
+	border-bottom: 1px solid var(--neutral-40);
+}
+.psc-exchange\/issue-report\/pipeline-table .ia_table__head__header__cell .content {
+	color: var(--neutral-70);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+.psc-exchange\/issue-report\/pipeline-table .ia_table__body__row {
+	border-bottom: 1px solid var(--neutral-30);
+}
+.psc-exchange\/issue-report\/pipeline-table .ia_table__body__rowGroup:last-child .ia_table__body__row {
+	border-bottom: none;
+}
+/* Zebra striping instead of a hover-only cue -- this table is read on a
+   projector, where a 1px separator alone does not carry. */
+.psc-exchange\/issue-report\/pipeline-table .ia_table__body__row--odd {
+	background-color: var(--neutral-30);
+}
+.psc-exchange\/issue-report\/pipeline-table .ia_table__cell .content {
+	padding: 0 10px;
+}
+/* The outcome column wraps; everything else is short and reads better on one
+   line than half-wrapped at a narrow dock width. */
+.psc-exchange\/issue-report\/pipeline-table .ia_table__body__row .tc .content {
+	line-height: 1.45;
+}
+/*---------- end Issue Pipeline activity table ----------*/
+
+
+/* >>> alarm-flood mimic motion (generated by scripts/wire_alarm_flood_svg.py -- do not hand-edit) */
+/* Perspective prefixes SVG ids per component instance, hence [id$=]. */
+/* Rate and play-state come from --<station>-rate / --<station>-play,   */
+/* bound on the SVG's parent flex container and inherited into the SVG. */
+
+@keyframes af-spin     { to  { transform: rotate(360deg); } }
+@keyframes af-bob-30   { 50% { transform: translateY(30px); } }
+@keyframes af-bob-20   { 50% { transform: translateY(20px); } }
+@keyframes af-bob-4    { 50% { transform: translateY(4px); } }
+
+/* Resynced pairs. Identical bodies under two names: an animation can
+   only be restarted from CSS by renaming it, and these have to be put
+   back in phase after a flood has paused each of them at a different
+   moment. Which copy is live comes from --gen-*, all flipped together
+   by one expr-struct binding off the simulator phase. */
+@keyframes af-spin-a { to  { transform: rotate(360deg); } }
+@keyframes af-spin-b { to  { transform: rotate(360deg); } }
+@keyframes af-cam-30-a { 0% { transform: translateY(0.000px); } 5% { transform: translateY(0.734px); } 10% { transform: translateY(2.865px); } 15% { transform: translateY(6.183px); } 20% { transform: translateY(10.365px); } 25% { transform: translateY(15.000px); } 30% { transform: translateY(19.635px); } 35% { transform: translateY(23.817px); } 40% { transform: translateY(27.135px); } 45% { transform: translateY(29.266px); } 50% { transform: translateY(30.000px); } 55% { transform: translateY(29.266px); } 60% { transform: translateY(27.135px); } 65% { transform: translateY(23.817px); } 70% { transform: translateY(19.635px); } 75% { transform: translateY(15.000px); } 80% { transform: translateY(10.365px); } 85% { transform: translateY(6.183px); } 90% { transform: translateY(2.865px); } 95% { transform: translateY(0.734px); } 100% { transform: translateY(0.000px); } }
+@keyframes af-cam-30-b { 0% { transform: translateY(0.000px); } 5% { transform: translateY(0.734px); } 10% { transform: translateY(2.865px); } 15% { transform: translateY(6.183px); } 20% { transform: translateY(10.365px); } 25% { transform: translateY(15.000px); } 30% { transform: translateY(19.635px); } 35% { transform: translateY(23.817px); } 40% { transform: translateY(27.135px); } 45% { transform: translateY(29.266px); } 50% { transform: translateY(30.000px); } 55% { transform: translateY(29.266px); } 60% { transform: translateY(27.135px); } 65% { transform: translateY(23.817px); } 70% { transform: translateY(19.635px); } 75% { transform: translateY(15.000px); } 80% { transform: translateY(10.365px); } 85% { transform: translateY(6.183px); } 90% { transform: translateY(2.865px); } 95% { transform: translateY(0.734px); } 100% { transform: translateY(0.000px); } }
+@keyframes af-bob-55-a { 50% { transform: translateY(55px); } }
+@keyframes af-bob-55-b { 50% { transform: translateY(55px); } }
+@keyframes af-run-seg1-a { from { transform: translateX(0); } to   { transform: translateX(320px); } }
+@keyframes af-run-seg1-b { from { transform: translateX(0); } to   { transform: translateX(320px); } }
+@keyframes af-run-seg2-a { from { transform: translateX(0); } to   { transform: translateX(320px); } }
+@keyframes af-run-seg2-b { from { transform: translateX(0); } to   { transform: translateX(320px); } }
+@keyframes af-run-seg3-a { from { transform: translateX(0); } to   { transform: translateX(320px); } }
+@keyframes af-run-seg3-b { from { transform: translateX(0); } to   { transform: translateX(320px); } }
+@keyframes af-run-seg4-a { from { transform: translateX(0); } to   { transform: translateX(106.667px); } }
+@keyframes af-run-seg4-b { from { transform: translateX(0); } to   { transform: translateX(106.667px); } }
+
+@keyframes af-alarm-red   { 0%, 100% { stroke: #ff2222; opacity: 0.10; }
+                            50%      { stroke: #ff2222; opacity: 0.95; } }
+@keyframes af-alarm-amber { 0%, 100% { stroke: #ffaa00; opacity: 0.08; }
+                            50%      { stroke: #ffaa00; opacity: 0.60; } }
+@keyframes af-dash-18   { to  { stroke-dashoffset: -18; } }
+@keyframes af-dash-26   { to  { stroke-dashoffset: -26; } }
+@keyframes af-flow      { from { transform: translateX(0); }
+                          to   { transform: translateX(1045px); } }
+
+/* NO transition: on any bound property. Perspective delivers a bound
+   value as a presentation ATTRIBUTE, and a CSS transition on such a
+   property pins the computed value at its initial value forever -- the
+   attribute updates, the screen never does. Measured: a gauge reading
+   scale(1, 0.992) still computed as its scale(1, 0.4) seed, and a
+   status lamp stayed green through a Fault. Applies to transform, fill
+   and opacity alike. Smoothing has to come from quantising the value,
+   not from easing between values. */
+
+[id$="-conv-b"] > g {
+	animation: af-spin calc(0.6667s / var(--form-rate, 1)) linear infinite;
+	animation-play-state: var(--form-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-conv-c"] > g {
+	animation: af-spin calc(0.6667s / var(--cook-rate, 1)) linear infinite;
+	animation-play-state: var(--cook-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-conv-d"] > g {
+	animation: af-spin calc(0.6667s / var(--pkg-rate, 1)) linear infinite;
+	animation-play-state: var(--pkg-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-belt-mixing"] > g {
+	animation: af-spin calc(0.6667s / var(--mix-rate, 1)) linear infinite;
+	animation-play-state: var(--mix-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-belt-forming"] > g {
+	animation: af-spin calc(0.6667s / var(--form-rate, 1)) linear infinite;
+	animation-play-state: var(--form-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-belt-cooking"] > g {
+	animation: af-spin calc(0.6667s / var(--cook-rate, 1)) linear infinite;
+	animation-play-state: var(--cook-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-belt-packaging"] > g {
+	animation: af-spin calc(0.6667s / var(--pkg-rate, 1)) linear infinite;
+	animation-play-state: var(--pkg-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-pkg-rotor"] {
+	animation: var(--gen-spin, af-spin-a) calc(0.6838s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-0.3419s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg3-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-pkg-crank"] {
+	animation: var(--gen-spin, af-spin-a) calc(0.6838s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-0.3419s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg3-play, running);
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+[id$="-pkg-camrod"] {
+	animation: var(--gen-cam-30, af-cam-30-a) calc(0.6838s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-0.3419s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg3-play, running);
+}
+[id$="-kit-arm-1"] {
+	animation: af-bob-30 calc(0.6667s / var(--kit-rate, 1)) linear infinite;
+	animation-play-state: var(--kit-play, running);
+}
+[id$="-kit-arm-2"] {
+	animation: af-bob-20 calc(0.8000s / var(--kit-rate, 1)) linear infinite;
+	animation-play-state: var(--kit-play, running);
+}
+[id$="-form-piston"] {
+	animation: var(--gen-bob-55, af-bob-55-a) calc(0.6838s / var(--form-rate, 1)) linear infinite;
+	animation-delay: calc(-0.3419s / var(--form-rate, 1));
+	animation-play-state: var(--seg1-play, running);
+}
+[id$="-form-press"] {
+	animation: var(--gen-bob-55, af-bob-55-a) calc(0.6838s / var(--form-rate, 1)) linear infinite;
+	animation-delay: calc(-0.3419s / var(--form-rate, 1));
+	animation-play-state: var(--seg1-play, running);
+}
+[id$="-pkg-sealer"] {
+	animation: var(--gen-cam-30, af-cam-30-a) calc(0.6838s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-0.3419s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg3-play, running);
+}
+[id$="-flow-chute-1"] {
+	animation: af-dash-18 calc(0.3333s / var(--kit-rate, 1)) linear infinite;
+	animation-play-state: var(--kit-play, running);
+}
+[id$="-flow-chute-2"] {
+	animation: af-dash-26 calc(0.3333s / var(--kit-rate, 1)) linear infinite;
+	animation-play-state: var(--kit-play, running);
+}
+[id$="-mix-wave"] {
+	animation: af-bob-4 calc(0.6667s / var(--mix-rate, 1)) linear infinite;
+	animation-play-state: var(--mix-play, running);
+}
+
+[id$="-kitting-alarm-halo"] {
+	opacity: 0;
+	animation: var(--kit-alarm, none) 1s ease-in-out infinite;
+}
+[id$="-mixing-alarm-halo"] {
+	opacity: 0;
+	animation: var(--mix-alarm, none) 1s ease-in-out infinite;
+}
+[id$="-forming-alarm-halo"] {
+	opacity: 0;
+	animation: var(--form-alarm, none) 1s ease-in-out infinite;
+}
+[id$="-cooking-alarm-halo"] {
+	opacity: 0;
+	animation: var(--cook-alarm, none) 1s ease-in-out infinite;
+}
+[id$="-packaging-alarm-halo"] {
+	opacity: 0;
+	animation: var(--pkg-alarm, none) 1s ease-in-out infinite;
+}
+[id$="-packaging-vibration-alarm"] {
+	opacity: 0;
+	animation: var(--pdrv-alarm, none) 0.7s ease-in-out infinite;
+}
+
+[id$="-flow-1-0"] {
+	animation: var(--gen-run-seg1, af-run-seg1-a) calc(2.0513s / var(--form-rate, 1)) linear infinite;
+	animation-delay: calc(-0.0000s / var(--form-rate, 1));
+	animation-play-state: var(--seg1-play, running);
+}
+[id$="-flow-1-1"] {
+	animation: var(--gen-run-seg1, af-run-seg1-a) calc(2.0513s / var(--form-rate, 1)) linear infinite;
+	animation-delay: calc(-0.6838s / var(--form-rate, 1));
+	animation-play-state: var(--seg1-play, running);
+}
+[id$="-flow-1-2"] {
+	animation: var(--gen-run-seg1, af-run-seg1-a) calc(2.0513s / var(--form-rate, 1)) linear infinite;
+	animation-delay: calc(-1.3675s / var(--form-rate, 1));
+	animation-play-state: var(--seg1-play, running);
+}
+[id$="-flow-2-0"] {
+	animation: var(--gen-run-seg2, af-run-seg2-a) calc(2.0513s / var(--cook-rate, 1)) linear infinite;
+	animation-delay: calc(-0.0000s / var(--cook-rate, 1));
+	animation-play-state: var(--seg2-play, running);
+}
+[id$="-flow-2-1"] {
+	animation: var(--gen-run-seg2, af-run-seg2-a) calc(2.0513s / var(--cook-rate, 1)) linear infinite;
+	animation-delay: calc(-0.6838s / var(--cook-rate, 1));
+	animation-play-state: var(--seg2-play, running);
+}
+[id$="-flow-2-2"] {
+	animation: var(--gen-run-seg2, af-run-seg2-a) calc(2.0513s / var(--cook-rate, 1)) linear infinite;
+	animation-delay: calc(-1.3675s / var(--cook-rate, 1));
+	animation-play-state: var(--seg2-play, running);
+}
+[id$="-flow-3-0"] {
+	animation: var(--gen-run-seg3, af-run-seg3-a) calc(2.0513s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-0.0000s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg3-play, running);
+}
+[id$="-flow-3-1"] {
+	animation: var(--gen-run-seg3, af-run-seg3-a) calc(2.0513s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-0.6838s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg3-play, running);
+}
+[id$="-flow-3-2"] {
+	animation: var(--gen-run-seg3, af-run-seg3-a) calc(2.0513s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-1.3675s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg3-play, running);
+}
+[id$="-flow-4-0"] {
+	animation: var(--gen-run-seg4, af-run-seg4-a) calc(0.6838s / var(--pkg-rate, 1)) linear infinite;
+	animation-delay: calc(-0.0000s / var(--pkg-rate, 1));
+	animation-play-state: var(--seg4-play, running);
+}
+/* <<< alarm-flood mimic motion */
+
+/*---------- Dashboard Agent widget tiles ----------*/
+/* The ia.display.dashboard component draws every widget as a bare rectangle
+   with a 1px near-white border (measured: rgb(250,250,251)) over a transparent
+   background and no padding anywhere. On a dark theme that reads as a
+   wireframe, not a card -- the border is the brightest thing on the screen and
+   the chart runs straight into it.
+
+   These rules are on the platform's own class names rather than on
+   widgets[].style.classes, because the agent writes the widgets array and
+   would have to remember to set a class on every tile it places. Styling the
+   component means a tile the agent produces and a tile loaded from a saved
+   config look the same without either of them knowing about it.
+
+   Nothing here transitions a property Perspective delivers as a bound value --
+   border-color and box-shadow are set by CSS alone, not by a binding. */
+.dashboard-widget {
+	border: 1px solid var(--neutral-40) !important;
+	border-radius: 8px;
+	background-color: var(--neutral-20);
+	/* Two shadows: a tight one for the edge, a wide soft one for the lift. */
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.40),
+	            0 6px 18px rgba(0, 0, 0, 0.24);
+	overflow: hidden;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.dashboard-widget:hover {
+		border-color: var(--neutral-60) !important;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.40),
+		            0 10px 26px rgba(0, 0, 0, 0.34);
+	}
+}
+
+/* The body is a square-cornered child of a rounded parent, so without this the
+   tile's own background paints over the radius at all four corners. */
+.dashboard-widget-body {
+	background-color: var(--neutral-20);
+	border-radius: 8px;
+}
+
+/* The dashboard's own surface, so the tiles sit on something rather than on
+   the page background. */
+.dashboard-container {
+	background-color: var(--neutral-10);
+}
+
+/* >>> agent anatomy walkthrough (generated by scripts/gen_agent_anatomy.py -- do not hand-edit) */
+/* Reveal state lives entirely in class names written by the Next/Back scripts.
+   Animations use `forwards` rather than transitions, and Back removes the class
+   while Next re-adds it -- removing and re-adding a class restarts an animation,
+   so no -a/-b renaming is needed here.
+
+   Perspective prefixes SVG ids per component instance, hence [id$="-name"]. */
+
+/* ---- a part card, before and after its step ---------------------------- */
+.psc-exchange\/agent-anatomy\/part {
+	border: 1px solid transparent;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.psc-exchange\/agent-anatomy\/idle {
+	opacity: 0.10;
+	filter: blur(3px);
+	border: 1px dashed var(--neutral-40);
+	box-shadow: none;
+	transform: translateY(10px) scale(0.985);
+}
+
+.psc-exchange\/agent-anatomy\/prompt { --aa-accent: #3987E5; }
+.psc-exchange\/agent-anatomy\/tools  { --aa-accent: #D95926; }
+.psc-exchange\/agent-anatomy\/model  { --aa-accent: #199E70; }
+
+.psc-exchange\/agent-anatomy\/live {
+	animation: aa-card-in 620ms cubic-bezier(0.16, 0.84, 0.36, 1) forwards;
+	border-color: color-mix(in srgb, var(--aa-accent) 45%, transparent);
+}
+
+@keyframes aa-card-in {
+	from { opacity: 0.10; filter: blur(3px); transform: translateY(10px) scale(0.985); }
+	55%  { opacity: 1;    filter: blur(0);   transform: translateY(-3px) scale(1.004); }
+	to   { opacity: 1;    filter: blur(0);   transform: none;
+	       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35),
+	                   0 0 0 1px color-mix(in srgb, var(--aa-accent) 26%, transparent),
+	                   0 8px 30px color-mix(in srgb, var(--aa-accent) 16%, transparent); }
+}
+
+/* The badge and tool tiles read their colour from the card's --aa-accent, so a
+   card's whole identity is the one custom property set above. */
+.psc-exchange\/agent-anatomy\/badge {
+	background-color: color-mix(in srgb, var(--aa-accent) 22%, transparent);
+	color: var(--aa-accent);
+	border: 1px solid color-mix(in srgb, var(--aa-accent) 45%, transparent);
+	border-radius: 9px;
+}
+
+.psc-exchange\/agent-anatomy\/code {
+	background-color: var(--neutral-10);
+	border: 1px solid var(--neutral-30);
+	border-left: 3px solid var(--aa-accent);
+}
+
+.psc-exchange\/agent-anatomy\/tool {
+	background-color: var(--neutral-10);
+	border: 1px solid var(--neutral-30);
+	border-left: 3px solid var(--aa-accent);
+}
+
+/* ---- the figure --------------------------------------------------------- */
+.psc-exchange\/agent-anatomy\/stage [id$="-aura"],
+.psc-exchange\/agent-anatomy\/stage [id$="-aura2"] {
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+
+.psc-exchange\/agent-anatomy\/stage [id$="-aura"]  { animation: aa-spin 38s linear infinite; }
+.psc-exchange\/agent-anatomy\/stage [id$="-aura2"] { animation: aa-spin 28s linear infinite reverse; }
+
+@keyframes aa-spin { to { transform: rotate(360deg); } }
+
+.psc-exchange\/agent-anatomy\/stage [id$="-figure"] {
+	animation: aa-figure-in 900ms cubic-bezier(0.16, 0.84, 0.36, 1) both;
+	filter: drop-shadow(0 0 16px rgba(194, 203, 210, 0.14));
+}
+
+/* The figure is the thing being explained, so it carries a real caption
+   rather than a footnote-sized one. */
+.psc-exchange\/agent-anatomy\/stage [id$="-caption"] {
+	letter-spacing: 0.3em;
+	font-weight: 700;
+}
+
+@keyframes aa-figure-in {
+	from { opacity: 0; transform: translateY(14px); }
+	to   { opacity: 1; transform: none; }
+}
+
+/* Connectors: hidden until their step, then drawn from the card to the body. */
+.psc-exchange\/agent-anatomy\/stage [id$="-link-prompt"],
+.psc-exchange\/agent-anatomy\/stage [id$="-link-tools"] {
+	stroke-dasharray: 108;
+	stroke-dashoffset: 108;
+}
+
+.psc-exchange\/agent-anatomy\/stage [id$="-link-model"] {
+	stroke-dasharray: 34;
+	stroke-dashoffset: 34;
+}
+
+.psc-exchange\/agent-anatomy\/on-prompt [id$="-link-prompt"],
+.psc-exchange\/agent-anatomy\/on-tools  [id$="-link-tools"],
+.psc-exchange\/agent-anatomy\/on-model  [id$="-link-model"] {
+	animation: aa-draw 560ms 120ms ease-out forwards;
+}
+
+@keyframes aa-draw { to { stroke-dashoffset: 0; } }
+
+/* The dot that runs down the connector, once, as it lands. The base rule is
+   what actually hides it at rest: opacity="0" in the elements array is not
+   honoured here. An animation outranks a normal declaration, so the
+   keyframes still play over the top and fall back to hidden when done. */
+.psc-exchange\/agent-anatomy\/stage [id$="-dot-prompt"],
+.psc-exchange\/agent-anatomy\/stage [id$="-dot-tools"],
+.psc-exchange\/agent-anatomy\/stage [id$="-dot-model"] {
+	opacity: 0;
+}
+
+/* The dot that runs down the connector, once, as it lands. */
+.psc-exchange\/agent-anatomy\/on-prompt [id$="-dot-prompt"] { animation: aa-dot-right 900ms 240ms ease-in-out; }
+.psc-exchange\/agent-anatomy\/on-tools  [id$="-dot-tools"]  { animation: aa-dot-left  900ms 240ms ease-in-out; }
+.psc-exchange\/agent-anatomy\/on-model  [id$="-dot-model"]  { animation: aa-dot-down  900ms 240ms ease-in-out; }
+
+@keyframes aa-dot-right {
+	from { opacity: 0; transform: translateX(0); }
+	20%  { opacity: 1; }
+	to   { opacity: 0; transform: translateX(106px); }
+}
+
+@keyframes aa-dot-left {
+	from { opacity: 0; transform: translateX(0); }
+	20%  { opacity: 1; }
+	to   { opacity: 0; transform: translateX(-106px); }
+}
+
+@keyframes aa-dot-down {
+	from { opacity: 0; transform: translateY(0); }
+	20%  { opacity: 1; }
+	to   { opacity: 0; transform: translateY(32px); }
+}
+
+/* Each part lights the bit of the body it corresponds to. A CSS rule beats a
+   presentation attribute, so the idle colours in the elements array are simply
+   overridden -- and revert when the class goes away. */
+.psc-exchange\/agent-anatomy\/on-prompt [id$="-torso"] {
+	animation: aa-light-torso 700ms 300ms ease-out forwards;
+}
+
+@keyframes aa-light-torso {
+	to { stroke: #3987E5;
+	     filter: drop-shadow(0 0 9px color-mix(in srgb, #3987E5 70%, transparent)); }
+}
+
+.psc-exchange\/agent-anatomy\/on-tools [id$="-hand-l"],
+.psc-exchange\/agent-anatomy\/on-tools [id$="-hand-r"] {
+	animation: aa-light-hands 700ms 300ms ease-out forwards;
+}
+
+@keyframes aa-light-hands {
+	0%   { fill: #4D5358; }
+	60%  { fill: #D95926; transform: scale(1.5); }
+	to   { fill: #D95926;
+	       filter: drop-shadow(0 0 9px color-mix(in srgb, #D95926 70%, transparent)); }
+}
+
+.psc-exchange\/agent-anatomy\/on-tools [id$="-hand-l"],
+.psc-exchange\/agent-anatomy\/on-tools [id$="-hand-r"] {
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+
+.psc-exchange\/agent-anatomy\/on-model [id$="-head"] {
+	animation: aa-light-head 700ms 300ms ease-out forwards;
+}
+
+@keyframes aa-light-head {
+	to { stroke: #199E70;
+	     filter: drop-shadow(0 0 12px color-mix(in srgb, #199E70 75%, transparent)); }
+}
+
+.psc-exchange\/agent-anatomy\/on-model [id$="-core"] {
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+	animation: aa-core-in 500ms 420ms ease-out forwards,
+	           aa-core-pulse 2.4s 920ms ease-in-out infinite;
+}
+
+@keyframes aa-core-in {
+	from { opacity: 0; transform: scale(0.2); }
+	to   { opacity: 0.9; transform: scale(1); }
+}
+
+@keyframes aa-core-pulse {
+	0%, 100% { opacity: 0.55; transform: scale(0.92); }
+	50%      { opacity: 1;    transform: scale(1.06); }
+}
+/* <<< agent anatomy walkthrough */

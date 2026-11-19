@@ -1,0 +1,216 @@
+{
+  "custom": {},
+  "params": {
+    "issue": {}
+  },
+  "propConfig": {
+    "params.issue": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 800,
+      "width": 660
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-90)",
+                "fontSize": "18px",
+                "fontWeight": 700
+              },
+              "text": "Report an issue"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.closeDock(\"issue-report\")\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Close"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "transparent",
+                "border": "1px solid var(--neutral-30)",
+                "borderRadius": "3px",
+                "color": "var(--neutral-90)",
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "padding": "4px 12px"
+              },
+              "text": "Close"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "HeaderRow"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "justify": "flex-start",
+          "style": {
+            "gap": "10px"
+          },
+          "wrap": "nowrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Heading"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-60)",
+                "fontSize": "11px",
+                "fontWeight": 600,
+                "letterSpacing": "0.08em"
+              },
+              "text": "CAPTURED CONTEXT"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Rows"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.instances": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.issue"
+                  },
+                  "transforms": [
+                    {
+                      "code": "\t# A one-line delegation: runScript() hands an object param over in a form the\n\t# repeater does not render, so the property value goes to the library as-is\n\treturn exchange.issueReport.ui.contextRows(value)",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "elementPosition": {
+                "basis": "auto",
+                "grow": 0,
+                "shrink": 0
+              },
+              "instances": [],
+              "path": "Exchange/Report Issue Agent/Context Row",
+              "useDefaultViewHeight": false
+            },
+            "type": "ia.display.flex-repeater"
+          }
+        ],
+        "meta": {
+          "name": "CapturedContext"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "backgroundColor": "var(--neutral-20)",
+            "border": "1px solid var(--neutral-30)",
+            "borderRadius": "6px",
+            "gap": "8px",
+            "padding": "12px 14px"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "AiChat"
+        },
+        "position": {
+          "basis": "500px",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.context.issue": {
+            "binding": {
+              "config": {
+                "path": "view.params.issue"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn system.util.jsonDecode(system.util.jsonEncode(value))",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "agentIcon": "material/bug_report",
+          "agentName": "Report Issue Agent",
+          "suggestedPrompts": [
+            "There\u0027s an issue with the drive torque.",
+            "Go ahead and file this ticket."
+          ]
+        },
+        "type": "ia.ai.chat"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "basis": "100%",
+      "grow": 1
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "var(--neutral-10)",
+        "gap": "10px",
+        "padding": "10px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "save_proposal",
+    "description": "Saves your structured tag-structure proposal so it renders in the tree view on the Tag Import page for the user to review. Creates nothing -- it only records what you intend to create. Call it once you have finished analyzing the export and checking for collisions, then summarize the proposal in chat and wait for the user to tell you to go ahead. Validates the shape and returns a list of errors (saving nothing) if the JSON is malformed.",
+    "parameters": [
+      {
+        "name": "proposal_json",
+        "description": "The full proposal as a JSON object string. Shape: {\"udt_definitions\":[{\"name\":\"Machine\",\"folder\":\"Exchange/Tag Import Agent/Line1\",\"members\":[{\"name\":\"Running\",\"datatype\":\"BOOL\",\"description\":\"...\"}],\"rationale\":\"why a UDT\"}],\"udt_instances\":[{\"udt_name\":\"Machine\",\"instance_name\":\"Roaster\",\"folder\":\"Exchange/Tag Import Agent/Line1/Machines\",\"overrides\":{}}],\"standalone_tags\":[{\"name\":\"AmbientTemp\",\"datatype\":\"REAL\",\"folder\":\"Exchange/Tag Import Agent/Line1\",\"value_source\":\"memory\",\"rationale\":\"line-wide, not per-machine\"}],\"unresolved\":[{\"tag\":\"Line1_Foo\",\"reason\":\"ambiguous naming\"}]}. Every folder is rewritten into the Tag Import Agent folder automatically; the response tells you which ones were moved.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "rationale",
+        "description": "Short prose explanation of the overall grouping decisions, shown alongside the tree.",
+        "type": "STRING",
+        "required": false
+      },
+      {
+        "name": "upload_id",
+        "description": "Id of the upload this proposal is for. Omit to attach it to the most recent upload.",
+        "type": "INTEGER",
+        "required": false
+      }
+    ]
+  }
+}

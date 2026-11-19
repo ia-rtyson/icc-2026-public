@@ -1,0 +1,971 @@
+{
+  "custom": {
+    "currentIsDemo": false,
+    "currentName": "",
+    "toast": "",
+    "widgets": []
+  },
+  "params": {},
+  "propConfig": {
+    "custom.widgets": {
+      "access": "PRIVATE",
+      "persistent": false
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 720,
+      "width": 1366
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Dashboard"
+        },
+        "position": {
+          "height": "93%",
+          "width": "100%",
+          "x": "0%",
+          "y": "7%"
+        },
+        "propConfig": {
+          "props.widgets": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.widgets"
+              },
+              "type": "property"
+            },
+            "persistent": false
+          }
+        },
+        "props": {
+          "availableWidgets": [
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Line Chart",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Displays a tag\u0027s history over the last hour as a line chart. Parameters: header (string, required) - card title, empty string to omit. footer (string, required) - secondary context (units, range), empty string to omit. tagPath (string, required) - fully qualified Ignition tag path, must be history-enabled and numeric, e.g. \"[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/MotorTorque\". valueName (string, required) - human-readable series label.",
+                "footer": "",
+                "header": "",
+                "tagPath": "",
+                "valueName": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/line"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 3,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": true,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Gauge",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Displays a live numeric tag value as a needle gauge. Parameters: header (string, required) - card title, empty string to omit. footer (string, required) - secondary context (units, cadence), empty string to omit. tagPath (string, required) - fully qualified, readable, numeric tag path. valueName (string, required) - what is being measured, shown under the gauge.",
+                "footer": "",
+                "header": "",
+                "tagPath": "",
+                "valueName": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/gauge"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 3,
+                "rowSpan": 5
+              },
+              "header": {
+                "enabled": true,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Bar Chart",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Displays a single live numeric tag value as a bar. Parameters: header (string, required) - card title, empty string to omit. footer (string, required) - secondary context, empty string to omit. tagPath (string, required) - fully qualified, readable, numeric tag path. valueName (string, required) - series label shown on the axis.",
+                "footer": "",
+                "header": "",
+                "tagPath": "",
+                "valueName": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/bar"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": true,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Donut Chart",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Displays one or more live tag values as a donut chart; each tag becomes a slice sized by its current value. Parameters: header (string, required) - card title, empty string to omit. footer (string, required) - secondary context, empty string to omit. tagPaths (array of strings, required) - one or more fully qualified, readable, numeric tag paths; at least one required, each becomes a slice labeled by its tag name.",
+                "footer": "",
+                "header": "",
+                "tagPaths": []
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/donut"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": true,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Radar Chart",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Compares multiple live tag values side by side as a horizontal bar comparison (this gateway does not have the separately-licensed ECharts module, so a true radar/spider plot is not available -- this widget is the substitute for comparing several metrics at a glance). Parameters: header (string, required) - card title, empty string to omit. footer (string, required) - secondary context, empty string to omit. tagPaths (array of strings, required) - at least three fully qualified, readable, numeric tag paths for a meaningful comparison; each becomes one bar labeled by its tag name.",
+                "footer": "",
+                "header": "",
+                "tagPaths": []
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/radar"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Text",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": true,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 1
+              },
+              "name": "Markdown",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Renders a Markdown string as a formatted card -- headings, paragraphs, bold/italic, lists, links, tables, blockquotes, and code blocks. Use for narrative, instructions, or context alongside live-data tiles. Parameter: content (string, required) - the Markdown source; use \\n for line breaks in the JSON string.",
+                "content": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/markdown"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 5,
+                "rowSpan": 4
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Sankey - Material Flow",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Material flow down the Alarm Flood line as a Sankey diagram. Each station emits two bands: what it passes downstream and what it is accumulating in its own buffer. On a healthy line the chain runs full width and the held bands are hairlines; during a jam the held bands fatten from the downstream end backwards, so the whole cascade reads in one frame. Best single widget for \u0027where is the line backing up\u0027. Values are % of each station\u0027s nominal rate, not units/min. linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "linePath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/sankey"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 4
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Chord - Station Coupling",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Station-to-station coupling as a chord diagram. Shows the downstream chain plus the two return paths a Sankey cannot draw: empty carriers cycling back from Packaging to Kitting, and rework from Cooking back to Forming. Use it to show the line as a closed system rather than a one-way pipe. linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "linePath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/chord"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 6,
+                "rowSpan": 4
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 3,
+                "rowSpan": 2
+              },
+              "name": "Graph - Line Topology",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "The line as an equipment topology: five stations, their buffers, and the Packaging drive that every fault scenario starts at. Station nodes grow with their active alarm count and buffer nodes grow with their fill level, so the equipment actually in trouble is the node that reads largest. Use it when the question is \u0027what is connected to what\u0027, not \u0027how much is flowing\u0027. linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "linePath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/graph"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 6,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 3,
+                "rowSpan": 2
+              },
+              "name": "Heatmap - Alarm Density",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Alarm counts per station per time bucket, read from the alarm journal. A flood shows as a diagonal smear from Packaging up to Kitting -- which is the propagation order, made visible without reading a single timestamp. Normal running is near-empty with the odd nuisance alarm. Parameters: hoursBack (integer, default 12), bucketMinutes (integer, default 30). Widen the bucket for a longer window or the grid gets too fine to read. linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "bucketMinutes": 30,
+                "footer": "",
+                "header": "",
+                "hoursBack": 12,
+                "linePath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/heatmap"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 4
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Funnel - Throughput Loss",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Throughput as a funnel, stations in process order, as % of nominal. Values are clamped to a running minimum so the funnel is monotonic; a station running meaningfully faster than the constraint below it is annotated in its label with both its own rate and the rate it is being held to. Answers \u0027what is the line\u0027s actual capacity right now, and which station is setting it\u0027. linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "linePath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/funnel"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 3,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Pie - Where Product Sits",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Share of accumulated material by station, from the five buffer tags. During a cascade this is the most diagnostic single view on the screen: it answers \u0027where is the line holding product\u0027 directly. On a healthy line the five slices are roughly even. linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "linePath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/station-pie"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 4
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Radar - Station Health",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Station health across five shared axes -- Throughput, Headroom (buffer space left), Alarm-free, Running, Stability -- overlaid for up to four stations. Every axis is normalised so 100 is good, so a healthy station is a big even pentagon and a sick one visibly caves in on whichever axis is failing. Parameters: stations (string, optional) - comma-separated station names from Kitting, Mixing, Forming, Cooking, Packaging. Empty compares the two ends of the cascade (Kitting and Packaging). linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "linePath": "",
+                "stations": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/station-radar"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 4,
+                "rowSpan": 5
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Bar - Station Comparison",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "One metric across all five stations as bars. Parameters: metric (string, required) - one of \"rate\" (% of nominal throughput), \"buffer\" (% full) or \"alarms\" (active alarm count). The plainest way to show which station is the outlier; pair \"rate\" and \"buffer\" side by side to show a backup (rate down, buffer up) as opposed to a slowdown (both down). linePath (string, optional) - Alarm Flood line path, e.g. \"Site1/Area1/Line1\". Leave empty to follow the simulator\u0027s default line, which is what the Alarm Flood Event page drives.",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "linePath": "",
+                "metric": "rate"
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/station-bar"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 6,
+                "rowSpan": 3
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 3,
+                "rowSpan": 2
+              },
+              "name": "Area - Multi-Tag Trend",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Historian trend for up to 12 tags as stacked areas. Parameters: tagPaths (string, required) - comma-separated fully-qualified tag paths, e.g. \"[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/MotorTorque,[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/DriveVibration\". minutesBack (integer, default 30). points (integer, default 180) - samples returned; history is 1 Hz, so leaving this high on a long window returns a lot of rows. Use for the precursor story: torque, current and vibration climbing together before the belt parts. ",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "minutesBack": 30,
+                "points": 180,
+                "tagPaths": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/area"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Ring - Single Value",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "One tag as a 0-100 ring dial. Parameters: tagPath (string, required) - fully-qualified numeric tag path. engHigh (number, default 100) - full-scale value; 100 is already correct for every % tag in the Alarm Flood model, so only set it for a tag in other units. Compact enough to place four or five across the top of a dashboard as a KPI row. ",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "engHigh": 100,
+                "footer": "",
+                "header": "",
+                "tagPath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/ring"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Sparkline - Trend",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "One tag\u0027s recent history as a bare sparkline, no axes. Parameters: tagPath (string, required). minutesBack (integer, default 15). points (integer, default 60) - capped deliberately, since a sparkline is about eighty pixels wide and 1 Hz history would hand it nine hundred rows. Pair with a Ring to put a value and its direction in the same tile. ",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "minutesBack": 15,
+                "points": 60,
+                "tagPath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/sparkline"
+            },
+            {
+              "body": {
+                "style": {
+                  "classes": ""
+                }
+              },
+              "category": "Charts",
+              "defaultSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "header": {
+                "enabled": false,
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "isConfigurable": false,
+              "minSize": {
+                "columnSpan": 2,
+                "rowSpan": 2
+              },
+              "name": "Sparkline Bar - Trend",
+              "style": {
+                "classes": ""
+              },
+              "viewParams": {
+                "_description": "Same data as the Sparkline but drawn as discrete bars, which reads better for counts and rates than for continuous analogs. Parameters: tagPath (string, required). minutesBack (integer, default 15). points (integer, default 40) - keep this low; bars need more width each than a line does. ",
+                "_generated": "canvas-charts (generated by scripts/gen_dashboard_widgets.py)",
+                "footer": "",
+                "header": "",
+                "minutesBack": 15,
+                "points": 40,
+                "tagPath": ""
+              },
+              "viewPath": "Exchange/Dashboard Agent/Dashboard Templates/sparkline-bar"
+            }
+          ],
+          "editingToggle": false,
+          "grid": "stretch",
+          "pack": false,
+          "stretch": {
+            "columnCount": 14,
+            "columnGutterSize": 10,
+            "rowCount": 12,
+            "rowGutterSize": 10
+          },
+          "style": {
+            "padding": "10px"
+          },
+          "widgets": []
+        },
+        "type": "ia.display.dashboard"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Name"
+            },
+            "position": {
+              "basis": "0px",
+              "grow": 1,
+              "shrink": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "expression": "if(len({view.custom.currentName}) \u003e 0, {view.custom.currentName} + if({view.custom.currentIsDemo}, \u0027  •  demo\u0027, \u0027\u0027), \u0027Unsaved dashboard\u0027)"
+                  },
+                  "type": "expr"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--neutral-80)",
+                "fontSize": "14px",
+                "fontWeight": 500,
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap"
+              },
+              "text": "Unsaved dashboard"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Toast"
+            },
+            "position": {
+              "basis": "auto",
+              "grow": 0,
+              "shrink": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.toast"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "color": "var(--warning)",
+                "fontSize": "12px"
+              },
+              "text": ""
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.toggleDock(\u0027dashboard-agent\u0027)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Agent"
+            },
+            "position": {
+              "basis": "130px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "fontSize": "13px",
+                "height": "30px",
+                "minHeight": "0px"
+              },
+              "text": "Ask the Agent"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\t# Clears the canvas without touching anything saved -- the \"start again\" the\n\t# agent has no tool for.\n\tself.view.custom.widgets \u003d []\n\tself.view.custom.currentName \u003d \u0027\u0027\n\tself.view.custom.currentIsDemo \u003d False\n\tself.view.custom.toast \u003d \u0027\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Clear"
+            },
+            "position": {
+              "basis": "80px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "fontSize": "13px",
+                "height": "30px",
+                "minHeight": "0px"
+              },
+              "text": "Clear"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsystem.perspective.openPopup(\n\t\t\u0027dashboard-manage\u0027,\n\t\t\u0027Exchange/Dashboard Agent/Manage Dashboards\u0027,\n\t\ttitle\u003d\u0027Saved dashboards\u0027,\n\t\tmodal\u003dTrue,\n\t\tshowCloseIcon\u003dTrue,\n\t\tdraggable\u003dTrue,\n\t\tresizable\u003dTrue,\n\t\toverlayDismiss\u003dTrue)\n"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Open"
+            },
+            "position": {
+              "basis": "90px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": false,
+              "style": {
+                "fontSize": "13px",
+                "height": "30px",
+                "minHeight": "0px"
+              },
+              "text": "Saved"
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tself.view.custom.toast \u003d exchange.dashboard.ui.openSaveDock(self.view.custom.widgets, self.view.custom.currentName, self.view.custom.currentIsDemo)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "Save"
+            },
+            "position": {
+              "basis": "90px",
+              "grow": 0,
+              "shrink": 0
+            },
+            "props": {
+              "primary": true,
+              "style": {
+                "fontSize": "13px",
+                "height": "30px",
+                "minHeight": "0px"
+              },
+              "text": "Save"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Toolbar"
+        },
+        "position": {
+          "height": "7%",
+          "width": "100%",
+          "x": "0%",
+          "y": "0%"
+        },
+        "props": {
+          "alignItems": "center",
+          "direction": "row",
+          "justify": "flex-end",
+          "style": {
+            "backgroundColor": "var(--neutral-20)",
+            "borderBottom": "1px solid var(--neutral-40)",
+            "gap": "8px",
+            "padding": "0px 14px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\t# Open on the default dashboard rather than an empty grid. The layout is\n\t# loaded from the database by name (exchange.dashboard.configs.DEFAULT_NAME),\n\t# so re-saving a layout under that name changes what the page opens on.\n\texchange.dashboard.ui.applyDefault(self.view)\n"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "exchange.dashboard.load",
+          "pageScope": true,
+          "script": "\t# Sent by the saved-list popup\u0027s Open button (exchange.dashboard.ui.openSaved); the\n\t# popup is a separate view, so the layout arrives as a page message.\n\tself.view.custom.widgets \u003d payload[\u0027widgets\u0027]\n\tself.view.custom.currentName \u003d payload[\u0027name\u0027]\n\tself.view.custom.currentIsDemo \u003d payload[\u0027isDemo\u0027]\n\tself.view.custom.toast \u003d \u0027\u0027",
+          "sessionScope": false,
+          "viewScope": true
+        },
+        {
+          "messageType": "exchange.dashboard.saved",
+          "pageScope": true,
+          "script": "\t# Sent by the Save popup once the row is written, so the toolbar stops saying\n\t# \"Unsaved\" and a second Save updates the same row.\n\tself.view.custom.currentName \u003d payload[\u0027name\u0027]\n\tself.view.custom.currentIsDemo \u003d payload[\u0027isDemo\u0027]\n\tself.view.custom.toast \u003d \u0027\u0027\n",
+          "sessionScope": false,
+          "viewScope": true
+        },
+        {
+          "messageType": "exchange.dashboard.setWidgets",
+          "pageScope": true,
+          "script": "\t# Written by the agent\u0027s writeDashboardConfiguration tool, which lives in the\n\t# Agent Dock and therefore cannot touch this view\u0027s properties directly.\n\tself.view.custom.widgets \u003d payload[\u0027widgets\u0027]\n\tself.view.custom.currentName \u003d \u0027\u0027\n\tself.view.custom.currentIsDemo \u003d False\n\tself.view.custom.toast \u003d \u0027\u0027",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.coord"
+  }
+}

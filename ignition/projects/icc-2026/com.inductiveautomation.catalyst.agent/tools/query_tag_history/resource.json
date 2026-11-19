@@ -1,0 +1,53 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-08T22:00:00Z"
+    },
+    "title": "query_tag_history",
+    "description": "Queries the tag historian for time-series process values of one or more tags. A trailing window only ever goes 60 seconds back -- pass event_id instead to get a full flood event's window (including its pre-flood lead-in), which is what you want when analysing a flood. Use this on the earliest-firing tags in a flood (and any tag whose inventory reports history enabled) to see which process variable deviated first and how fast it moved; the variable that moved first is usually closer to the root cause than the alarm that fired most often. Returns a wide-format table: a timestamp column plus one column per tag, keyed by the last segment of each tag path (column_paths gives the full path of each), with tags omitted from a row where they had no recorded sample at that timestamp. The response is capped in size; if it would have been larger, every Nth row is returned and the 'sampling' block says so. Batch every tag you want into one call -- up to 10 tag paths per call; extra paths are dropped and reported in tags_notice. Paths without a [provider] prefix are assumed to be in the [default] provider.",
+    "parameters": [
+      {
+        "name": "tag_paths",
+        "description": "One or more tag paths, either comma-separated or as a JSON array string. Paths without a [provider] prefix are assumed [default], e.g. 'Exchange/Alarm Flood/Site1/Area1/Line1/Kitting/BinLevel'.",
+        "type": "STRING",
+        "required": true
+      },
+      {
+        "name": "event_id",
+        "description": "Optional flood event_id from query_alarm_flood_events. When supplied, the query window is taken from that event's stored window (which already includes the pre-flood lead-in), padded 60s either side, and seconds_back is ignored. A stored window longer than 30 minutes is cut to its first 30 minutes (where the onset is) and the window's notice says so. Prefer this when analysing a specific flood.",
+        "type": "INTEGER",
+        "required": false
+      },
+      {
+        "name": "seconds_back",
+        "description": "Size of the trailing time window in seconds, ending at now. Only used when event_id is not supplied. Defaults to 60 and is capped at 60 -- a larger value is reduced to 60 and reported back in the window's notice. History is recorded at 1 Hz, so 60 seconds is already ~60 samples per tag and is enough to judge how fast a value is moving. To read further back than a minute, pass a flood's event_id. Always pass a whole number of seconds, never a fractional hour.",
+        "type": "INTEGER",
+        "required": false
+      },
+      {
+        "name": "return_size",
+        "description": "Maximum number of sample rows to return. Only applies when an aggregation mode is given; ignored in the default As Stored mode, which returns every recorded point in the window. Either way the response is separately capped by size, so you do not need to set this to keep the result manageable.",
+        "type": "INTEGER",
+        "required": false
+      },
+      {
+        "name": "aggregation_mode",
+        "description": "Historian aggregation mode. Defaults to 'As Stored' -- raw recorded values with no averaging, which is what you want for root-cause work because averaging hides the onset. Pass Average, LastValue, MinMax, Minimum, Maximum etc. only if you deliberately want downsampling.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

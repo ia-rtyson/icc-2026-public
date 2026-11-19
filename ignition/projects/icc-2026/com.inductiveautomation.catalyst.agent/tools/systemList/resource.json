@@ -1,0 +1,30 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "lastModificationSignature": "2dacd32345044f97ee9031f3fdfa29a33b25a81596ef28f442850bd3ec0c03c1",
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-22T15:50:23Z"
+    },
+    "description": "List the system.* functions systemCall is allowed to invoke -- the translation allow-list only, filtered to what resolves on this gateway. Optional case-insensitive group prefix (\u0027util\u0027, \u0027i18n\u0027). Returns {group: [{name, access, usage}, ...]}.",
+    "title": "systemList",
+    "parameters": [
+      {
+        "name": "prefix",
+        "description": "optional case-insensitive filter on the group name (\u0027util\u0027 or \u0027i18n\u0027); empty returns the whole allow-list",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "en.json",
+    "notes.json",
+    "es-MX.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "unknown",
+      "timestamp": "2026-10-22T15:42:43Z"
+    },
+    "ignorePunctuation": false,
+    "caseInsensitive": false,
+    "lastModificationSignature": "fe7af74988f79bcf884b82602dce68f7cc9edbbf629fd09915cae698e8ff8cf2",
+    "ignoreWhitespace": false,
+    "ignoreTags": false
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "lastModificationSignature": "fb11abb32cb1391b657f59e47258053a13bb9c366920d99da79c225c52acd1a7",
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-22T15:50:23Z"
+    },
+    "description": "Reads the live value, quality and timestamp of each tag path. Returns JSON {count, values: [{path, value, quality, good, timestamp}]}. At most 50 paths per call; extra paths are dropped and a notice says so.",
+    "title": "tagRead",
+    "parameters": [
+      {
+        "name": "tagPaths",
+        "description": "Array of full tag path strings, e.g. [\"[default]Folder/Tag\"]. A comma-separated string is also accepted.",
+        "type": "ARRAY",
+        "required": true
+      }
+    ]
+  }
+}

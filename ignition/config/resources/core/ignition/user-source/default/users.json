@@ -1,0 +1,386 @@
+{
+  "users": [
+    {
+      "uuid": "1",
+      "username": "admin",
+      "schedule": "Always",
+      "password": "[37D8F78C]0ff5f075c0a7dce983e0fe27f7e1d5ae1b33c166fac4d9d683977d61b3da43f5",
+      "passwordDate": "20250716.125712550-0600",
+      "passwordHistory": [],
+      "createdDate": "20260408.163547007-0600",
+      "lastModifiedDate": "20260408.163547007-0600",
+      "roles": [
+        "93f27c1c-419a-4878-b348-da6699407a2f"
+      ],
+      "extraProps": [
+        {
+          "propertyKey": "user.pin"
+        }
+      ],
+      "scheduleAdjustments": [],
+      "contactInfos": []
+    },
+    {
+      "uuid": "e0450152-aac4-4efe-a6b6-0c5546ce8d08",
+      "username": "dmorales",
+      "firstName": "Diana",
+      "lastName": "Morales",
+      "schedule": "Always",
+      "password": "[3264AA9D]5099cdc3451333de1f26fffb3f709838c1ace2aa45f932f3af0c44cfe7db0df4",
+      "passwordDate": "20260901.133124792-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133124791-0600",
+      "lastModifiedDate": "20260901.133526168-0600",
+      "roles": [
+        "93f27c1c-419a-4878-b348-da6699407a2f",
+        "e61ed39b-0637-4096-945e-43ecb578ee12"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "dmorales@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "50d73273-e631-4c7b-a9c2-3486e6294b55",
+      "username": "rchen",
+      "firstName": "Ray",
+      "lastName": "Chen",
+      "schedule": "Always",
+      "password": "[C4B78254]7a8b2c80b577c5148575e17d3e1e2fc14aeb48c36160f29121860ffd0e966ed6",
+      "passwordDate": "20260901.133124905-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133124904-0600",
+      "lastModifiedDate": "20260901.133526270-0600",
+      "roles": [
+        "e61ed39b-0637-4096-945e-43ecb578ee12"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "rchen@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "df573c63-0550-4776-9942-c5e948ee3a7c",
+      "username": "pnovak",
+      "firstName": "Petra",
+      "lastName": "Novak",
+      "schedule": "Always",
+      "password": "[6169A350]49a07fcc813985a0196a8a0a246b89ecfe32412edbbf53297a51cbf2b19cf3f0",
+      "passwordDate": "20260901.133125009-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125009-0600",
+      "lastModifiedDate": "20260901.133526365-0600",
+      "roles": [
+        "e61ed39b-0637-4096-945e-43ecb578ee12"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "pnovak@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "600a6bc4-2a6a-4c1c-95cc-e7b6885c9f77",
+      "username": "jokafor",
+      "firstName": "Joy",
+      "lastName": "Okafor",
+      "schedule": "Always",
+      "password": "[C1B5079B]ded3eb18162dd835f21203b682679f07bf01c7713a0ca36c9fd36d3174c6cf71",
+      "passwordDate": "20260901.133125106-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125106-0600",
+      "lastModifiedDate": "20260901.133526468-0600",
+      "roles": [
+        "f20555d5-29f3-47eb-83d3-e549ccb09f6f"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "jokafor@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "2bf11b45-3257-4922-b12e-72240a6d5f26",
+      "username": "mhaddad",
+      "firstName": "Malik",
+      "lastName": "Haddad",
+      "schedule": "Always",
+      "password": "[53B9C02D]7c9c94a33ff6e04d410f5b9769e3dbf1d02c348fa92f2a00d935209475a6d978",
+      "passwordDate": "20260901.133125200-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125200-0600",
+      "lastModifiedDate": "20260901.133526582-0600",
+      "roles": [
+        "f20555d5-29f3-47eb-83d3-e549ccb09f6f"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "mhaddad@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "18e28ee3-8251-4342-bd78-fc532f5ef193",
+      "username": "sberg",
+      "firstName": "Sam",
+      "lastName": "Berg",
+      "schedule": "Always",
+      "password": "[656D9539]6830128635932bb06149b22ccfa914efa1bcb7cf5378e677bf9d0ee6b1bfe6b7",
+      "passwordDate": "20260901.133125325-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125325-0600",
+      "lastModifiedDate": "20260901.133526690-0600",
+      "roles": [
+        "30d8ce8a-da23-4c79-b196-2b11e160bf72"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "sberg@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "09c73990-af2c-4333-88bb-43a8b5d987dc",
+      "username": "tvasquez",
+      "firstName": "Tomas",
+      "lastName": "Vasquez",
+      "schedule": "Always",
+      "password": "[C105AC66]d99d655f443611131e5158d3ea3b769bcb5032ec83e6b19697163cf67adc6429",
+      "passwordDate": "20260901.133125438-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125437-0600",
+      "lastModifiedDate": "20260901.133526784-0600",
+      "roles": [
+        "30d8ce8a-da23-4c79-b196-2b11e160bf72"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "tvasquez@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "6782f737-dda4-4fb1-9b64-9d9eb01300bc",
+      "username": "adubois",
+      "firstName": "Amara",
+      "lastName": "Dubois",
+      "schedule": "Always",
+      "password": "[2E043883]b1894322e3946693fc9424a8fdb9f32dd06e9629a571da6a385d3dd5772fabf2",
+      "passwordDate": "20260901.133125547-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125547-0600",
+      "lastModifiedDate": "20260901.133526878-0600",
+      "roles": [
+        "30d8ce8a-da23-4c79-b196-2b11e160bf72"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "adubois@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "c56f0b7a-2a7e-4905-ac0c-1530e14e2ddd",
+      "username": "korlov",
+      "firstName": "Kira",
+      "lastName": "Orlov",
+      "schedule": "Always",
+      "password": "[62BD84AC]eb8627c2e053bb3d9e8e59576e7d60ae207a24bac82c241a5f0c6a948f13c961",
+      "passwordDate": "20260901.133125647-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125647-0600",
+      "lastModifiedDate": "20260901.133526981-0600",
+      "roles": [
+        "4606a42f-3fd9-4253-91ab-3d2b65a342f9"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "korlov@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "7fdce141-2e45-4365-a342-4b9d5bd8fb6c",
+      "username": "bfitzgerald",
+      "firstName": "Brian",
+      "lastName": "Fitzgerald",
+      "schedule": "Always",
+      "password": "[1BB4CC20]076b66ede522ca0149e67fb55e090bd6cce52db6d6cf42a3a1c08485761c674a",
+      "passwordDate": "20260901.133125769-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125768-0600",
+      "lastModifiedDate": "20260901.133527264-0600",
+      "roles": [
+        "4606a42f-3fd9-4253-91ab-3d2b65a342f9"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "iggy@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "6f91460d-79de-4044-a157-a29739019ca7",
+      "username": "linelead",
+      "firstName": "Line",
+      "lastName": "Lead",
+      "schedule": "Always",
+      "description": "SEEDED DEFECT (U005): Shared shift login with no owner",
+      "password": "[9C3B08D1]44776317f61c43ebf407fbedfe68d287028b4aaf8d73bbbd2dba49cf76cb309e",
+      "passwordDate": "20260901.133125891-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125891-0600",
+      "lastModifiedDate": "20260901.133527449-0600",
+      "roles": [
+        "30d8ce8a-da23-4c79-b196-2b11e160bf72",
+        "f20555d5-29f3-47eb-83d3-e549ccb09f6f"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": []
+    },
+    {
+      "uuid": "e3060e98-bb9b-47d2-9c23-458759134453",
+      "username": "contractor1",
+      "firstName": "Contract",
+      "lastName": "Integrator",
+      "schedule": "Always",
+      "description": "SEEDED DEFECT (U005): Contractor account still active, holding Administrator",
+      "password": "[DF65059C]72a970fcdda178adee6bc28f7a05aeb77e53ae4066399269912585595e8e8f36",
+      "passwordDate": "20260901.133125984-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133125984-0600",
+      "lastModifiedDate": "20260901.133527561-0600",
+      "roles": [
+        "e61ed39b-0637-4096-945e-43ecb578ee12",
+        "93f27c1c-419a-4878-b348-da6699407a2f"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": []
+    },
+    {
+      "uuid": "e2f1a29b-4123-4a59-a92f-83fb172ea6fa",
+      "username": "jhalvorsen",
+      "firstName": "Jonas",
+      "lastName": "Halvorsen",
+      "schedule": "Always",
+      "description": "SEEDED DEFECT (U002): Account provisioned but never assigned a role",
+      "password": "[270A53F3]47459281aabb7bd41f2d5b1fe4b6ec7c8b6e6638d3d2d9040bff0bac0f33de32",
+      "passwordDate": "20260901.133126082-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133126082-0600",
+      "lastModifiedDate": "20260901.133527651-0600",
+      "roles": [],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": [
+        {
+          "contactType": "email",
+          "value": "jhalvorsen@example.com",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "uuid": "69ca377d-46b1-4ef6-a0f8-c709e1cc71bf",
+      "username": "svc_historian",
+      "firstName": "Service",
+      "lastName": "Historian",
+      "schedule": "Always",
+      "description": "SEEDED DEFECT (U006): Service account holding Administrator with no owner contact",
+      "password": "[773CEA2A]8a888949570f594c71865166bb895b243f1e4f305c29ba463792c1c8c647d5cb",
+      "passwordDate": "20260901.133126174-0600",
+      "passwordHistory": [],
+      "createdDate": "20260901.133126174-0600",
+      "lastModifiedDate": "20260901.133527745-0600",
+      "roles": [
+        "93f27c1c-419a-4878-b348-da6699407a2f"
+      ],
+      "extraProps": [],
+      "scheduleAdjustments": [],
+      "contactInfos": []
+    }
+  ],
+  "roles": [
+    {
+      "uuid": "93f27c1c-419a-4878-b348-da6699407a2f",
+      "rolename": "Administrator",
+      "description": "",
+      "createdDate": "20260408.163547007-0600",
+      "lastModifiedDate": "20260408.163547007-0600"
+    },
+    {
+      "uuid": "e61ed39b-0637-4096-945e-43ecb578ee12",
+      "rolename": "Engineer",
+      "createdDate": "20260901.132919876-0600",
+      "lastModifiedDate": "20260901.132919876-0600"
+    },
+    {
+      "uuid": "f20555d5-29f3-47eb-83d3-e549ccb09f6f",
+      "rolename": "Supervisor",
+      "createdDate": "20260901.132922088-0600",
+      "lastModifiedDate": "20260901.132922088-0600"
+    },
+    {
+      "uuid": "30d8ce8a-da23-4c79-b196-2b11e160bf72",
+      "rolename": "Operator",
+      "createdDate": "20260901.132922172-0600",
+      "lastModifiedDate": "20260901.132922172-0600"
+    },
+    {
+      "uuid": "4606a42f-3fd9-4253-91ab-3d2b65a342f9",
+      "rolename": "Maintenance",
+      "createdDate": "20260901.132922247-0600",
+      "lastModifiedDate": "20260901.132922247-0600"
+    },
+    {
+      "uuid": "3d779857-659d-4406-b3a9-b5cbdcd84ec3",
+      "rolename": "Contractor",
+      "createdDate": "20260901.132922330-0600",
+      "lastModifiedDate": "20260901.132922330-0600"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 1,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "postgres",
+    "fallbackEnabled": false,
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-30T00:00:00Z"
+    },
+    "parameters": [
+      {"type": "Parameter", "identifier": "project", "sqlType": 7},
+      {"type": "Parameter", "identifier": "score", "sqlType": 2},
+      {"type": "Parameter", "identifier": "findingCount", "sqlType": 2},
+      {"type": "Parameter", "identifier": "critical", "sqlType": 2},
+      {"type": "Parameter", "identifier": "high", "sqlType": 2},
+      {"type": "Parameter", "identifier": "medium", "sqlType": 2},
+      {"type": "Parameter", "identifier": "low", "sqlType": 2},
+      {"type": "Parameter", "identifier": "findingsJson", "sqlType": 7},
+      {"type": "Parameter", "identifier": "inventoryJson", "sqlType": 7},
+      {"type": "Parameter", "identifier": "markdown", "sqlType": 7}
+    ]
+  }
+}

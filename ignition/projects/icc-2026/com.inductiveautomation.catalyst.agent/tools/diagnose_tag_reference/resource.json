@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-07-28T00:00:00Z"
+    },
+    "title": "diagnose_tag_reference",
+    "description": "Checks whether tag paths resolve, and works out WHY when they do not. For each path it reports existence, live read quality, whether the parent folder exists, the parent's actual tag names, and any sibling within a small edit distance of the requested name. A near-miss under a valid parent is strong evidence of a typo; a missing parent points instead at a wrong folder or an offline provider. Use this to confirm or kill a hypothesis about a broken binding before writing a root cause -- do not assert a cause you have not checked here. Read-only.",
+    "parameters": [
+      {
+        "name": "tag_paths",
+        "description": "One or more tag paths, comma-separated or as a JSON array string. Paths without a [provider] prefix are assumed [default], e.g. '[default]Exchange/Alarm Flood/Site1/Area1/Line1/Packaging/MotorTorque'.",
+        "type": "STRING",
+        "required": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "profile": {
+    "type": "SqlHistorian"
+  },
+  "settings": {
+    "database": "postgres",
+    "partition": {
+      "enabled": true,
+      "optimized": false,
+      "optimizedWindowSeconds": 60,
+      "partitionSeedQueryLimit": 2,
+      "size": 1,
+      "sizeUnits": "DAY"
+    },
+    "pruning": {
+      "age": 1,
+      "ageUnits": "WEEK",
+      "enabled": true
+    },
+    "staleMultiplier": 2,
+    "trackSce": true
+  }
+}

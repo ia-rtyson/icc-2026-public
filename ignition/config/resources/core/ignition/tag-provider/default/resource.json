@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "Default tag provider",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "idp:default:/usr:admin",
+      "timestamp": "2026-09-16T18:32:40Z"
+    },
+    "uuid": "7a050aae-7512-4d1c-a142-245c5b7794cf",
+    "lastModificationSignature": "bcd9d28ff642a2c4c9d9a3b67fd3b612c5c57fe2349661c91c73b6574fed96ce",
+    "enabled": true
+  }
+}

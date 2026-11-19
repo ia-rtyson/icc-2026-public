@@ -1,0 +1,133 @@
+{
+  "custom": {
+    "chartData": []
+  },
+  "params": {
+    "footer": "",
+    "header": "",
+    "tagPaths": []
+  },
+  "propConfig": {
+    "custom.chartData": {
+      "access": "PRIVATE",
+      "binding": {
+        "config": {
+          "expression": "runScript(\"exchange.dashboard.widgets.tagsToChartData\", 3000, {view.params.tagPaths})"
+        },
+        "type": "expr"
+      }
+    },
+    "params.footer": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.header": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPaths": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 260,
+      "width": 320
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Header"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.header"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "13px",
+            "fontWeight": 600
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Donut"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 1
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.chartData"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cutoutRadius": 55,
+          "legend": {
+            "position": "bottom"
+          }
+        },
+        "type": "ia.chart.pie"
+      },
+      {
+        "meta": {
+          "name": "Footer"
+        },
+        "position": {
+          "basis": "auto",
+          "grow": 0,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.footer"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "var(--neutral-50)",
+            "fontSize": "11px"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "4px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

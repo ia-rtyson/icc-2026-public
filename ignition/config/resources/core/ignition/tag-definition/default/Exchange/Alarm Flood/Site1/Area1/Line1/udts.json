@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Cooking",
+    "tagType": "UdtInstance",
+    "typeId": "[default]_types_/Exchange/AlarmFlood/CookingStation"
+  },
+  {
+    "name": "Forming",
+    "tagType": "UdtInstance",
+    "typeId": "[default]_types_/Exchange/AlarmFlood/FormingStation"
+  },
+  {
+    "name": "Kitting",
+    "tagType": "UdtInstance",
+    "typeId": "[default]_types_/Exchange/AlarmFlood/KittingStation"
+  },
+  {
+    "name": "Mixing",
+    "tagType": "UdtInstance",
+    "typeId": "[default]_types_/Exchange/AlarmFlood/MixingStation"
+  },
+  {
+    "name": "Packaging",
+    "tagType": "UdtInstance",
+    "typeId": "[default]_types_/Exchange/AlarmFlood/PackagingStation"
+  }
+]

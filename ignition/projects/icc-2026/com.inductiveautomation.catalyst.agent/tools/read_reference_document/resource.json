@@ -1,0 +1,29 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-10T00:00:00Z"
+    },
+    "title": "read_reference_document",
+    "description": "Returns the full text of one hosted reference document by filename. Use it to read the PLC tag export you are importing, and to read the supporting material (ladder-logic description, code lookups) when you need it to decide how tags group. Call list_reference_documents first if you do not know the filename. Reading the primary tag export also stages it, so save_proposal can attach your proposal to it.",
+    "parameters": [
+      {
+        "name": "filename",
+        "description": "Exact filename from list_reference_documents, e.g. 'Line1_ControllerTags_Export.CSV'. Omit to read the primary tag export.",
+        "type": "STRING",
+        "required": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "onToolCalled.py"
+  ],
+  "attributes": {
+    "permissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "lastModification": {
+      "actor": "external",
+      "timestamp": "2026-09-01T00:00:00Z"
+    },
+    "title": "get_current_time",
+    "description": "Returns the gateway's current date/time (ISO 8601) and time zone. Use this whenever you need to know what time it is now, e.g. to compute a trailing window for a chart.",
+    "parameters": []
+  }
+}
